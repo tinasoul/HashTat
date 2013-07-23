@@ -13,6 +13,7 @@ gem 'devise'
 gem 'rolify'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'haml'
 
 group :assets do
   gem 'compass-rails'

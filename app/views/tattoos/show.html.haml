@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%= image_tag @tattoo.picture
+%p.tattoo_description @tattoo.description
+
+%= render 'comment'
+
+%= link_to 'Edit', edit_tattoo_path(@tattoo) %> |
+%= link_to 'Back', tattoos_path %>
