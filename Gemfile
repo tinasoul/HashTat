@@ -37,3 +37,27 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'cancan'
+gem 'devise'
+gem 'rolify'
+gem 'simple_form'
+
+group :assets do
+  gem 'compass-rails'
+  gem 'zurb-foundation'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
+  gem 'quiet_assets'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'cucumber-rails', :require=>false
+  gem 'database_cleaner'
+  gem 'launchy'
+end
+
