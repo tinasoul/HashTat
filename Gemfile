@@ -12,7 +12,7 @@ gem 'cancan'
 gem 'devise'
 gem 'rolify'
 gem 'simple_form'
-gem 'paperclip'
+gem 'carrierwave'
 
 group :assets do
   gem 'compass-rails'

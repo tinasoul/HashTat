@@ -1,3 +1,4 @@
 class Tattoo < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :picture, :description, :gender, :body_location, :studio, :artist, :hashtags
+  mount_uploader :picture, PhotoUploader
 end
