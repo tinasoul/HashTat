@@ -1,9 +1,9 @@
 <%= simple_form_for(@tattoo) do |f| %>
   <%= f.error_notification %>
 
-	<div class="field">
-  	<%= f.label :picture %><br />
-  	<%= f.file_field :picture %>
+  <div class="field">
+    <%= f.label :picture %><br />
+    <%= f.file_field :picture %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -34,10 +34,16 @@
   </div>
 <% end %>
 
+<!-- 
+
+
+<%= simple_form_for(@tattoo) do |f| %>
+  <%= f.error_notification %>
+
   <div class="form-inputs">
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
-<% end %>
+<% end %> -->
