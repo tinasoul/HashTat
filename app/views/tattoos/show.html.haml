@@ -1,6 +1,6 @@
 %p#notice= notice
-
-= image_tag @tattoo.picture
+- if @tattoo.picture.exists?
+	= image_tag @tattoo.picture
 %p.tattoo_description= @tattoo.description
 
 = render 'comments'
