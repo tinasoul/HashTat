@@ -2,24 +2,69 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Myapp" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Myapp" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "HashTat" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "HashTat" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
+
+
+
+
   <body class="<%= controller_name %> <%= action_name %>">
-    <div id="container" class="container">
-      <header>
-        <%= render 'layouts/navigation' %>
-        <%= render 'layouts/messages' %>
-      </header>
+ 
+
+<!-- Nav -->
+  
+    <div id="uberbar" class="large-12 columns">
+      
+      <%= render 'layouts/navigation' %>
+
+    </div>
+  
+  
+  <!-- Content -->
+  
+  <div class="row">
       <div id="main" role="main">
+      <%= render 'layouts/messages' %>
+
         <%= yield %>
       </div>
-      <footer>
-      </footer>
-    </div> <!--! end of #container -->
+  </div>
+  
+  
+  <!-- Footer -->
+  
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+            <li><a href="#">Link 6</a></li>
+            <li><a href="#">Link 7</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+
+
+
+
+
+
+
   </body>
 </html>
