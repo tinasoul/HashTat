@@ -1,5 +1,5 @@
 Myapp::Application.routes.draw do
-  resources :tattoos
+  
 
 
   authenticated :user do
@@ -8,4 +8,8 @@ Myapp::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+  resources :tattoos do
+    resources :comments
+  end
+
 end

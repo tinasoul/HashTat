@@ -14,9 +14,11 @@ class TattoosController < ApplicationController
   # GET /tattoos/1.json
   def show
     @tattoo = Tattoo.find(params[:id])
-
+    @comment = @tattoo.comments.build
+    @comments = Comment.all
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @tattoo }
     end
   end
