@@ -7,18 +7,18 @@
 
 
 %h3 Add a Comment
-= form_for [@link, @comment] do |f|
+= form_for [@tattoo, @comment] do |f|
 
   - if @comment.errors.any? 
     #error_explanation
       %h2= pluralize(@comment.errors.count, "error") +'prohibited this comment from being saved:'
 
   %ul
-    = @link.errors.full_messages.each do |msg| 
+    = @tattoo.errors.full_messages.each do |msg| 
       %li= msg
 
   .field
-    = f.text_area :message, :placeholder => "What do you think?"
+    = f.text_area :comment_content, :placeholder => "What do you think?"
 
   
   .actions= f.submit 

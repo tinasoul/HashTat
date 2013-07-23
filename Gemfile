@@ -14,6 +14,7 @@ gem 'rolify'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'haml'
+gem 'haml-rails'
 
 group :assets do
   gem 'compass-rails'
