@@ -4,6 +4,10 @@ class TattoosController < ApplicationController
   def index
     @tattoos = Tattoo.all
     @users = User.all
+<<<<<<< HEAD
+=======
+
+>>>>>>> d492a082fd0c46bee48fad39733f0ed562375847
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tattoos }

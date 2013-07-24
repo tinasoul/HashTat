@@ -46,7 +46,6 @@ class TattoosController < ApplicationController
   # POST /tattoos.json
   def create
     @tattoo = Tattoo.new(params[:tattoo])
-    @users = User.all
 
     respond_to do |format|
       if @tattoo.save
@@ -63,7 +62,6 @@ class TattoosController < ApplicationController
   # PUT /tattoos/1.json
   def update
     @tattoo = Tattoo.find(params[:id])
-    @users = User.all
 
     respond_to do |format|
       if @tattoo.update_attributes(params[:tattoo])
@@ -80,7 +78,6 @@ class TattoosController < ApplicationController
   # DELETE /tattoos/1.json
   def destroy
     @tattoo = Tattoo.find(params[:id])
-    @users = User.all
     @tattoo.destroy
 
     respond_to do |format|
