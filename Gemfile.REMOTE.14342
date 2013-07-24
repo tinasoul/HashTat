@@ -16,11 +16,8 @@ gem 'carrierwave'
 gem 'haml'
 gem 'haml-rails'
 gem 'figaro'
-<<<<<<< HEAD
-=======
 gem 'rmagick'
 gem 'fog'
->>>>>>> PictureResize
 
 group :assets do
   gem 'compass-rails'
