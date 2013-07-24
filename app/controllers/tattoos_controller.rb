@@ -27,6 +27,7 @@ class TattoosController < ApplicationController
   # GET /tattoos/new.json
   def new
     @tattoo = Tattoo.new
+    @users = User.all
 
     respond_to do |format|
       format.html # new.html.erb
