@@ -17,6 +17,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'figaro'
 gem 'rmagick'
+gem 'fog'
 
 group :assets do
   gem 'compass-rails'
