@@ -1,9 +1,22 @@
 %p#notice= notice
 - if @tattoo.picture.present?
-	= image_tag @tattoo.picture
+	= image_tag @tattoo.picture_url(:medium)
+
 %p.tattoo_description= @tattoo.description
+
+/ %p.tattoo_body_location= @tattoo.body_location
+
+/ %p.tattoo_artist= @tattoo.artist
+
+/ %p.tattoo_studio= @tattoo.studio
+
+/ %p.tattoo_hashtags= @tattoo.hashtag
 
 = render 'comments'
 
 = link_to 'Edit', edit_tattoo_path(@tattoo) |
 = link_to 'Back', tattoos_path
+
+
+
+
