@@ -7,6 +7,14 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//d3f5pyioow99x0.cloudfront.net/0.6.1/hull.js"></script>
+    <script>
+    Hull.init({
+      appId : "51efd715f029957cf200036b",
+      orgUrl: "https://dfa1f890.hullapp.io"
+    });
+</script>
     <%= yield(:head) %>
   </head>
 

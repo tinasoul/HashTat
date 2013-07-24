@@ -1,5 +1,5 @@
 %p#notice= notice
-- if @tattoo.picture.exists?
+- if @tattoo.picture.present?
 	= image_tag @tattoo.picture
 %p.tattoo_description= @tattoo.description
 
