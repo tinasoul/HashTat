@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'haml'
 gem 'haml-rails'
+gem 'figaro'
 
 group :assets do
   gem 'compass-rails'

@@ -3,7 +3,7 @@ class TattoosController < ApplicationController
   # GET /tattoos.json
   def index
     @tattoos = Tattoo.all
-
+    @users = User.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tattoos }
@@ -16,6 +16,7 @@ class TattoosController < ApplicationController
     @tattoo = Tattoo.find(params[:id])
     @comment = @tattoo.comments.build
     @comments = Comment.all
+    @users = User.all
     
     respond_to do |format|
       format.html # show.html.haml
@@ -27,6 +28,7 @@ class TattoosController < ApplicationController
   # GET /tattoos/new.json
   def new
     @tattoo = Tattoo.new
+    @users = User.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +39,7 @@ class TattoosController < ApplicationController
   # GET /tattoos/1/edit
   def edit
     @tattoo = Tattoo.find(params[:id])
+    @users = User.all
   end
 
   # POST /tattoos

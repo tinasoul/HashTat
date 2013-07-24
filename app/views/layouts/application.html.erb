@@ -11,8 +11,8 @@
     <script src="//d3f5pyioow99x0.cloudfront.net/0.6.1/hull.js"></script>
     <script>
     Hull.init({
-      appId : "51efd715f029957cf200036b",
-      orgUrl: "https://dfa1f890.hullapp.io"
+      appId : ENV["HULL_APP_ID"],
+      orgUrl: ENV["HULL_ORG_URL"]
     });
 </script>
     <%= yield(:head) %>
