@@ -1,33 +1,65 @@
-<%= link_to image_tag("hashtatlogo_03.gif", :align=> "left"), root_path, :class => 'logo' %>
-
-<ul class="nav">
-  <% if user_signed_in? %>
-
-    <li>
-      <p>User: <%=link_to current_user.name, current_user %></p>
-    </li>
-
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login with Twitter', user_omniauth_authorize_path(:twitter) %>
-    <%= link_to 'Login', new_user_session_path %>
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
-    </li>
-    <% if current_user.has_role? :admin %>
-      <li>
-      <%= link_to 'Admin', users_path %>
+<!-- Header and Nav -->
+  <nav class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a href="#">
+            H A S H T A T
+          </a>
+        </h1>
       </li>
-    <% end %>
-  <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
-  <% end %>
-</ul>
+    </ul>
+ 
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+<!--       <ul class="left">
+        <li class="divider"></li>
+        <li>
+          <%= link_to image_tag("hashtatlogo_03.gif", :align=> "left"), root_path, :class => 'logo' %>
+        </li>
+      </ul> -->
+ 
+      <!-- Right Nav Section -->
+      <ul class="right">
+<!--         <li class="divider"></li>
+ -->        
+        <ul class="nav">
+          <% if user_signed_in? %>
+
+            <li>
+              <p>User: <%=link_to current_user.name, current_user %></p>
+            </li>
+            <li>
+            <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
+            </li>
+          <% else %>
+            <li>
+            <%= link_to 'Login with Twitter', user_omniauth_authorize_path(:twitter) %></li>
+            <li>
+            <%= link_to 'Login', new_user_session_path %>
+            </li>
+          <% end %>
+          <% if user_signed_in? %>
+            <li>
+            <%= link_to 'Edit account', edit_user_registration_path %>
+            </li>
+            <% if current_user.has_role? :admin %>
+              <li>
+              <%= link_to 'Admin', users_path %>
+              </li>
+            <% end %>
+          <% else %>
+            <li>
+            <%= link_to 'Sign up', new_user_registration_path %>
+            </li>
+          <% end %>
+        </ul>
+
+
+
+      </ul>
+    </section>
+  </nav>
+ 
+ 
+  <!-- End Header and Nav -->
