@@ -18,6 +18,9 @@ gem 'haml-rails'
 gem 'figaro'
 gem 'rmagick'
 gem 'fog'
+gem 'devise'
+gem 'omniauth-twitter'
+gem 'twitter'
 
 group :assets do
   gem 'compass-rails'
