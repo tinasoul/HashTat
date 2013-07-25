@@ -1,7 +1,10 @@
-<h1>Listing tattoos</h1>
+<h1>All tattoos</h1>
 
 <table>
   <tr>
+    <th>Pic</th>
+    <th>Story</th>
+    <th>Hashtags</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,13 +12,16 @@
 
 <% @tattoos.each do |tattoo| %>
   <tr>
+    <td><%=image_tag(tattoo.picture_url) if tattoo.picture.present?%></td>
+    <td><%= tattoo.description %></td>
+    <td><%= tattoo.hashtags %></td>
     <td><%= link_to 'Show', tattoo %></td>
     <td><%= link_to 'Edit', edit_tattoo_path(tattoo) %></td>
-    <td><%= link_to 'Destroy', tattoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', tattoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tattoo', new_tattoo_path %>
+<%= link_to 'Add a New Tattoo', new_tattoo_path %>

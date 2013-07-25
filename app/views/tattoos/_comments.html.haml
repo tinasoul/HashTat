@@ -5,7 +5,6 @@
   %br
 
 
-
 %h3 Add a Comment
 = form_for [@tattoo, @comment] do |f|
 
@@ -14,7 +13,7 @@
       %h2= pluralize(@comment.errors.count, "error") +'prohibited this comment from being saved:'
 
   %ul
-    = @tattoo.errors.full_messages.each do |msg| 
+    - @tattoo.errors.full_messages.each do |msg| 
       %li= msg
 
   .field
