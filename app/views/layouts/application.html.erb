@@ -8,12 +8,6 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//d3f5pyioow99x0.cloudfront.net/0.6.1/hull.js"></script>
-    <script>
-    Hull.init({
-      appId : ENV["HULL_APP_ID"],
-      orgUrl: ENV["HULL_ORG_URL"]
-    });
 </script>
     <%= yield(:head) %>
   </head>
