@@ -39,18 +39,20 @@ ul.nav li {
   border: solid 1px #C66;
 }
 
-#uberbar  { 
+.masonry-brick { width: 220px; margin: 10px; float: left;  }
+#masonryContainer { width: 0 auto; } 
+
+#uberbar {
+  position: fixed;
+}
+
+
+/*#uberbar  { 
   border-bottom:1px solid #bfa87a; 
   background:#FFE0A3; 
   padding:5px 20px; 
-/*  position:fixed;   
-*/ 
   top:0; 
   left:0; 
   z-index:2000; 
   width:100%;
-}
-
-#main {
-/*  padding-top: 6em;*/
-}
+}*/
