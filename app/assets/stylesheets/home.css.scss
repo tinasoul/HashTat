@@ -9,16 +9,14 @@
   z-index:1; }
 
 #masonryContainer { 
-  width: 0 auto;
-  margin-top:3.5em;
+  width: 96%;
   bottom:0;
   scroll:auto;
+  float:right;
 } 
-
 .masonry-brick a {
 	transition: opacity .2s linear;
 }
-
 .masonry-brick a:hover {
 	opacity:0.8;
 }

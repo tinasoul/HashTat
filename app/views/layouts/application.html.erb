@@ -26,16 +26,34 @@
 
   
   
+  <!-- SideNav -->
+  <div id="navbar" class="small-1 column">
+    <div id="navbar" class="fixed">
+      <ul class="side-nav">
+        <li>
+          <%= link_to "+Tat", new_tattoo_path %> 
+        </li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+      </ul>
+    </div>
+  </div>
+
+
   <!-- Content -->
-  
-  <div class="row full-width">
-      <div id="main" role="main" class="large-12 columns">
-<!--       <%= render 'layouts/messages' %>
- -->
+
+  <% if current_page?(root_url) %>
+    <div class="row full-width">
+  <% else %>
+    <div class="row">
+  <% end %>
+      <div id="main" role="main" class="large-11 columns">
+        <%= render 'layouts/messages' %>
         <%= yield %>
       </div>
-  </div>
-  
+    </div>
+
   
   <!-- Footer -->
   
@@ -44,14 +62,14 @@
       <hr />
       <div class="row">
         <div class="large-6 columns">
-          <p>&copy; Tina, Doa and Shannon</p>
+          <p>&copy; HackHAUS</p>
         </div>
         <div class="large-6 columns">
           <ul class="inline-list right">
-            <li><a href="#">Section 1</a></li>
-            <li><a href="#">Section 2</a></li>
-            <li><a href="#">Section 3</a></li>
-            <li><a href="#">Section 4</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">E-mail</a></li>
           </ul>
         </div>
       </div>

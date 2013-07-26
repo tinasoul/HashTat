@@ -14,15 +14,31 @@
 
 */
 
+/* Body */
 body {
-  background-image: url(<%= asset_path 'absurd.png' %>);
+  background-image: url(<%= asset_path 'brickwall.png' %>);
 }
 
-.logo {
-  float: left;
-  padding-right: 8px;
+.full-width { 
+  width: 100%; 
+  max-width: 100%; 
 }
 
+#main {
+  margin-top:3.5em;
+}
+
+/* Side Nav Bar */
+
+#navbar {
+  margin-top:3.5em;
+  padding-left: 1em;
+}
+
+/* Top Nav Bar */
+.top-bar {
+  opacity:0.8;
+}
 ul.nav {
   background-color:transparent;
   list-style: none;
@@ -32,6 +48,8 @@ ul.nav {
 ul.nav li {
   display: inline;
 }
+
+/* Flash Alerts */
 #flash_notice, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;
@@ -43,9 +61,4 @@ ul.nav li {
 #flash_alert {
   background-color: #FCC;
   border: solid 1px #C66;
-}
-
-.full-width { 
-  width: 100%; 
-  max-width: 100%; 
 }
