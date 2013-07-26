@@ -1,3 +1,24 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.masonry-brick { 
+  width: 220px; 
+  margin: 10px; 
+  float: left; 
+  z-index:1; }
+
+#masonryContainer { 
+  width: 0 auto;
+  top:50px;
+  bottom:0;
+  scroll:auto;
+} 
+
+.masonry-brick a {
+	transition: opacity .2s linear;
+}
+
+.masonry-brick a:hover {
+	opacity:0.8;
+}

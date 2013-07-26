@@ -13,12 +13,18 @@
  *= require_tree .
 */
 
+body {
+  margin:0;
+  padding:0;
+}
+
 .logo {
   float: left;
   padding-right: 8px;
 }
 
 ul.nav {
+  background-color:transparent;
   list-style: none;
   margin: 0 0 2em;
   padding: 0;
@@ -38,9 +44,6 @@ ul.nav li {
   background-color: #FCC;
   border: solid 1px #C66;
 }
-
-.masonry-brick { width: 220px; margin: 10px; float: left;  }
-#masonryContainer { width: 0 auto; } 
 
 #uberbar {
   position: fixed;
