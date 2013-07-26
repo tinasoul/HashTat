@@ -2,7 +2,13 @@
 <div class="row">
   <div class="large-12 columns">
     <div id="masonryContainer">
-      <div class="masonry-brick">
+      
+        <% @tattoos.each do |tattoo| %>
+          <div class="masonry-brick">
+          <%= link_to image_tag(tattoo.picture), tattoo %>
+          </div>
+        <% end %>
+      <div class ="masonry-brick">
         <img src="assets/noheroes.jpg">
       </div>
       <div class="masonry-brick">
