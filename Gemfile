@@ -23,6 +23,7 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'will_paginate'
 
+
 group :assets do
   gem 'compass-rails'
   gem 'zurb-foundation'
