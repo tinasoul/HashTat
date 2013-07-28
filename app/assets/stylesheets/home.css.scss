@@ -2,17 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#banner_img {
+position: fixed;
+top: 45px;
+left: -10px;
+width: 100%;
+height: 500px;
+z-index: 0;
+background-image: url('noheroes.jpg');
+background-size: 100% 500px;
+background-repeat: no-repeat;
+  
+}
+
 .masonry-brick { 
   width: 220px; 
-  margin: 10px; 
+  margin: 10px;
+  //weird gutter to right that needs to be fixed
   float: left; 
   z-index:1; }
 
 #masonryContainer { 
-  width: 96%;
+  background-image: url('brickwall.png');
+  position:relative;
+  top: 500px;
+  width: 102%;
   bottom:0;
   scroll:auto;
-  float:right;
+  left: -15px;
+  padding-left: 7%;
 } 
 .masonry-brick a {
 	transition: opacity .2s linear;
