@@ -16,6 +16,7 @@ class TattoosController < ApplicationController
     @tattoo = Tattoo.find(params[:id])
     @comment = @tattoo.comments.build
     @comments = Comment.all
+    @user = @tattoo.user_id
     
     respond_to do |format|
       format.html # show.html.haml
