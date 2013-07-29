@@ -25,16 +25,19 @@
         <ul class="nav">
           <% if user_signed_in? %>
             <li>
-              <p>User: <%=link_to current_user.name, current_user %></p>
+              <p><%=link_to current_user.name, current_user %></p>
+                <!-- <li>
+                <%= link_to 'Edit account', edit_user_registration_path %>
+                </li> -->
+            </li>
+            <li>
+             <%= link_to "+Tat", new_tattoo_path %>
             </li>
             <li>
             <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
             </li>
           <% else %>
-<!--        <li>
-            <%= link_to 'Login with Twitter', user_omniauth_authorize_path(:twitter) %></li> -->
-            <li>
-            <%= link_to 'Enter', new_user_session_path %>
+            <%= link_to 'Login', new_user_session_path %>
             </li>
           <% end %>
           <% if user_signed_in? %>
@@ -49,9 +52,6 @@
           <% end %>
         </ul>
 
-
-
-
       </ul>
     </section>
   </nav>
@@ -59,3 +59,5 @@
  
  
   <!-- End Header and Nav -->
+
+
