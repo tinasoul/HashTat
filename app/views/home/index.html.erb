@@ -5,7 +5,7 @@
       
         <% @tattoos.each do |tattoo| %>
           <div class="masonry-brick">
-          <%= link_to image_tag(tattoo.picture), tattoo %>
+          <%= link_to image_tag(tattoo.picture_url(:medium)), tattoo %>
           </div>
         <% end %>
       <div class ="masonry-brick">
