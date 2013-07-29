@@ -15,7 +15,7 @@ class TattoosController < ApplicationController
   def show
     @tattoo = Tattoo.find(params[:id])
     @comment = @tattoo.comments.build
-    @comments = Comment.all
+    @comments = @tattoo.comments
     @user = @tattoo.user_id
     
     respond_to do |format|
