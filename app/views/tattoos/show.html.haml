@@ -2,26 +2,27 @@
 - if @tattoo.picture.present?
 	= image_tag @tattoo.picture_url(:medium)
 
-%p story
+%p Story
 %p.tattoo_description= @tattoo.description
 
-%p body_location
+%p Location on Body
 %p.tattoo_body_location= @tattoo.body_location
 
-%p artist
+%p Artist
 %p.tattoo_artist= @tattoo.artist
 
 %p studio
 %p.tattoo_studio= @tattoo.studio
 
-%p hashtag
+%p HashTags
 %p.tattoo_hashtags= @tattoo.hashtags
 
 = render 'comments'
 
-= link_to 'Edit', edit_tattoo_path(@tattoo) 
-= link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
-= link_to 'Home', root_path 
+- if @user == current_user.id
+	= link_to 'Edit', edit_tattoo_path(@tattoo) 
+	= link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
+	= link_to 'Back to all my tats', tattoos_path
 
 
 
