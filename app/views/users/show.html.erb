@@ -1,5 +1,7 @@
 <h3><%= @user.name %></h3>
 
 <% @tattoos.each do |tattoo| %>
-	<%= link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo %>
+	<div class= "user_tat">
+		<%= link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo %>
+	</div>
 <% end %>
