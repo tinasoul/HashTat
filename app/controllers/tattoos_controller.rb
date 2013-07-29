@@ -17,6 +17,7 @@ class TattoosController < ApplicationController
     @comment = @tattoo.comments.build
     @comments = @tattoo.comments
     @user = @tattoo.user_id
+    @current_url = request.original_url
     
     respond_to do |format|
       format.html # show.html.haml
