@@ -1,8 +1,11 @@
 %p#notice= notice
 
-#photo
+#photo_div
 	- if @tattoo.picture.present?
-		= image_tag @tattoo.picture_url(:medium)
+		#pic= image_tag @tattoo.picture_url(:medium)
+		<fb:like href="#{@current_url}" send="false" layout="button_count" width="200" show_faces="true" font="arial"></fb:like>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this sweet tattoo I found on" data-hashtags="hashtats">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	- if @user == current_user.id
 		= link_to 'Edit', edit_tattoo_path(@tattoo) 
 		= link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
