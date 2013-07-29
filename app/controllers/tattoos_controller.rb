@@ -1,4 +1,5 @@
 class TattoosController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index]
   # GET /tattoos
   # GET /tattoos.json
   def index
@@ -42,7 +43,7 @@ class TattoosController < ApplicationController
   # POST /tattoos
   # POST /tattoos.json
   def create
-    @tattoo = Tattoo.new(params[:tattoo])
+    @tattoo = current_user.tattoos.build(params[:tattoo])
 
     respond_to do |format|
       if @tattoo.save
