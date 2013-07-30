@@ -2,7 +2,7 @@
 
   <p>
     <b>About Me:</b>
-    <%= best_in_place_if current_user == @user, @user, :about_me, :type => :input, :activator => "#activator" %><a href="#" id="activator">Edit</a>
+    <%= best_in_place_if current_user == @user, @user, :about_me, :type => :textarea %>
   </p>
 
   <p>
@@ -31,3 +31,7 @@
 		<%= link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo %>
 	</div>
 <% end %>
+
+<!--  <b>About Me:</b>
+    <%= best_in_place_if current_user == @user, @user, :about_me, :type => :input, :activator => "#activator" %><a href="#" id="activator">Edit</a>
+  </p> -->
