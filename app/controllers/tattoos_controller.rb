@@ -85,4 +85,23 @@ class TattoosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def vote_up
+      @tattoo = Tattoo.find(params[:id])
+    current_user.vote_for(@tattoo)
+    respond_to do |format|
+      format.js
+      format.html{redirect_to :back}
+    end
+end
+
+
+  #   begin
+  #     current_user.vote_for(@tattoo = Tattoo.find(params[:id]))
+  #     render :nothing => true, :status => 200
+  #   rescue ActiveRecord::RecordInvalid
+  #     render :nothing => true, :status => 404
+  #   end
+  # end
+
 end

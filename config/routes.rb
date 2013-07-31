@@ -10,6 +10,9 @@ Myapp::Application.routes.draw do
   resources :users
   resources :tattoos do
     resources :comments
+    member do 
+      post :vote_up
+    end
   end
 
 end

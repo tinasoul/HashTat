@@ -14,8 +14,15 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+//= require best_in_place
 
 //doc ready & function calls
+
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+
 $(function(){ 
 	$(document).foundation();
 });
@@ -26,7 +33,7 @@ $(window).load(function(){
     columnWidth: 400
   });  
 });    
-              
+
          
 
 
