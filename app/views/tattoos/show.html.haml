@@ -3,12 +3,15 @@
 #photo_div
 	- if @tattoo.picture.present?
 		#pic= image_tag @tattoo.picture_url(:medium)
+		- if !current_user.voted_for?(@tattoo)
+			= link_to "Like #{@tattoo.votes_for}", vote_up_tattoo_path(@tattoo), :method => :post
+		- else
+			= link_to "Unlike #{@tattoo.votes_for}", vote_down_tattoo_path(@tattoo), :method => :post
 
 		<fb:like href="#{@current_url}" send="false" layout="button_count" width="200" show_faces="true" font="arial"></fb:like>
 		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this sweet tattoo I found on" data-hashtags="hashtats">Tweet</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		%i.icon-trash
-		= ilink_to "trash", vote_up_tattoo_path(@tattoo), :method => :post
+
 	- if @user == current_user.id
 		= link_to 'Edit', edit_tattoo_path(@tattoo) 
 		= link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |

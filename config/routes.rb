@@ -12,6 +12,7 @@ Myapp::Application.routes.draw do
     resources :comments
     member do 
       post :vote_up
+      post :vote_down
     end
   end
 
