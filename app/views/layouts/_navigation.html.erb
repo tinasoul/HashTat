@@ -25,6 +25,9 @@
         <ul class="nav">
           <% if user_signed_in? %>
             <li>
+             <%= link_to "Search", new_tattoo_path %>
+            </li>
+            <li>
               <p><%=link_to current_user.name, current_user %></p>
             </li>
             <li>
