@@ -1,5 +1,6 @@
 class TattoosController < ApplicationController
   before_filter :authenticate_user!, :except => [:index]
+  layout "full-width", :only => :index
   # GET /tattoos
   # GET /tattoos.json
   def index
