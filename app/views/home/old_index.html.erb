@@ -1,16 +1,11 @@
-<div id="banner_img">
-<!--   Micah<br>
-  Developer<br>
-  Inked at SHOP in Austin, TX<br>
-  Inspired by painter Mike Ming -->
-</div>
+#banner_img
 
 <!-- Masonry Container -->
-    <div id="masonryContainer">
-      
-        <% @tattoos.each do |tattoo| %>
-          <div class="masonry-brick">
-          <%= link_to image_tag(tattoo.picture_url(:medium)), tattoo %>
+
+#masonryContainer
+  -@tattoos.each do |tattoo|
+    .masonry-brick
+      = link_to image_tag(tattoo.picture_url(:medium)), tattoo
           </div>
         <% end %>
       <div class ="masonry-brick">

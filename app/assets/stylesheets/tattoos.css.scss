@@ -34,7 +34,7 @@ $accentColor: #0e0e49;
 	margin-bottom:10px;
 }
 
-#blackandwhite img {
+.blackandwhite img {
     filter: grayscale(100%); /* Current draft standard */
     -webkit-filter: grayscale(100%); /* New WebKit */
     -moz-filter: grayscale(100%);
@@ -45,7 +45,7 @@ $accentColor: #0e0e49;
     -webkit-filter: grayscale(1); /* Old WebKit */
 }
 
-#blackandwhite img:hover {
+.blackandwhite img:hover {
 	filter: none;
 	-webkit-filter: none; /* New WebKit */
     -moz-filter: none;
@@ -57,10 +57,10 @@ $accentColor: #0e0e49;
 
 }
 
-#blackandwhite {
+.blackandwhite {
 	float:right;
 }
 
-#color {
+.color {
 	float:right;
 }

@@ -4,9 +4,9 @@
 	- if @tattoo.picture.present?
 		#pic= image_tag @tattoo.picture_url(:medium)
 		- if !current_user.voted_for?(@tattoo)
-			#blackandwhite= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_up_tattoo_path(@tattoo), :method => :post
+			.blackandwhite= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_up_tattoo_path(@tattoo), :method => :post
 		- else
-			#color= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_down_tattoo_path(@tattoo), :method => :post
+			.color= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_down_tattoo_path(@tattoo), :method => :post
 
 		-#<div class="fb-like" data-href="#{@current_url}" data-width="450" data-layout="box_count" data-show-faces="true" data-send="false"></div>
 		-#<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this sweet tattoo I found on" data-hashtags="hashtats">Tweet</a>
