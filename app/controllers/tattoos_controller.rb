@@ -93,7 +93,16 @@ class TattoosController < ApplicationController
       format.js
       format.html{redirect_to :back}
     end
-end
+  end
+
+  def vote_down
+    @tattoo = Tattoo.find(params[:id])
+    current_user.unvote_for(@tattoo)
+    respond_to do |format|
+      format.js
+      format.html{redirect_to :back}
+    end
+  end
 
 
   #   begin
