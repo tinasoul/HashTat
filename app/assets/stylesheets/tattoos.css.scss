@@ -33,3 +33,34 @@ $accentColor: #0e0e49;
 #pic {
 	margin-bottom:10px;
 }
+
+#blackandwhite img {
+    filter: grayscale(100%); /* Current draft standard */
+    -webkit-filter: grayscale(100%); /* New WebKit */
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%); 
+    -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */ 
+    filter: url(resources.svg#desaturate); /* Gecko */
+    filter: gray; /* IE */
+    -webkit-filter: grayscale(1); /* Old WebKit */
+}
+
+#blackandwhite img:hover {
+	filter: none;
+	-webkit-filter: none; /* New WebKit */
+    -moz-filter: none;
+    -ms-filter: none; 
+    -o-filter: none; /* Not yet supported in Gecko, Opera or IE */ 
+    filter: url(resources.svg#desaturate); /* Gecko */
+    filter: none; /* IE */
+    -webkit-filter: none; /* Old WebKit */
+
+}
+
+#blackandwhite {
+	float:right;
+}
+
+#color {
+	float:right;
+}

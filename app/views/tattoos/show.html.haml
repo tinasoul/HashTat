@@ -4,13 +4,13 @@
 	- if @tattoo.picture.present?
 		#pic= image_tag @tattoo.picture_url(:medium)
 		- if !current_user.voted_for?(@tattoo)
-			= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_up_tattoo_path(@tattoo), :method => :post
+			#blackandwhite= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_up_tattoo_path(@tattoo), :method => :post
 		- else
-			= link_to "Unlike #{@tattoo.votes_for}", vote_down_tattoo_path(@tattoo), :method => :post
+			#color= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_down_tattoo_path(@tattoo), :method => :post
 
-		<fb:like href="#{@current_url}" width="450" layout="box_count" show_faces="true" send="false"></fb:like>
-		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this sweet tattoo I found on" data-hashtags="hashtats">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		-#<div class="fb-like" data-href="#{@current_url}" data-width="450" data-layout="box_count" data-show-faces="true" data-send="false"></div>
+		-#<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this sweet tattoo I found on" data-hashtags="hashtats">Tweet</a>
+		-#<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 	- if @user == current_user.id
 		= link_to 'Edit', edit_tattoo_path(@tattoo) 
