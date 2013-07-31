@@ -2,27 +2,23 @@
 
   <p>
     <b>About Me:</b>
-    <%= best_in_place_if current_user == @user, @user, :about_me, :type => :textarea %>
   </p>
 
   <p>
     <b>Location:</b>
-    <%= best_in_place @user, :location %>
   </p>
 
   <p>
     <b>Number of Tattoos:</b>
-    <%= best_in_place @user, :tat_number %>
   </p>
 
   <p>
     <b>Favorite Tattoo Artist:</b>
-    <%= best_in_place @user, :fav_artist %>
   </p>
 
   <p>
     <b>The Craziest Thing Anyone's Ever Asked Me About My Tattoo:</b>
-    <%= best_in_place @user, :memorable_story %>
+    <%= best_in_place @user, :memorable_story, :type => :textarea %>  
   </p>
 
 
@@ -32,6 +28,3 @@
 	</div>
 <% end %>
 
-<!--  <b>About Me:</b>
-    <%= best_in_place_if current_user == @user, @user, :about_me, :type => :input, :activator => "#activator" %><a href="#" id="activator">Edit</a>
-  </p> -->

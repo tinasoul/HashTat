@@ -4,7 +4,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <%= link_to "H A S H T A T S", root_path %>
+          <%= link_to "H A S H T A T", root_path %>
         </h1>
       </li>
     </ul>
@@ -24,6 +24,9 @@
  -->        
         <ul class="nav">
           <% if user_signed_in? %>
+            <li>
+             <%= link_to "Search", new_tattoo_path %>
+            </li>
             <li>
               <p><%=link_to current_user.name, current_user %></p>
             </li>
