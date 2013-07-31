@@ -1,8 +1,27 @@
 <div id="banner_img">
-  Micah<br>
+
+  <h2>Sign up. See more tats. </h2>
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+    <%= f.error_notification %>
+    <%= display_base_errors resource %>
+    <%= f.input :name, :label => "Username", :autofocus => true %>
+    <%= f.input :email, :required => true %>
+    <% if f.object.password_required? %>
+      <%= f.input :password, :required => true %>
+      <%= f.input :password_confirmation, :required => true %>
+    <% end %>
+    <%= f.button :submit, 'Let me see them tats', :class => 'btn-primary' %>
+  <% end %>
+
+  <%- if devise_mapping.omniauthable? %>
+    <%- User.omniauth_providers.each do |provider| %>
+      <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+    <% end -%>
+  <% end -%>
+<!--   Micah<br>
   Developer<br>
   Inked at SHOP in Austin, TX<br>
-  Inspired by painter Mike Ming
+  Inspired by painter Mike Ming -->
 </div>
 
 <!-- Masonry Container -->
