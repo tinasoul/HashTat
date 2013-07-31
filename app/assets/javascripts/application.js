@@ -15,6 +15,7 @@
 //= require foundation
 //= require_tree .
 //= require best_in_place
+//= require best_in_place.purr
 
 //doc ready & function calls
 
