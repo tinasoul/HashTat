@@ -1,11 +1,9 @@
 // alert("<%= @tattoo.id %>");
 
-  // alert("<%= @tattoo.id %>");
-
 if ($("#like_button").has(".blackandwhite").length > 0) {
   // $('#like_button').find('a').attr('href', '/tattoos/15/vote_up');
   // $('#like_button').find('#count').html(<%= @tattoo.votes_for %>);
-  // $('#like_button').find('img')
+  // $('.blackandwhite').toggleClass('blackandwhite', 'color');
   $("#like_button").html("<%= escape_javascript( render :partial => "liked") %>");
 } 
 
@@ -13,4 +11,5 @@ else if ($("#like_button").has(".color").length > 0){
   $("#like_button").html("<%= escape_javascript( render :partial => "not_liked") %>");
   // $('#like_button').find('a').attr('href', '/tattoos/15/vote_down');
   // $('#like_button').find('#count').html(<%= @tattoo.votes_for %>);
+  // $('.color').toggleClass('color', 'blackandwhite');
 }
