@@ -34,7 +34,6 @@ gem 'will_paginate'
 gem 'best_in_place'
 
 group :production do
-  gem 'pg'
   gem 'sunspot_solr'
   gem 'progress_bar'
 end
@@ -45,8 +44,10 @@ group :development do
   gem 'quiet_assets'
   gem 'sunspot_solr'
   gem 'progress_bar'
-  gem 'sqlite3'
 end
+
+gem 'pg'
+gem 'sextant'
 
 group :test do
   gem 'capybara'
