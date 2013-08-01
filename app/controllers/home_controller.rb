@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
+layout "full-width", :only => [:index]
   def index
-    @users = User.all
-    @tattoos = Tattoo.order('created_at DESC')
+    
   end
+
+
 end
