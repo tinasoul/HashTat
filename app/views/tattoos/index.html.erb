@@ -7,12 +7,13 @@
 
 <!-- Masonry Container -->
     <div id="masonryContainer">
-      
-        <% @tattoos.each do |tattoo| %>
-          <div class="masonry-brick">
-          <%= link_to image_tag(tattoo.picture_url(:medium)), tattoo %>
-          </div>
-        <% end %>
+        <% if @tattoos %> 
+          <% @tattoos.each do |tattoo| %>
+            <div class="masonry-brick">
+            <%= link_to image_tag(tattoo.picture_url(:medium)), tattoo %>
+            </div>
+          <% end %>
+         <% end %> 
       <!-- <div class ="masonry-brick">
         <img src="http://placehold.it/500x600&text=Item">
       </div>

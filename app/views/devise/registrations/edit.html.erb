@@ -7,7 +7,7 @@
   <%= f.input :password, :label => "New password", :autocomplete => "off", :required => false %>
   <%= f.input :password_confirmation, :label => "Confirm new password", :required => false %>
   <% if f.object.encrypted_password.present? %>
-  	<%= f.input :current_password, :label => "Old password", :required => true %>
+  	<%= f.input :current_password, :label => "Current password", :required => true %>
   <% end %>
   <%= f.button :submit, 'Update my account', :class => 'btn-primary' %>
 <% end %>
