@@ -153,6 +153,7 @@ GEM
     options (2.3.0)
       fattr
     orm_adapter (0.4.0)
+    pg (0.16.0)
     polyglot (0.3.3)
     pr_geohash (1.0.0)
     progress_bar (1.0.0)
@@ -259,6 +260,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   omniauth-twitter
+  pg
   progress_bar
   quiet_assets
   rails (= 3.2.13)
