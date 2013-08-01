@@ -19,7 +19,7 @@
 
 //doc ready & function calls
 
-//  $(".best_in_place").best_in_place();
+ // $(".best_in_place").best_in_place();
 
 $(function(){ 
 	$(document).foundation();
