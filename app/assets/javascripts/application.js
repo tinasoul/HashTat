@@ -19,10 +19,7 @@
 
 //doc ready & function calls
 
-$(document).ready(function() {
-  /* Activating Best In Place */
-  jQuery(".best_in_place").best_in_place();
-});
+//  $(".best_in_place").best_in_place();
 
 $(function(){ 
 	$(document).foundation();
@@ -33,6 +30,15 @@ $(window).load(function(){
     itemSelector: '.masonry-brick',
     columnWidth: 400
   });  
+  // $('.hover-bar').hide();
+  // $('.masonry-brick').hover(function(){
+  //   $(this).find('.hover-bar').toggle();
+  // });
+
+  // $(".hover-bar").on("ajax:success", (e, data, status, xhr) ->
+  //   $(".hover-bar").append xhr.responseText
+  // ).bind "ajax:error", (e, xhr, status, error) ->
+  //   $("#new_post").append "<p>ERROR</p>"
 });    
 
          

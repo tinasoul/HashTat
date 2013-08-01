@@ -91,7 +91,7 @@ class TattoosController < ApplicationController
       @tattoo = Tattoo.find(params[:id])
     current_user.vote_for(@tattoo)
     respond_to do |format|
-      format.js
+      format.js {render 'vote'}
       format.html{redirect_to :back}
     end
   end
@@ -100,7 +100,7 @@ class TattoosController < ApplicationController
     @tattoo = Tattoo.find(params[:id])
     current_user.unvote_for(@tattoo)
     respond_to do |format|
-      format.js
+      format.js {render 'vote'}
       format.html{redirect_to :back}
     end
   end
