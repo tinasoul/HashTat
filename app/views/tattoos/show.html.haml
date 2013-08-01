@@ -1,39 +1,41 @@
 %p#notice= notice
 
 #photo_div
-	- if @tattoo.picture.present?
-		#pic= image_tag @tattoo.picture_url(:medium)
-		- if !current_user.voted_for?(@tattoo)
-			.blackandwhite= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_up_tattoo_path(@tattoo), :method => :post
-		- else
-			.color= link_to image_tag('likemom.png', size:'40x40') + "#{@tattoo.votes_for}", vote_down_tattoo_path(@tattoo), :method => :post
+  - if @tattoo.picture.present?
+    #pic= image_tag @tattoo.picture_url(:medium)
+    #like_button
+      - if !current_user.voted_for?(@tattoo)
+        = render 'not_liked'
+      - else
+        = render 'liked'
 
-		-#<div class="fb-like" data-href="#{@current_url}" data-width="450" data-layout="box_count" data-show-faces="true" data-send="false"></div>
-		-#<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this sweet tattoo I found on" data-hashtags="hashtats">Tweet</a>
-		-#<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	- if @user == current_user.id
-		= link_to 'Edit', edit_tattoo_path(@tattoo) 
-		= link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
+-#<div class="fb-like" data-href="#{@current_url}" data-width="450" data-layout="box_count" data-show-faces="true" data-send="false"></div>
+-#<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this sweet tattoo I found on" data-hashtags="hashtats">Tweet</a>
+-#<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+- if @user == current_user.id
+  = link_to 'Edit', edit_tattoo_path(@tattoo) 
+  = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
 
 #description
-	%p.title Story
-	%p.tattoo_description= @tattoo.description
+  %p.title Story
+  %p.tattoo_description= @tattoo.description
 
-	%p.title Location on Body
-	%p.tattoo_body_location= @tattoo.body_location
+  %p.title Location on Body
+  %p.tattoo_body_location= @tattoo.body_location
 
-	%p.title Artist
-	%p.tattoo_artist= @tattoo.artist
+  %p.title Artist
+  %p.tattoo_artist= @tattoo.artist
 
-	%p.title studio
-	%p.tattoo_studio= @tattoo.studio
+  %p.title studio
+  %p.tattoo_studio= @tattoo.studio
 
-	%p.title HashTags
-	%p.tattoo_hashtags= @tattoo.hashtags
+  %p.title HashTags
+  %p.tattoo_hashtags= @tattoo.hashtags
 
 #comments
-	= render 'comments'
+= render 'comments'
 
 
 

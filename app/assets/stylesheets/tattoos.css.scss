@@ -34,6 +34,10 @@ $accentColor: #0e0e49;
 	margin-bottom:10px;
 }
 
+#like_button {
+  height: 40px;
+}
+
 .blackandwhite img {
     filter: grayscale(100%); /* Current draft standard */
     -webkit-filter: grayscale(100%); /* New WebKit */
