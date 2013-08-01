@@ -23,15 +23,12 @@
 <!--         <li class="divider"></li>
  -->        
         <ul class="nav">
-          <li>
-            <%= form_tag '/search', :method => :get do %>
+          <% if user_signed_in? %>
+            <li>
+             <%= form_tag '/search', :method => :get do %>
               <%= text_field_tag :q, params[:q] %>
               <%= submit_tag "search" %>
             <% end %>
-          </li>
-          <% if user_signed_in? %>
-            <li>
-             <%= link_to "Search"%>
             </li>
             <li>
               <p><%=link_to current_user.name, current_user %></p>
@@ -52,10 +49,10 @@
             </li>
           <% else %>
             <li>
-            <%= link_to 'Register', new_user_registration_path %>
+            <%= link_to 'Sign up', new_user_registration_path %>
             </li>
             <li>
-            <%= link_to 'Login', new_user_session_path %>
+            <%= link_to 'Log in', new_user_session_path %>
             </li>
           <% end %>
           
