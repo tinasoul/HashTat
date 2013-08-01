@@ -23,6 +23,12 @@
 <!--         <li class="divider"></li>
  -->        
         <ul class="nav">
+          <li>
+            <%= form_tag '/search', :method => :get do %>
+              <%= text_field_tag :q, params[:q] %>
+              <%= submit_tag "search" %>
+            <% end %>
+          </li>
           <% if user_signed_in? %>
             <li>
              <%= link_to "Search"%>

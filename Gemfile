@@ -2,15 +2,16 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '3.2.13'
 gem 'sqlite3'
+gem 'sunspot_rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'therubyracer'
-  gem 'less'
-  gem 'less-rails'
-  gem 'less-rails-fontawesome'
+  # gem 'therubyracer'
+  # gem 'less'
+  # gem 'less-rails'
+  # gem 'less-rails-fontawesome'
   gem 'compass-rails'
   gem 'zurb-foundation'
 end
@@ -34,11 +35,15 @@ gem 'will_paginate'
 gem 'best_in_place'
 
 
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
+  gem 'sunspot_solr'
+  gem 'progress_bar'
 end
+
 group :test do
   gem 'capybara'
   gem 'cucumber-rails', :require=>false

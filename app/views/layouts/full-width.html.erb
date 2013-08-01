@@ -10,6 +10,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </script>
     <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <%= yield(:head) %>
   </head>
 
 
@@ -51,8 +53,7 @@
 
   <!-- Content -->
 
-  
-    <div class="row">
+    <div class="row full-width">
       <div id="main" role="main" class="large-12 columns">
         <%= render 'layouts/messages' %>
         <%= yield %>

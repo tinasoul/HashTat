@@ -1,29 +1,64 @@
-<h1>All tats</h1>
+<div id="banner_img">
+<!--   Micah<br>
+  Developer<br>
+  Inked at SHOP in Austin, TX<br>
+  Inspired by painter Mike Ming -->
+</div>
 
-<table>
-  <tr>
-    <th>Pic</th>
-    <th>Story</th>
-    <th>Hashtags</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tattoos.each do |tattoo| %>
-  <tr>
-    <td><%=image_tag(tattoo.picture_url) if tattoo.picture.present?%></td>
-    <td><%= tattoo.description %></td>
-    <td><%= tattoo.hashtags %></td>
-    <td><%= link_to 'Show', tattoo %></td>
-    <td><%= link_to 'Edit', edit_tattoo_path(tattoo) %></td>
-    <td><%= link_to 'Delete', tattoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to '+ Tat', new_tattoo_path %>
-<!-- link to index masonry page
- -->
+<!-- Masonry Container -->
+    <div id="masonryContainer">
+      
+        <% @tattoos.each do |tattoo| %>
+          <div class="masonry-brick">
+          <%= link_to image_tag(tattoo.picture_url(:medium)), tattoo %>
+          </div>
+        <% end %>
+      <!-- <div class ="masonry-brick">
+        <img src="http://placehold.it/500x600&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x600&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x700&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x400&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x200&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x300&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x600&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x700&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x400&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x200&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x200&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x300&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x600&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x700&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x400&text=Item">
+      </div>
+      <div class="masonry-brick">
+        <img src="http://placehold.it/500x200&text=Item">
+      </div> -->
+    </div>
