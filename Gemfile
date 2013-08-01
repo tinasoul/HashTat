@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '3.2.13'
-gem 'sqlite3'
 gem 'sunspot_rails'
 
 group :assets do
@@ -34,7 +33,11 @@ gem 'twitter'
 gem 'will_paginate'
 gem 'best_in_place'
 
-
+group :production do
+  gem 'pg'
+  gem 'sunspot_solr'
+  gem 'progress_bar'
+end
 
 group :development do
   gem 'better_errors'
@@ -42,6 +45,7 @@ group :development do
   gem 'quiet_assets'
   gem 'sunspot_solr'
   gem 'progress_bar'
+  gem 'sqlite3'
 end
 
 group :test do
