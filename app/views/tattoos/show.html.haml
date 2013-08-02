@@ -10,9 +10,9 @@
         - else
           = render 'liked'
 
-  - if @user == current_user.id
-    = link_to 'Edit', edit_tattoo_path(@tattoo) 
-    = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
+    - if @user == current_user.id
+      = link_to 'Edit', edit_tattoo_path(@tattoo) 
+      = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
 
   #description
     %p.title Story
