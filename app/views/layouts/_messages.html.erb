@@ -1,11 +1,5 @@
 <% flash.each do |name, msg| %>
-<<<<<<< HEAD
-  <% if msg.is_a?(String) %>
-   <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <%end %>
-=======
-  <% if msg.is_a?(String) && !msg.empty %>
+  <% if msg.is_a?(String) && !msg.empty? %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
->>>>>>> error_handling
 <% end %>

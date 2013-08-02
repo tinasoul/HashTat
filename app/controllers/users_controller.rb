@@ -24,9 +24,17 @@ class UsersController < ApplicationController
       format.html redirect_to users_path, :notice => "User updated."
       format.json { respond_with_bip(@user) }
     else
-      format.html redirect_to users_path, :alert => "Unable to update user."
+      format.html { render action: "edit"}
       format.json { respond_with_bip(@user) }
     end
+    # Works with best_in_place gem
+    # if @user.update_attributes(params[:user], :as => :admin)
+    #   format.html redirect_to users_path, :notice => "User updated."
+    #   format.json { respond_with_bip(@user) }
+    # else
+    #   format.html redirect_to users_path, :alert => "Unable to update user."
+    #   format.json { respond_with_bip(@user) }
+    # end
   end
     
   def destroy

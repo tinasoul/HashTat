@@ -8,14 +8,14 @@ en:
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
-    error_notification:
-      default_message: "Just one more step"
+    # error_notification:
+    #   default_message: "Oopsies, something's not right"
     # Labels and hints examples
     # labels:
     #   defaults:
     #     password: 'Password'
     #   user:
-    #     new:
+    #     new:  
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'

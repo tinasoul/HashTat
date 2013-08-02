@@ -12,7 +12,7 @@
   <%= f.button :submit, 'Update my account', :class => 'btn-primary' %>
 <% end %>
 <h3>Cancel my account</h3>
-<p>Too much ink for you? <%= link_to "Delete my account for eternity (but not my tat)", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+<p>Too much ink for you? <%= link_to "Delete my account for eternity", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
 <%= link_to "Back", :back %>
 
 
