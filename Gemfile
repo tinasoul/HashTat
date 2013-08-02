@@ -32,6 +32,7 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'will_paginate'
 gem 'best_in_place'
+gem 'sqlite3'
 
 group :production do
   gem 'sunspot_solr'
@@ -46,7 +47,7 @@ group :development do
   gem 'progress_bar'
 end
 
-gem 'pg'
+# gem 'pg'
 gem 'sextant'
 
 group :test do
