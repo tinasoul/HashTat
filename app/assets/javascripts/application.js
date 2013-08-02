@@ -13,13 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
 //= require best_in_place
+//= require_tree .
 //= require best_in_place.purr
 
 //doc ready & function calls
 
+<<<<<<< HEAD
  // $(".best_in_place").best_in_place();
+=======
+ $(".best_in_place").best_in_place();
+>>>>>>> best_in_place
 
 $(function(){ 
 	$(document).foundation();
