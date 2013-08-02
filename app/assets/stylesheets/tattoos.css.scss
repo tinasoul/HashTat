@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $accentColor: #0e0e49;
 
-@import "foundation/variables";
-@import "foundation/components/global";
-@import "foundation/components/buttons";
 #photo_div{
 	float: left;
 	width:40%;
@@ -159,6 +156,15 @@ background-repeat: no-repeat;
 
 }
 
+.btn{
+	margin-bottom:0;
+
+}
+
+.twitter_btn {
+	display:inline;
+}
+
 .user {
 	display:inline;
 	float:left;
@@ -168,8 +174,4 @@ background-repeat: no-repeat;
 
 .comment_content {
 	margin-left:10em;
-}
-
-.action {
-	@include button;
 }

@@ -13,7 +13,7 @@ html{
   min-height:100%;
   height: auto !important;
   margin: 0 auto -4em;
-  min-width:960px;
+  min-width:1150px;
 }
 
 .input{
@@ -35,17 +35,22 @@ html{
   h2 {
     color:white;
   }
-  label {
+  label,abbr {
     color:white;
   }
 
 }
 
+.top-bar {
+  margin-bottom:0;
+}
 
+.row {
+  margin-bottom:0;
+}
 
 .log_in {
   width:30%;
-  /*height:375px;*/
   display:inline-block;
   width:25em;
   background-color: white;
@@ -63,6 +68,7 @@ html{
   label {
     color:white;
   }
+
 
 }
 
@@ -87,3 +93,7 @@ html{
   opacity:0.65;
 }
 
+.sign_btn {
+  opacity:1;
+  display:inline;
+}
