@@ -16,7 +16,7 @@ group :assets do
 end
 
 gem 'thumbs_up'
-gem 'jquery-rails'
+gem 'jquery-rails', '2.3.0'
 gem 'cancan'
 gem 'devise'
 gem 'rolify'
