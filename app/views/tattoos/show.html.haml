@@ -1,5 +1,6 @@
 %p#notice= notice
 
+<<<<<<< HEAD
 #photo_div
   - if @tattoo.picture.present?
     #pic= image_tag @tattoo.picture_url(:medium)
@@ -33,6 +34,37 @@
 
   %p.title HashTags
   %p.tattoo_hashtags= @tattoo.hashtags
+=======
+#tattoo_info
+  #photo_div
+    - if @tattoo.picture.present?
+      #pic= image_tag @tattoo.picture_url(:medium)
+      #like_button
+        - if !current_user.voted_for?(@tattoo)
+          = render 'not_liked'
+        - else
+          = render 'liked'
+
+  - if @user == current_user.id
+    = link_to 'Edit', edit_tattoo_path(@tattoo) 
+    = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
+
+  #description
+    %p.title Story
+    %p.tattoo_description= @tattoo.description
+
+    %p.title Location on Body
+    %p.tattoo_body_location= @tattoo.body_location
+
+    %p.title Artist
+    %p.tattoo_artist= @tattoo.artist
+
+    %p.title studio
+    %p.tattoo_studio= @tattoo.studio
+
+    %p.title HashTags
+    %p.tattoo_hashtags= @tattoo.hashtags
+>>>>>>> d2b4e9c2df1cf5c369236ac30de52c0971d11a6a
 
 #comments
 = render 'comments'
