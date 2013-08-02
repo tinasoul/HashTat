@@ -19,11 +19,7 @@
 
 //doc ready & function calls
 
-<<<<<<< HEAD
- // $(".best_in_place").best_in_place();
-=======
- $(".best_in_place").best_in_place();
->>>>>>> best_in_place
+$(".best_in_place").best_in_place();
 
 $(function(){ 
 	$(document).foundation();
