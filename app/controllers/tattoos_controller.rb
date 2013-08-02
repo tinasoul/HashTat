@@ -4,7 +4,7 @@ class TattoosController < ApplicationController
   # GET /tattoos
   # GET /tattoos.json
   def index
-    @tattoos = Tattoo.all
+    @tattoos = Tattoo.order('created_at DESC').all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tattoos }

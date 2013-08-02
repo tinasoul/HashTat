@@ -116,3 +116,20 @@ background-repeat: no-repeat;
   right: 0;
   position: absolute;
 }
+
+/*Tattoo Show Page*/
+
+#tattoo_info {
+  margin-top: 40px;
+  background-color:rgba(255,0,0,0.5);
+  padding: 1em;
+  border-radius:3px;
+}
+
+#tattoo_info:after { 
+     content: "hi"; 
+     visibility: hidden; 
+     display: block; 
+     height: 0;
+     clear: both;
+   }
