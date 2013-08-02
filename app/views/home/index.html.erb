@@ -12,13 +12,13 @@
           <%= f.input :password, :required => true %>
           <%= f.input :password_confirmation, :required => true %>
         <% end %>
-        <%= f.button :submit, 'Sign Up', :class => 'btn-primary' %>
+        <%= f.button :submit, 'Sign Up', :class => 'tiny button' %>
       <% end %>
     
 
     <%- if devise_mapping.omniauthable? %>
       <%- User.omniauth_providers.each do |provider| %>
-        <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'tiny button' %><br />
+        <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'tiny button twitter_btn' %><br />
       <% end -%>
     <% end -%>
     </div>
@@ -29,18 +29,18 @@
       <%= f.input :email, :autofocus => true %>
       <%= f.input :password %>
       <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-      <%= f.button :submit, "Log in", :class => 'btn-primary' %>
+      <%= f.button :submit, "Log in", :class => 'tiny button' %>
     <% end %>
-
-    <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-    <% end -%>
 
     <%- if devise_mapping.omniauthable? %>
       <%- User.omniauth_providers.each do |provider| %>
-        <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'tiny button' %><br />
+        <%= link_to "Sign In with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'tiny button twitter_btn' %><br />
       <% end -%>
       <%end -%>
+
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+    <% end -%>
     </div>
     <div class = "push"></div>
     <div class = "footer"></div>
