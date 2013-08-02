@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $accentColor: #0e0e49;
+
+@import "foundation/variables";
+@import "foundation/components/global";
+@import "foundation/components/buttons";
 #photo_div{
 	float: left;
 	width:40%;
@@ -121,9 +125,21 @@ background-repeat: no-repeat;
 
 #tattoo_info {
   margin-top: 40px;
-  background-color:rgba(255,0,0,0.5);
+  background-color:rgba(0,0,0,0.3);
   padding: 1em;
   border-radius:3px;
+  .title {
+  	color:white;
+  }
+  a {
+  	color:white;
+  }
+  a:hover{
+  	color:lighten(black, 50%) ;
+  }
+  #count {
+  	color:white;
+  }
 }
 
 #tattoo_info:after { 
@@ -133,3 +149,27 @@ background-repeat: no-repeat;
      height: 0;
      clear: both;
    }
+
+.comment_div{
+	background-color:rgba(0,0,0,0.1);
+	border-radius:3px;
+	padding:10px;
+	margin-bottom:10px;
+
+
+}
+
+.user {
+	display:inline;
+	float:left;
+	width:10em;
+	height:100%;
+}
+
+.comment_content {
+	margin-left:10em;
+}
+
+.action {
+	@include button;
+}

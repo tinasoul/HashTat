@@ -1,12 +1,13 @@
-%h2 Comments
+%h3 Comments
 - @comments.each do |comment|
   - if comment.id
-    %p.comment_content= comment.comment_content
-    %p.user= link_to comment.user.name, comment.user
-  %br
+    .comment_div
+      %div.user= link_to comment.user.name, comment.user
+      %div.comment_content= comment.comment_content
+      
 
 
-%h3 Add a Comment
+%hr
 = form_for [@tattoo, @comment] do |f|
 
   - if @comment.errors.any? 
@@ -20,4 +21,4 @@
   .field
     = f.text_area :comment_content, :placeholder => "What do you think?"
   
-  .actions= f.submit
+  .action= f.submit

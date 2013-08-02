@@ -18,7 +18,7 @@
 
     <%- if devise_mapping.omniauthable? %>
       <%- User.omniauth_providers.each do |provider| %>
-        <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+        <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'tiny button' %><br />
       <% end -%>
     <% end -%>
     </div>
@@ -35,6 +35,12 @@
     <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
     <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
     <% end -%>
+
+    <%- if devise_mapping.omniauthable? %>
+      <%- User.omniauth_providers.each do |provider| %>
+        <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'tiny button' %><br />
+      <% end -%>
+      <%end -%>
     </div>
     <div class = "push"></div>
     <div class = "footer"></div>
