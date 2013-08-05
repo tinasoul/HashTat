@@ -46,7 +46,8 @@ class TattoosController < ApplicationController
   # POST /tattoos
   # POST /tattoos.json
   def create
-    @tattoo = current_user.tattoos.build(params[:tattoo])
+    @tattoo = Tattoo.new(params[:tattoo])
+    @tattoo.enthusiast_id = current_user.id
 
     respond_to do |format|
       if @tattoo.save
