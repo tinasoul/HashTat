@@ -1,40 +1,3 @@
-%p#notice= notice
-
-<<<<<<< HEAD
-#photo_div
-  - if @tattoo.picture.present?
-    #pic= image_tag @tattoo.picture_url(:medium)
-    #like_button
-      - if !current_user.voted_for?(@tattoo)
-        = render 'not_liked'
-      - else
-        = render 'liked'
-
-
--#<div class="fb-like" data-href="#{@current_url}" data-width="450" data-layout="box_count" data-show-faces="true" data-send="false"></div>
--#<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this sweet tattoo I found on" data-hashtags="hashtats">Tweet</a>
--#<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-- if @user == current_user.id
-  = link_to 'Edit', edit_tattoo_path(@tattoo) 
-  = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
-
-#description
-  %p.title Story
-  %p.tattoo_description= @tattoo.description
-
-  %p.title Location on Body
-  %p.tattoo_body_location= @tattoo.body_location
-
-  %p.title Artist
-  %p.tattoo_artist= @tattoo.artist
-
-  %p.title Studio
-  %p.tattoo_studio= @tattoo.studio
-
-  %p.title HashTags
-  %p.tattoo_hashtags= @tattoo.hashtags
-=======
 #tattoo_info
   #photo_div
     - if @tattoo.picture.present?
@@ -57,14 +20,13 @@
     %p.tattoo_body_location= @tattoo.body_location
 
     %p.title Artist
-    %p.tattoo_artist= @tattoo.artist
+    %p.tattoo_artist= @tattoo.artist_name
 
     %p.title studio
     %p.tattoo_studio= @tattoo.studio
 
     %p.title HashTags
     %p.tattoo_hashtags= @tattoo.hashtags
->>>>>>> d2b4e9c2df1cf5c369236ac30de52c0971d11a6a
 
 #comments
 = render 'comments'

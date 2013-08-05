@@ -47,6 +47,10 @@ group :development do
   gem 'progress_bar'
 end
 
+group :development, :test do
+  gem 'rspec-rails','~> 2.0'
+end
+
 # gem 'pg'
 gem 'sextant'
 
