@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730204433) do
+ActiveRecord::Schema.define(:version => 20130805150356) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -40,10 +40,11 @@ ActiveRecord::Schema.define(:version => 20130730204433) do
     t.string   "studio"
     t.string   "artist"
     t.text     "hashtags"
-    t.integer  "user_id"
+    t.integer  "enthusiast_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "location"
+    t.integer  "artist_id"
   end
 
   create_table "users", :force => true do |t|
