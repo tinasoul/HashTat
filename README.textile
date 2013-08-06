@@ -2,6 +2,12 @@ h1. Hashtats
 
 A website that tracks your tats and their meanings.  Connect with others around you!
 
+h2. Features:
+
+- Twitter Authentication
+- Voting Mechanism
+- Twitter API Integration -- pulls tweets with #hashtat hashtag
+
 h2. Diagnostics
 
 This application was built with recipes that are NOT known to work together.
