@@ -30,9 +30,11 @@
               <%= submit_tag "search" %>
             <% end %>
             </li>
+            
             <li>
-              <p><%=link_to current_user.name, current_user %></p>
+                <%=link_to current_user.name, current_user %>
             </li>
+        
             <li>
              <%= link_to "+Tat", new_tattoo_path %>
             </li>
