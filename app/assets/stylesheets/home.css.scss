@@ -16,10 +16,6 @@ html{
   min-width:1150px;
 }
 
-.login_intro {
-  
-}
-
 .input{
   width: 75%;
   margin:1em;
@@ -44,16 +40,15 @@ html{
 
 }
 
-.top-bar {
-  margin-bottom:0;
-}
+// .top-bar {
+//   margin-bottom:0;
+// }
 
 .row {
   margin-bottom:0;
 }
 
 .log_in {
-  // width:30%;
   display:inline-block;
   height: 377px;
   width:25em;
@@ -79,12 +74,25 @@ html{
   min-height:800px;
   background-image: url('noheroes.jpg');
   background-size:100% 100%;
+  margin-top: 15px;
+}
+
+.login_intro {
+  padding: 5em;
+}
+
+.login_intro h1{
+  color: #FFBD2A;
+  text-align: center;
+  font-size: 3em;
+  text-shadow: 2px 2px 5px black, -2px -2px 5px black; 
 }
 
 .push{
   height:23em;
 }
 /*Ensures that the picture covers the entire page.*/
+
 .footer {
     height: 200px;
     clear: both !important;
