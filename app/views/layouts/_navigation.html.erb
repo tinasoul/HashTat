@@ -4,7 +4,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <%= link_to "H A S H T A T S", root_path %>
+          <%= link_to "H A S H T A T", root_path %>
         </h1>
       </li>
     </ul>
@@ -30,9 +30,11 @@
               <%= submit_tag "search" %>
             <% end %>
             </li>
+            
             <li>
               <p><%=link_to current_user.username, user_path(current_user) %></p>
             </li>
+        
             <li>
              <%= link_to "+Tat", new_tattoo_path %>
             </li>
