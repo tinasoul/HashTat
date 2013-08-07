@@ -1,0 +1,62 @@
+<!-- Header and Nav -->
+ <div class = "fixed">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <%= link_to "H A S H T A T S", root_path %>
+        </h1>
+      </li>
+    </ul>
+ 
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+<!--       <ul class="left">
+        <li class="divider"></li>
+        <li>
+          <%= link_to image_tag("hashtatlogo_03.gif", :align=> "left"), root_path, :class => 'logo' %>
+        </li>
+      </ul> -->
+ 
+      <!-- Right Nav Section -->
+      <ul class="right">
+<!--         <li class="divider"></li>
+ -->        
+        <ul class="nav">
+          <% if user_signed_in? %>
+            <li>
+             <%= form_tag '/search', :method => :get do %>
+              <%= text_field_tag :q, params[:q] %>
+              <%= submit_tag "search" %>
+            <% end %>
+            </li>
+            <li>
+              <p><%=link_to current_user.username, user_path(current_user) %></p>
+            </li>
+            <li>
+             <%= link_to "+Tat", new_tattoo_path %>
+            </li>
+            <li>
+            <%= link_to 'Edit account', edit_user_registration_path %>
+            </li>
+            <%# if current_user.has_role? :admin %>
+              <!-- <li> -->
+              <%#= link_to 'Admin', users_path %>
+              <!-- </li> -->
+            <%# end %>
+            <!-- <li> -->
+            <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
+            </li>
+          <% end %>
+          
+        </ul>
+
+      </ul>
+    </section>
+  </nav>
+</div>
+ 
+ 
+  <!-- End Header and Nav -->
+
+
