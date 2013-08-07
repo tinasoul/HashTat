@@ -13,34 +13,33 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require masonry.pkgd.min
 //= require best_in_place
 //= require_tree .
 //= require best_in_place.purr
 
 //doc ready & function calls
 
-$(".best_in_place").best_in_place();
 
 $(function(){ 
 	$(document).foundation();
-});
 
-$(window).load(function(){
+  //$(".best_in_place").best_in_place();
+
   $('#masonryContainer').masonry({  
     itemSelector: '.masonry-brick',
     columnWidth: 400
-  });  
-  // $('.hover-bar').hide();
-  // $('.masonry-brick').hover(function(){
-  //   $(this).find('.hover-bar').toggle();
-  // });
+  });
+
+  $('#myModal').foundation('reveal', 'open');
+  $('#myModal').foundation('reveal', 'close');  
+  $('.hover-bar').hide();
+  $('.masonry-brick').hover(function(){
+    $(this).find('.hover-bar').toggle();
+  });
 
   // $(".hover-bar").on("ajax:success", (e, data, status, xhr) ->
   //   $(".hover-bar").append xhr.responseText
   // ).bind "ajax:error", (e, xhr, status, error) ->
   //   $("#new_post").append "<p>ERROR</p>"
 });    
-
-         
-
-

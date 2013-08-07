@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805183444) do
+ActiveRecord::Schema.define(:version => 20130807150217) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(:version => 20130805183444) do
     t.text     "comment_content"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "portfolios", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "tattoo_shop"
+    t.text     "bio"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "flikr"
+    t.string   "website"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -60,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20130805183444) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "name"
+    t.string   "username"
     t.string   "provider"
     t.string   "uid"
     t.string   "avatar"
@@ -69,6 +85,8 @@ ActiveRecord::Schema.define(:version => 20130805183444) do
     t.integer  "tat_number"
     t.string   "fav_artist"
     t.text     "memorable_story"
+    t.boolean  "is_artist"
+    t.string   "type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

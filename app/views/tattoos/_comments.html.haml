@@ -2,7 +2,7 @@
 - @comments.each do |comment|
   - if comment.id
     .comment_div
-      %div.user= link_to comment.user.name, comment.user
+      %div.user= link_to comment.user.username, comment.user
       %div.comment_content= comment.comment_content
       
 

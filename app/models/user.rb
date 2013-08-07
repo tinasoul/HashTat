@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :location
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :location
   
   # Establish relationships between models
   has_many :tattoos
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     where(auth.slice(:provider,:uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.name = auth.info.nickname
+      user.username = auth.info.nickname
     end
   end 
 
