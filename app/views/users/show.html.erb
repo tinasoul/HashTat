@@ -14,7 +14,8 @@
 
   <p>
     <b>Favorite Story About My Tats:</b>
-    <%= best_in_place @user, :memorable_story, :type => :textarea, :ok_button => "save" %>  
+    <%= @user.memorable_story %>
+    <!-- <span class='best_in_place' id='best_in_place_user_<%= current_user.id %>_memorable_story' data-url='/users/<%= current_user.id %>' data-object='user' data-attribute='memorable_story' data-ok-button='save' data-type='textarea'><%= @user.memorable_story %></span>  --> 
   </p>
 
 

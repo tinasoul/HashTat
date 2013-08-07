@@ -1,6 +1,6 @@
 Myapp::Application.routes.draw do
   
-
+  post '/change_to_artist' => 'users#change_to_artist'
 
   authenticated :user do
     root :to => 'tattoos#index'
