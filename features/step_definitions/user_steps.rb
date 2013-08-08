@@ -146,43 +146,43 @@ Then /^I should be signed out$/ do
 end
 
 Then /^I see an unconfirmed account message$/ do
-  page.should have_content "You have to confirm your account before continuing."
+  page.should have_content "Confirm your account before continuing, thanks!"
 end
 
 Then /^I see a successful sign in message$/ do
-  page.should have_content "Signed in successfully."
+  page.should have_content "Signed in like a champ."
 end
 
 Then /^I should see a successful sign up message$/ do
-  page.should have_content "Welcome! You have signed up successfully."
+  page.should have_content "Welcome to Hashtat. We're glad to have you."
 end
 
 Then /^I should see an invalid email message$/ do
-  page.should have_content "Emailis invalid"
+  page.should have_content "That email is invalid, babe."
 end
 
 Then /^I should see a missing password message$/ do
-  page.should have_content "Passwordcan't be blank"
+  page.should have_content "Missing your password, sweetie."
 end
 
 Then /^I should see a missing password confirmation message$/ do
-  page.should have_content "Passworddoesn't match confirmation"
+  page.should have_content "Missing your password confirmation, sweetie."
 end
 
 Then /^I should see a mismatched password message$/ do
-  page.should have_content "Passworddoesn't match confirmation"
+  page.should have_content "Match your password to the confirm password "
 end
 
 Then /^I should see a signed out message$/ do
-  page.should have_content "Signed out successfully."
+  page.should have_content "Signed out. See you soon!"
 end
 
 Then /^I see an invalid login message$/ do
-  page.should have_content "Invalid email or password."
+  page.should have_content "That email or password is not valid, dear."
 end
 
 Then /^I should see an account edited message$/ do
-  page.should have_content "You updated your account successfully."
+  page.should have_content "Yay, you just updated your account."
 end
 
 Then /^I should see my name$/ do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808001927) do
+ActiveRecord::Schema.define(:version => 20130808050945) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20130808001927) do
     t.string   "pulled_tweet_id"
     t.text     "text"
     t.text     "attached_photos"
-    t.integer  "tattoo_id"
+    t.string   "handle"
   end
 
   create_table "users", :force => true do |t|
