@@ -19,17 +19,18 @@
 //= require best_in_place.purr
 
 //doc ready & function calls
-
+$(window).load(function(){
+$('#masonryContainer').masonry({  
+    itemSelector: '.masonry-brick',
+    columnWidth: 400
+  });
+});
 
 $(function(){ 
 	$(document).foundation();
 
   //$(".best_in_place").best_in_place();
 
-  $('#masonryContainer').masonry({  
-    itemSelector: '.masonry-brick',
-    columnWidth: 400
-  });
 
   $('#myModal').foundation('reveal', 'open');
   $('#myModal').foundation('reveal', 'close');  
