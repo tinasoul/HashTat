@@ -1,3 +1,5 @@
+<!-- Add artist field and select tags for gender & body parts. -->
+
 <%= simple_form_for(@tattoo) do |f| %>
   <%= f.error_notification %>
 
@@ -22,7 +24,7 @@
     <%= f.text_field :studio%>
   </div>
   <div class="field">
-    <%= f.label :location %><dr />
+    <%= f.label :location, "Location (e.g. Austin, Texas)" %><dr />
     <%= f.text_field :location %>
   </div>
  <div class="field">

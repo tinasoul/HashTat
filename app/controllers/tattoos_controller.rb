@@ -1,11 +1,10 @@
 class TattoosController < ApplicationController
   before_filter :authenticate_user!, :except => [:index]
-  layout "full-width", :only => [:index, :search]
+  layout "full-width", :only => [:index, :search, :twitterfeed]
   # GET /tattoos
   # GET /tattoos.json
   def index
     @tattoos = Tattoo.order('created_at DESC').all
-    @tweets = Tweet.order('created_at DESC').all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tattoos }
@@ -52,7 +51,7 @@ class TattoosController < ApplicationController
 
     respond_to do |format|
       if @tattoo.save
-        format.html { redirect_to @tattoo, notice: 'Tattoo was successfully created.' }
+        format.html { redirect_to @tattoo, notice: 'Your tattoo was successfully created.' }
         format.json { render json: @tattoo, status: :created, location: @tattoo }
       else
         format.html { render action: "new" }
@@ -68,7 +67,7 @@ class TattoosController < ApplicationController
 
     respond_to do |format|
       if @tattoo.update_attributes(params[:tattoo])
-        format.html { redirect_to @tattoo, notice: 'Tattoo was successfully updated.' }
+        format.html { redirect_to @tattoo, notice: 'Your tattoo was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -119,6 +118,11 @@ class TattoosController < ApplicationController
 
     render "index"
   end  
+
+    def twitterfeed
+      @tweets = Tweet.order('created_at DESC').all
+
+    end
 
 
 
