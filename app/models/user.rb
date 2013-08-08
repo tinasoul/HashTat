@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   # Establish relationships between models
   has_many :tattoos
   has_many :comments
+  has_one :artist
 
 
   def self.from_omniauth(auth)

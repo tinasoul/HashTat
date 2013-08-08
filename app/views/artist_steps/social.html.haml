@@ -1,0 +1,17 @@
+= simple_form_for @artist, url: wizard_path do |f|
+  = f.error_notification
+
+  .field
+    = f.input :instagram
+
+  .field
+    = f.input :twitter
+
+  .field
+    = f.input :flickr
+
+  .field
+    = f.input :facebook
+
+  .form_actions
+    = f.button :submit, "Create My Portfolio"

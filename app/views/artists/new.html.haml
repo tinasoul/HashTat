@@ -1,0 +1,18 @@
+= simple_form_for(@artist) do |f|
+  = f.error_notification
+
+  .field
+    = f.input :first_name
+
+  .field
+    = f.input :last_name
+
+  .field
+    = f.input :location
+
+  .field
+    = f.input :tattoo_shop
+
+  .form_actions
+    = f.button :submit, "Next"
+

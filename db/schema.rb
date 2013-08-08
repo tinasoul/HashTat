@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130807150217) do
+ActiveRecord::Schema.define(:version => 20130808190734) do
+
+  create_table "artists", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "full_name"
+    t.string   "location"
+    t.string   "tattoo_shop"
+    t.string   "avatar"
+    t.string   "specialties"
+    t.text     "bio"
+    t.string   "instagram"
+    t.string   "flickr"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "cover_photo"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +38,22 @@ ActiveRecord::Schema.define(:version => 20130807150217) do
     t.text     "comment_content"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "portfolios", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "tattoo_shop"
+    t.text     "bio"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "flikr"
+    t.string   "website"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -69,7 +104,7 @@ ActiveRecord::Schema.define(:version => 20130807150217) do
     t.integer  "tat_number"
     t.string   "fav_artist"
     t.text     "memorable_story"
-    t.string   "type"
+    t.boolean  "is_artist"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

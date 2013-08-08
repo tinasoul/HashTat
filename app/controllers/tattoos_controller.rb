@@ -106,18 +106,18 @@ class TattoosController < ApplicationController
     end
   end
 
-   def search
-    # copying code here so this means this code should be at higher level like on index action
-    params[:per_page] ||= 25
-    params[:page]     ||= 1
+ def search
+  # copying code here so this means this code should be at higher level like on index action
+  params[:per_page] ||= 25
+  params[:page]     ||= 1
 
-    @search = Tattoo.search(params[:q], params)
-    @tattoos = @search.results
+  @search = Tattoo.search(params[:q], params)
+  @tattoos = @search.results
 
-    # .page(params[:page]).per_page(params[:per_page])
+  # .page(params[:page]).per_page(params[:per_page])
 
-    render "index"
-  end  
+  render "index"
+end  
 
 
 
