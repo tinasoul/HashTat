@@ -4,7 +4,7 @@ class TattoosController < ApplicationController
   # GET /tattoos
   # GET /tattoos.json
   def index
-    @tattoos = Tattoo.order('created_at DESC').all
+    @tattoos = Tattoo.order('created_at DESC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tattoos }
@@ -120,8 +120,14 @@ class TattoosController < ApplicationController
   end  
 
     def twitterfeed
-      @tweets = Tweet.order('created_at DESC').all
-
+      @tweets = Tweet.order('created_at DESC')
+      @photos = []
+      @tweets.each do |tweet|
+        tweet.attached_photos.each do |photo|
+          @photos << photo.media_url
+        end
+      end
+    
     end
 
 

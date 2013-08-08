@@ -7,13 +7,15 @@
 
 <!-- Masonry Container -->
 <div id="masonryContainer">
-   <!-- <div class="masonry-brick">
-   </div>  -->
+    <% if @photos %> 
+      <% @photos.each do |photo| %>
+        <div class="masonry-brick">
+          <%= image_tag(photo)%>
+        </div>
+      <% end %>
+    <% end %>
   <div class="masonry-brick">
-    <img src="http://placehold.it/500x600&text=Item">
-  </div>
-  <div class="masonry-brick">
-    <img src="http://placehold.it/500x700&text=Item">
+     <%#= link_to image_tag(@tweets[1].attached_photos[0].media_url) %> 
   </div>
   <div class="masonry-brick">
     <img src="http://placehold.it/500x400&text=Item">

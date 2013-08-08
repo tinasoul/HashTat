@@ -60,7 +60,6 @@
     <img src="http://placehold.it/500x200&text=Item">
   </div>
 </div>
-<% unless current_user.type == "Artist" %>
   <div id="myModal" class="reveal-modal">
     <h2>Are You A Tattoo Artist?</h2>
     <p class="lead">Create Your Online Portfolio Now.</p>
@@ -76,7 +75,6 @@
     <%= form_tag "/change_to_artist" do %>
       <%= hidden_field_tag :change_artist, :value => "maybe" %>
       <%= submit_tag "I'll decide later" %>
-    <% end %>
 
 
 <% end %>
