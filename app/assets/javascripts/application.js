@@ -16,7 +16,7 @@
 //= require masonry.pkgd.min
 //= require best_in_place
 //= require_tree .
-//= require best_in_place.purr
+//= require best_in_place.purr 
 
 //doc ready & function calls
 $(window).load(function(){
