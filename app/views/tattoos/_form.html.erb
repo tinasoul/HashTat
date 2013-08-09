@@ -6,31 +6,35 @@
     <%= f.file_field :picture %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description, :placeholder => "The story behind your tat." %>
+    <%= f.label :description, "Story" %><br />
+    <%= f.text_area :description, :placeholder => "Share why you got this particular tat. You have a story." %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br />
+    <%= f.label :gender, "Gender (Need to add select tags)" %><br />
     <%= f.text_field :gender %>
   </div>
   <div class="field">
-    <%= f.label :body_location %><dr />
+    <%= f.label :body_location, "Location on Body (Need to add select tags)" %><dr />
     <%= f.text_field :body_location%>
+  </div>
+  <div class="field">
+    <%= f.label :artist_name %><dr />
+    <%= f.text_field :artist_name%>
   </div>
   <div class="field">
     <%= f.label :studio %><dr />
     <%= f.text_field :studio%>
   </div>
   <div class="field">
-    <%= f.label :location %><dr />
+    <%= f.label :location, "Location (eg. Austin, Texas)" %><dr />
     <%= f.text_field :location %>
   </div>
  <div class="field">
-    <%= f.label :hashtags %><br />
+    <%= f.label :hashtags, "Hashtag description" %><br />
     <%= f.text_field :hashtags %>
   </div>
   <div class="form-actions">
-    <%= f.button :submit, "Add my tat" %>
+    <%= f.button :submit, "Submit" %>
   </div>
 <% end %>
 
