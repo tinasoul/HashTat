@@ -9,6 +9,7 @@ class TattoosController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @tattoos }
     end
+
   end
 
   # GET /tattoos/1

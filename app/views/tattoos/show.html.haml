@@ -1,12 +1,14 @@
+%nav.breadcrumbs
+  = link_to 'Tattoos', tattoos_path
+  = link_to current_user.username, user_path
+  %a.current{:href => "#"} tattoo.title
+/
+/ = link_to 'Back', tattoos_path
 #tattoo_info
   #photo_div
     - if @tattoo.picture.present?
       #pic= image_tag @tattoo.picture_url(:medium)
-      #like_button
-        - if !current_user.voted_for?(@tattoo)
-          = render 'not_liked'
-        - else
-          = render 'liked'
+      = like_button(@tattoo, current_user)
 
     - if @user == current_user.id
       = link_to 'Edit', edit_tattoo_path(@tattoo) 

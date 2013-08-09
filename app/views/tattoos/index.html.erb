@@ -11,6 +11,8 @@
       <% @tattoos.each do |tattoo| %>
         <div class="masonry-brick">
         <%= link_to image_tag(tattoo.picture_url(:medium)), tattoo %>
+
+        <%= like_button(tattoo, current_user) %>
         </div>
       <% end %>
      <% end %> 
@@ -63,7 +65,8 @@
     <img src="http://placehold.it/500x200&text=Item">
   </div>
 </div>
-<% unless current_user.type == "Artist" %>
+
+<!--- <% unless current_user.type == "Artist" %>
   <div id="myModal" class="reveal-modal">
     <h2>Are You A Tattoo Artist?</h2>
     <p class="lead">Create Your Online Portfolio Now.</p>
@@ -81,8 +84,7 @@
       <%= submit_tag "I'll decide later" %>
     <% end %>
 
-
 <% end %>
 
   <a class="close-reveal-modal">&#215;</a>
-</div>
+</div>  -->

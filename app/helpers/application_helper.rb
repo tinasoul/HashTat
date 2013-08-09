@@ -12,4 +12,15 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def like_button(tattoo, user)
+    content_tag :div, id: dom_id(tattoo), class: 'like_button' do
+      if user.voted_for?(tattoo)
+        render partial: 'tattoos/liked', locals: {tattoo: tattoo}
+      elsif !user.voted_for?(tattoo)
+        render partial: 'tattoos/not_liked', locals: {tattoo: tattoo}
+      else
+        puts "hello"
+      end
+    end
+  end
 end
