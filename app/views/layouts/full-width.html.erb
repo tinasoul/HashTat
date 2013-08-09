@@ -5,7 +5,6 @@
     <title><%= content_for?(:title) ? yield(:title) : "HashTat" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "HashTat" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= stylesheet_link_tag "application-full-width", :media => "all" %>
     <%= javascript_include_tag "application" %>
 
     <%= csrf_meta_tags %>
@@ -52,9 +51,9 @@
   <!-- Content -->
 
     <div class="row full-width">
-      <div id="main" role="main" class="large-12 columns">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
+      <div id="main" role="main" class="large-12 columns" style="margin-top:0;">
+<!--         <%= render 'layouts/messages' %>
+ -->        <%= yield %>
       </div>
     </div>
 
