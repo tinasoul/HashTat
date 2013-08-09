@@ -19,13 +19,13 @@ class Tweet < ActiveRecord::Base
         tweet.media.each do |photo|
           uploader = PictureUploader.new
           File.write("public/tattoos/#{photo.id}.jpg", open(photo.media_url).read, {mode: 'wb'})
-          #uploader.store("public/tattoos/#{photo.id}.jpg")
-          #TODO: need to figure out how to get twitter images up to s3 seamlessly
-          #@tattoo = u.tattoos.create(description: tweet.text, picture: photo)
-          @tattoo = u.tattoos.create(description: tweet.text)
-       # else
-
-
+          uploader.store!(File.open("public/tattoos/#{photo.id}.jpg"))
+          @tattoo = u.tattoos.create(description: tweet.text, picture: photo)
+       else
+        tweet.media.each do |photo|
+          uploader = PictureUploader.new
+          File.write("public/tattoos/#{photo.id}.jpg", open(photo.media_url).read, {mode: 'wb'})
+          uploader.store!(File.open("public/tattoos/#{photo.id}.jpg"))
         end
       end
     end
