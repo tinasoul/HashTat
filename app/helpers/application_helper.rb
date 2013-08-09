@@ -12,4 +12,18 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def store_photo
+    if 
+
+
+  end
+
+  # def page_title(project)
+  #   if project
+  #     #{project.name} - Perfect Search Design | Ativa
+  #   else
+  #     "Tattoo Art Community | Hashtat"
+  #   end
+  # end
+
 end

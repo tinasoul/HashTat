@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808050945) do
+ActiveRecord::Schema.define(:version => 20130809192308) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130808050945) do
     t.datetime "updated_at",    :null => false
     t.string   "location"
     t.integer  "artist_id"
+    t.string   "twitter_photo"
   end
 
   create_table "tweets", :force => true do |t|
