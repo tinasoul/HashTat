@@ -11,5 +11,28 @@ require 'spec_helper'
 #   end
 # end
 describe ArtistHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'add_http' do
+    context 'when the method is sent a url' do
+      it "append http:// if it doesnt have it already" do
+        expect(add_http('www.facebook.com')).to eq('http://www.facebook.com')
+      end
+    end
+  end
+
+  describe 'build_link' do
+    let(:artist) do 
+      mock_model Artist, :twitter => 's_byrne',
+                          :facebook => 'www.facebook.com/shannonleighbyrne'
+    end
+    context 'if a user has added a username for a social network' do
+      it 'should turn that data into a functional link' do
+        expect(build_link(artist,:twitter)).to eq('http://www.twitter.com/s_byrne')
+      end
+    end
+    context 'if a user has added a url for the social network' do
+      it 'should turn that data into a functional link' do
+        expect(build_link(artist,:facebook)).to eq('http://www.facebook.com/shannonleighbyrne')
+      end
+    end
+  end
 end

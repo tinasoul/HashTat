@@ -27,13 +27,4 @@ describe Artist do
     end
   end
 
-  describe '#add_http' do
-  let(:artist){ Artist.new(:first_name => 'Shannon') }
-    context 'when the method is sent a url' do
-      it "append http:// if it doesnt have it already" do
-        expect(artist.add_http('www.facebook.com')).to eq('http://www.facebook.com')
-      end
-    end
-  end
-
 end

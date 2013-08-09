@@ -1,13 +1,16 @@
 %h1= "#{@artist.full_name}"
-
 .career
-	%p= "Location: #{@artist.location}"
-	%p= "Tattoo Shop: #{@artist.tattoo_shop}"
+  %p= "Location: #{@artist.location}"
+  %p= "Tattoo Shop: #{@artist.tattoo_shop}"
 .about
-	%p= "Bio: #{@artist.bio}"
-	%p= "Specialties: #{@artist.specialties}"
+  %p= "Bio: #{@artist.bio}"
+  %p= "Specialties: #{@artist.specialties}"
 .social
-	%p= "Instagram: #{@artist.instagram}"
-	%p= "Flickr: #{@artist.flickr}"
-	%p= "Twitter: #{@artist.twitter}"
-	%p= "Facebook: #{@artist.facebook}"
+  = if_social(@artist,:facebook) do
+    = build_link(@artist,:facebook)
+  = if_social(@artist, :flickr) do
+    = build_link(@artist,:flickr)
+  = if_social(@artist, :twitter) do
+    = build_link(@artist,:twitter)
+  = if_social(@artist, :instagram) do
+    = build_link(@artist,:instagram)
