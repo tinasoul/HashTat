@@ -13,19 +13,17 @@ class Tweet < ActiveRecord::Base
       handle: tweet.user.screen_name)
       # pulled_twitter_hashtag: tweet.text.hashtag
 
-
       if User.find_by_username(tweet.user.screen_name)
         u = User.find_by_username(tweet.user.screen_name)
+
         tweet.media.each do |photo|
+          uploader = PictureUploader.new
           File.write("public/tattoos/#{photo.id}.jpg", open(photo.media_url).read, {mode: 'wb'})
+          #uploader.store("public/tattoos/#{photo.id}.jpg")
           #TODO: need to figure out how to get twitter images up to s3 seamlessly
           #@tattoo = u.tattoos.create(description: tweet.text, picture: photo)
           @tattoo = u.tattoos.create(description: tweet.text)
-       else
-        s = User.new
-        tweet.media.each do |photo|
-        File.write("public/tattoos/#{photo.id}.jpg", open(photo.media_url).read, {mode: 'wb'})
-
+       # else
 
 
         end

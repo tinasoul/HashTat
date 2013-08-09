@@ -130,8 +130,6 @@ class TattoosController < ApplicationController
     
     end
 
-
-
   #   begin
   #     current_user.vote_for(@tattoo = Tattoo.find(params[:id]))
   #     render :nothing => true, :status => 200
