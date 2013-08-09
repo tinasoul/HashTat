@@ -23,13 +23,14 @@ class Artist < ActiveRecord::Base
     end
   end
 
-
-  def add_http(input)
-    u=URI.parse(input)
+  # Takes a user's input from social fields and parses it to see whether it starts with http://
+  # This method is called from within build_link.
+  def add_http(url)
+    u=URI.parse(url)
     if (!u.scheme)
-        return link = "http://" + input
+        return link = "http://" + url
     else
-        return link = input
+        return link = url
     end
   end
 
@@ -42,5 +43,10 @@ class Artist < ActiveRecord::Base
       end
     end
   end
+
+  def if_social(social_network, &block)
+    
+  end
+
 
 end
