@@ -12,11 +12,7 @@ module ApplicationHelper
     html.html_safe
   end
 
-  def store_photo
-    if 
-
-
-  end
+  # end
 
   # def page_title(project)
   #   if project

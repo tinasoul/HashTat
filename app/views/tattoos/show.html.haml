@@ -2,11 +2,14 @@
   #photo_div
     - if @tattoo.picture.present?
       #pic= image_tag @tattoo.picture_url(:medium)
-      #like_button
-        - if !current_user.voted_for?(@tattoo)
-          = render 'not_liked'
-        - else
-          = render 'liked'
+    - elsif @tattoo.twitter_photo.present?
+      #pic= image_tag @tattoo.twitter_photo
+    
+    #like_button
+      - if !current_user.voted_for?(@tattoo)
+        = render 'not_liked'
+      - else
+        = render 'liked'
 
     - if @user == current_user.id
       = link_to 'Edit', edit_tattoo_path(@tattoo) 

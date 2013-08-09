@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809192308) do
+ActiveRecord::Schema.define(:version => 20130809213909) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20130809192308) do
     t.text     "text"
     t.text     "attached_photos"
     t.string   "handle"
+    t.string   "hashtags"
   end
 
   create_table "users", :force => true do |t|
