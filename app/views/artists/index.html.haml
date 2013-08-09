@@ -1,2 +1,3 @@
 %h1 Artist#index
-%p Find me in app/views/artist/index.html.haml
+- @artists.each do |artist|
+	= link_to "#{artist.full_name}", artist_path(artist)
