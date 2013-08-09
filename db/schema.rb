@@ -40,22 +40,6 @@ ActiveRecord::Schema.define(:version => 20130808190734) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "portfolios", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "city"
-    t.string   "state"
-    t.string   "tattoo_shop"
-    t.text     "bio"
-    t.string   "twitter"
-    t.string   "instagram"
-    t.string   "flikr"
-    t.string   "website"
-    t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -104,7 +88,6 @@ ActiveRecord::Schema.define(:version => 20130808190734) do
     t.integer  "tat_number"
     t.string   "fav_artist"
     t.text     "memorable_story"
-    t.boolean  "is_artist"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
