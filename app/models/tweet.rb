@@ -5,8 +5,12 @@ class Tweet < ActiveRecord::Base
   serialize :attached_photos
 
   def self.pull_tweets
-    
-    Twitter.search("#hashtat").results.map do |tweet|
+    last_tweet = Tweet.order('pulled_tweet_id').last
+
+    options = {}
+    options[:since_id] = last_tweet.pulled_tweet_id unless last_tweet.nil?
+
+    Twitter.search("#hashtat", options).results.map do |tweet|
       hashtags = []
       tweet.hashtags.each do |hashtag|
         hashtag = "##{hashtag.text}" 
