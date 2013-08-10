@@ -37,6 +37,15 @@ class TattoosController < ApplicationController
     end
   end
 
+  # def new_artist_tattoo
+  #   @tattoo = Tattoo.new
+  #   respond_to do |format|
+  #     format.html #new_artist.html.haml
+  #     format.json {render json: @tattoo }
+
+  # def create_artist_tattoo
+  #   @tattoo = Artist(params[:artist_id]).tattoos.build(params[:tattoo])
+
   # GET /tattoos/1/edit
   def edit
     @tattoo = Tattoo.find(params[:id])
@@ -46,11 +55,17 @@ class TattoosController < ApplicationController
   # POST /tattoos
   # POST /tattoos.json
   def create
-    @tattoo = current_user.tattoos.build(params[:tattoo])
+    user = if params[:artist_id]
+      Artist.find(params[:artist_id])
+    else
+      current_user
+    end
+    @tattoo = user.tattoos.build(params[:tattoo])
+    @tattoo.artist_id = params[:artist_id]
     
 
     respond_to do |format|
-      if @tattoo.save
+      if user.save
         format.html { redirect_to @tattoo, notice: 'Tattoo was successfully created.' }
         format.json { render json: @tattoo, status: :created, location: @tattoo }
       else

@@ -16,7 +16,9 @@ Myapp::Application.routes.draw do
       post :vote_down
     end
   end
-  resources :artists
+  resources :artists do
+    resources :tattoos
+  end
   resources :artist_steps
 
 end
