@@ -13,36 +13,41 @@
  
       <!-- Right Nav Section -->
       <ul class="right">
-
+         <li>
+            <%= link_to "About"%>
+        </li>
         <% if user_signed_in? %>
+          <li>
+            <%= link_to "Add a Tat", new_tattoo_path %>
+          </li>
           <li id="search">
            <%= form_tag '/search', :method => :get do %>
             <%= text_field_tag :q, params[:q], :placeholder => "search" %>
             <!-- <%= submit_tag "search" %> -->
           </li>
           <% end %>
-          
           <li class="has-dropdown">
             <%=link_to current_user.username, user_path(current_user) %>
 
             <ul class="dropdown">
-        
               <li>
-               <%= link_to "+Tat", new_tattoo_path %>
+              <%= link_to 'Edit Profile' %>
               </li>
+      
               <li>
-              <%= link_to 'Edit account', edit_user_registration_path %>
+              <%= link_to 'Settings', edit_user_registration_path %>
               </li>
               <%# if current_user.has_role? :admin %>
                 <!-- <li> -->
                 <%#= link_to 'Admin', users_path %>
                 <!-- </li> -->
               <%# end %>
-              <!-- <li> -->
+              <!-- <li> -->  
+           
               <li>
               <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
-            
-            </ul>
+              <li>
+              </ul>
           </li>
 
         <% end %>
