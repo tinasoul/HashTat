@@ -37,15 +37,6 @@ class TattoosController < ApplicationController
     end
   end
 
-  # def new_artist_tattoo
-  #   @tattoo = Tattoo.new
-  #   respond_to do |format|
-  #     format.html #new_artist.html.haml
-  #     format.json {render json: @tattoo }
-
-  # def create_artist_tattoo
-  #   @tattoo = Artist(params[:artist_id]).tattoos.build(params[:tattoo])
-
   # GET /tattoos/1/edit
   def edit
     @tattoo = Tattoo.find(params[:id])
@@ -55,17 +46,16 @@ class TattoosController < ApplicationController
   # POST /tattoos
   # POST /tattoos.json
   def create
-    user = if params[:artist_id]
-      Artist.find(params[:artist_id])
+    tattoo_maker = if params[:tattoo][:artist_id]
+      Artist.find(params[:tattoo][:artist_id])
     else
       current_user
     end
-    @tattoo = user.tattoos.build(params[:tattoo])
-    @tattoo.artist_id = params[:artist_id]
+    @tattoo = tattoo_maker.tattoos.build(params[:tattoo])
     
 
     respond_to do |format|
-      if user.save
+      if tattoo_maker.save
         format.html { redirect_to @tattoo, notice: 'Tattoo was successfully created.' }
         format.json { render json: @tattoo, status: :created, location: @tattoo }
       else
@@ -104,8 +94,9 @@ class TattoosController < ApplicationController
   end
 
   def vote_up
-      @tattoo = Tattoo.find(params[:id])
+    @tattoo = Tattoo.find(params[:id])
     current_user.vote_for(@tattoo)
+    
     respond_to do |format|
       format.js {render 'vote'}
       format.html{redirect_to :back}
@@ -115,6 +106,7 @@ class TattoosController < ApplicationController
   def vote_down
     @tattoo = Tattoo.find(params[:id])
     current_user.unvote_for(@tattoo)
+    
     respond_to do |format|
       format.js {render 'vote'}
       format.html{redirect_to :back}
@@ -133,15 +125,5 @@ class TattoosController < ApplicationController
 
   render "index"
 end  
-
-
-
-  #   begin
-  #     current_user.vote_for(@tattoo = Tattoo.find(params[:id]))
-  #     render :nothing => true, :status => 200
-  #   rescue ActiveRecord::RecordInvalid
-  #     render :nothing => true, :status => 404
-  #   end
-  # end
 
 end

@@ -11,5 +11,6 @@
     = f.input :body_location
   .field
     = f.input :studio
+    = f.hidden_field_tag :artist_id, :value => params[:artist_id]
   .form_action
     = f.button :submit, "Add To My Portfolio"

@@ -1,20 +1,32 @@
 .artist_page
   %h1= "#{@artist.full_name}"
-  .artist_career
-    %p= "#{@artist.location}"
-    %p= "#{@artist.tattoo_shop}"
-    .social
-      = if_social(@artist,:facebook) do
-        = build_link(@artist,:facebook)
-      = if_social(@artist, :flickr) do
-        = build_link(@artist,:flickr)
-      = if_social(@artist, :twitter) do
-        = build_link(@artist,:twitter)
-      = if_social(@artist, :instagram) do
-        = build_link(@artist,:instagram)
-  .about_artist
-    %p= "Bio: #{@artist.bio}"
-    %p= "Specialties: #{@artist.specialties}"
-  .portfolio_tattoos
-    = link_to "Add Your First Tattoo", new_artist_tattoo_path(@artist)
+  .row
+    .artist_career.large-3.columns
+      %p= "#{@artist.location}"
+      %p= "#{@artist.tattoo_shop}"
+      .social
+        = if_social(@artist,:facebook) do
+          = build_link(@artist,:facebook)
+        = if_social(@artist, :flickr) do
+          = build_link(@artist,:flickr)
+        = if_social(@artist, :twitter) do
+          = build_link(@artist,:twitter)
+        = if_social(@artist, :instagram) do
+          = build_link(@artist,:instagram)
+    .about_artist.large-9.columns
+      %p= "Bio: #{@artist.bio}"
+      %p= "Specialties: #{@artist.specialties}"
+  .row
+    / Need to make helper methods to remove this logic from view
+    .portfolio_tattoos.large-12.columns
+      - if @artist.tattoos.length == 0
+        - if @artist.user_id == current_user.id
+          = link_to "Add Your First Tattoo", new_artist_tattoo_path(@artist), class: 'button'
+        - else
+          This artist hasn't added any tattoos to their portfolio yet.
+      - else
+        - @artist.tattoos.each do |tattoo|
+          = link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo
+        - if @artist.user_id == current_user.id
+          = link_to "Add Another Photo To Your Portfolio", new_artist_tattoo_path(@artist), class: 'button'
 

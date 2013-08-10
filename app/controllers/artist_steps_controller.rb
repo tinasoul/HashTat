@@ -13,7 +13,9 @@ class ArtistStepsController < Wicked::WizardController
   end
 
 private
+
   def finish_wizard_path
     artist_path(current_user.artist)
   end
+  
 end
