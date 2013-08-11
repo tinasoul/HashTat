@@ -12,4 +12,8 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def current_step(path)
+    "current_step" if current_page?(path)
+  end
+
 end
