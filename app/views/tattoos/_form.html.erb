@@ -2,39 +2,33 @@
   <%= f.error_notification %>
 
   <div class="field">
-    <%= f.label :picture %><br />
-    <%= f.file_field :picture %>
+    <%= f.input :picture, :as => :file %>
   </div>
   <div class="field">
-    <%= f.label :description, "Story" %><br />
-    <%= f.text_area :description, :placeholder => "Share why you got this particular tat. You have a story." %>
+    <%= f.input :description, :placeholder => "Share why you got this particular tattoo. You have a story." %>
   </div>
   <div class="field">
-    <%= f.label :gender, "Gender (Need to add select tags)" %><br />
-    <%= f.text_field :gender %>
+    <%= f.input :gender, :collection =>[['Female',:female],['Male',:male]], :as => :radio_buttons %>
   </div>
   <div class="field">
-    <%= f.label :body_location, "Location on Body (Need to add select tags)" %><dr />
-    <%= f.text_field :body_location%>
+    <%= f.input :body_location, 
+    :collection => [['shoulder',:shoulder], ['arm',:arm], ['upper back',:upper_back], ['torso',:torso], ['lower back',:lower_back], ['face',:face], ['neck',:neck], ['calf',:calf], ['leg',:leg], ['other', :other]]
+     %>
   </div>
   <div class="field">
-    <%= f.label :artist_name %><dr />
-    <%= f.text_field :artist_name%>
+    <%= f.input :artist_name%>
   </div>
   <div class="field">
-    <%= f.label :studio %><dr />
-    <%= f.text_field :studio%>
+    <%= f.input :studio%>
   </div>
   <div class="field">
-    <%= f.label :location, "Location (eg. Austin, Texas)" %><dr />
-    <%= f.text_field :location %>
+    <%= f.input :location, :placeholder => 'eg. Austin, Texas' %>
   </div>
  <div class="field">
-    <%= f.label :hashtags, "Hashtag description" %><br />
-    <%= f.text_field :hashtags %>
+    <%= f.input :hashtags %>
   </div>
   <div class="form-actions">
-    <%= f.button :submit, "Submit" %>
+    <%= f.button :submit, "Submit", class: 'button tiny' %>
   </div>
 <% end %>
 
