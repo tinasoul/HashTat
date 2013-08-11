@@ -9,6 +9,7 @@ $(window).resize(function(){
    var width = $(window).width();
    if(width >= 960 && width <= 1200){
        $('#myModal').removeClass('large').addClass('medium');
+       $('.modal_text').addClass('.large_text')
    }
    else if (width < 960 && width > 500){
        $('#myModal').removeClass('small').addClass('large');
@@ -16,6 +17,6 @@ $(window).resize(function(){
    else {
    	$('#myModal').removeClass('medium').addClass('small');
    }
-})
+});
 $(document).resize();
 });
