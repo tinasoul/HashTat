@@ -6,13 +6,7 @@
     </div> -->
     <div class = "sign_up">
       <h2>Sign up. </h2>
-      <%- if devise_mapping.omniauthable? %>
-        <%- User.omniauth_providers.each do |provider| %>
-        <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn' %><br />
-        <% end -%>
-      <% end -%>
-      <br>
-      <hr>
+      
       <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
         <%= f.error_notification %>
         <%= display_base_errors resource %>
