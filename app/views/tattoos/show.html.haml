@@ -6,9 +6,9 @@
 / = link_to 'Back', tattoos_path
 #tattoo_info
   #photo_div
-    - if @tattoo.picture.present?
-      #pic= image_tag @tattoo.picture_url(:medium)
-      = like_button(@tattoo, current_user)
+    #photo
+      = tweeted_a_photo(@tattoo)
+    = like_button(@tattoo, current_user)
 
     - if @user == current_user.id
       = link_to 'Edit', edit_tattoo_path(@tattoo) 
