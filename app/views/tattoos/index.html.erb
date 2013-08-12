@@ -10,7 +10,7 @@
     <% if @tattoos %> 
       <% @tattoos.each do |tattoo| %>
         <div class="masonry-brick">
-          <%= tweeted_a_photo(tattoo) %> 
+          <%= show_tattoo_photo(tattoo) %> 
           <%= like_button(tattoo, current_user) %>
         </div>
       <% end %>
