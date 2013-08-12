@@ -14,6 +14,25 @@ class User < ActiveRecord::Base
   # Establish relationships between models
   has_many :tattoos
   has_many :comments
+  after_create :assign_tweets_to_tattoos
+
+  def assign_tweets_to_tattoos
+    if !Tweet.where(:handle => self.username).empty?
+      Tweet.where(:handle => self.username).each do |tweet|
+        
+        hashtags = []
+        tweet.hashtags.each do |hashtag|
+          hashtag = "##{hashtag.text}" 
+          hashtags << hashtag
+        end
+        hashtags = hashtags.join(' ')
+        
+        tweet.attached_photos.each do |photo|
+          Tattoo.create(twitter_photo: photo.media_url, hashtags: hashtags)
+        end
+      end
+    end
+  end
 
 
   def self.from_omniauth(auth)

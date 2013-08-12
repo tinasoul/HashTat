@@ -11,12 +11,7 @@ class Tweet < ActiveRecord::Base
     options[:since_id] = last_tweet.pulled_tweet_id unless last_tweet.nil?
 
     Twitter.search("#hashtat", options).results.map do |tweet|
-      hashtags = []
-      tweet.hashtags.each do |hashtag|
-        hashtag = "##{hashtag.text}" 
-        hashtags << hashtag
-      end
-      hashtags = hashtags.join(' ')
+       
 
       Tweet.create!(pulled_tweet_id: tweet.id.to_s,
         text: tweet.text,
