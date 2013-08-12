@@ -13,12 +13,13 @@
   </p>
 
 <p>
-  <b> My Tats
+  <b> Tats I added
 </p>
 
 <% @tattoos.each do |tattoo| %>
 	<div class= "user_tat">
-		<%= link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo %>
+    <%= show_tattoo_photo_profile(tattoo) %>
+		<%#= link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo %>
 	</div>
 <% end %>
 

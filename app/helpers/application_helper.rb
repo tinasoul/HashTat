@@ -31,4 +31,20 @@ module ApplicationHelper
       link_to image_tag(tattoo.twitter_photo), tattoo 
     end
   end
+
+  def show_tattoo_photo_profile(tattoo)
+    image_url = if(tattoo.twitter_photo.blank?)
+      tattoo.picture_url(:medium)
+    else
+      tattoo.twitter_photo
+    end
+
+    style = "height: 250px; width: 250px; background-position: center; background-size: cover; background-image: url(#{ image_url });"
+
+    link_to tattoo do
+      content_tag(:div, {class: 'profile-photo', style: style}) do
+        " "
+      end
+    end.html_safe
+  end
 end
