@@ -15,6 +15,9 @@
       = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
 
   #description
+    %p.title Who's tat
+    / %p.
+
     %p.title Story
     %p.tattoo_description= @tattoo.description
 

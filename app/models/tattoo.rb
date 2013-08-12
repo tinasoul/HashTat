@@ -7,7 +7,7 @@ class Tattoo < ActiveRecord::Base
   belongs_to :user
   
   # searchable do 
-  #   text :gender, :body_location, :studio, :artist, :hashtags, :location
+  #   text :description :gender, :body_location, :studio, :artist, :hashtags, :location
   # end
 
   # def self.search(query, params={})
