@@ -1,23 +1,28 @@
+/ %nav.breadcrumbs
+/   = link_to 'Tattoos', tattoos_path
+/   = link_to current_user.username, user_path
+/   %a.current{:href => "#"} tattoo.title
+/
+/ = link_to 'Back', tattoos_path
 #tattoo_info
   #photo_div
     - if @tattoo.picture.present?
       #pic= image_tag @tattoo.picture_url(:medium)
-    - elsif @tattoo.twitter_photo.present?
-      #pic= image_tag @tattoo.twitter_photo
-    
-    #like_button
-      - if !current_user.voted_for?(@tattoo)
-        = render 'not_liked'
-      - else
-        = render 'liked'
+      = like_button(@tattoo, current_user)
 
     - if @user == current_user.id
       = link_to 'Edit', edit_tattoo_path(@tattoo) 
       = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
 
   #description
-    %p.title Description
+    %p.title Who's tat
+    / %p.
+
+    %p.title Story
     %p.tattoo_description= @tattoo.description
+
+    %p.title Gender
+    %p.tattoo_gender= @tattoo.gender
 
     %p.title Location on Body
     %p.tattoo_body_location= @tattoo.body_location
@@ -25,9 +30,11 @@
     %p.title Artist
     %p.tattoo_artist_name= @tattoo.artist_name
 
-
-    %p.title studio
+    %p.title Studio
     %p.tattoo_studio= @tattoo.studio
+
+    %p.title Location
+    %p.tattoo_location= @tattoo.location
 
     %p.title HashTags
     %p.tattoo_hashtags= @tattoo.hashtags

@@ -12,14 +12,15 @@ module ApplicationHelper
     html.html_safe
   end
 
-  # end
-
-  # def page_title(project)
-  #   if project
-  #     #{project.name} - Perfect Search Design | Ativa
-  #   else
-  #     "Tattoo Art Community | Hashtat"
-  #   end
-  # end
-
+  def like_button(tattoo, user)
+    content_tag :div, id: dom_id(tattoo), class: 'like_button' do
+      if user.voted_for?(tattoo)
+        render partial: 'tattoos/liked', locals: {tattoo: tattoo}
+      elsif !user.voted_for?(tattoo)
+        render partial: 'tattoos/not_liked', locals: {tattoo: tattoo}
+      else
+        puts "hello"
+      end
+    end
+  end
 end

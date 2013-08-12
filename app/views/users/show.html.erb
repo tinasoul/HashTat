@@ -9,19 +9,30 @@
   </p>
 
   <p>
-    <b>Favorite Tattoo Artists:</b>
+    <b>Favorite Artists:</b>
   </p>
 
-  <p>
-    <b>Favorite Story About My Tats:</b>
-    <%= @user.memorable_story %>
-    <!-- <span class='best_in_place' id='best_in_place_user_<%= current_user.id %>_memorable_story' data-url='/users/<%= current_user.id %>' data-object='user' data-attribute='memorable_story' data-ok-button='save' data-type='textarea'><%= @user.memorable_story %></span>  --> 
-  </p>
-
+<p>
+  <b> My Tats
+</p>
 
 <% @tattoos.each do |tattoo| %>
 	<div class= "user_tat">
 		<%= link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo %>
 	</div>
 <% end %>
+
+<!-- #Unsuccessfully tried to use best in place gem -->
+ <!-- <p>
+  <b>Favorite Story About a Tat:</b>
+    <%= @user.memorable_story %>
+    <span class='best_in_place' id='best_in_place_user_<%= current_user.id %>_memorable_story' data-url='/users/<%= current_user.id %>' data-object='user' data-attribute='memorable_story' data-ok-button='save' data-type='textarea'><%= @user.memorable_story %></span>   
+</p>
+ -->
+
+<hr>
+
+<p>
+  <b>Liked Tats:</b>
+</p>
 

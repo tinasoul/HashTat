@@ -1,3 +1,4 @@
+
 <div class = "login_container">
   <div class = "login_background">
    <!--  <div class = "login_intro"> 
@@ -41,8 +42,10 @@
         <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
     <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
     <% end -%>
+    <br>
     <% end -%>
       <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+      <br>
       <%= f.button :submit, "Log in", :class => 'small button' %>
     <% end %>
     </div>
