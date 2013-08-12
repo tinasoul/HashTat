@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20130809213909) do
     t.string   "avatar"
     t.text     "about_me"
     t.string   "location"
-    t.integer  "tat_number" #number of tattoos. Need to rename column because it's confusing
+    t.integer  "tat_number"
     t.string   "fav_artist"
     t.text     "memorable_story"
     t.string   "type"

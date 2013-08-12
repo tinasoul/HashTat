@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     if Tweet.where(:handle => self.username).present?
       Tweet.where(:handle => self.username).each do |tweet|
         tweet.attached_photos.each do |photo|
-          Tattoo.create(twitter_photo: photo.media_url, hashtags: hashtags)
+          Tattoo.create(twitter_photo: photo.media_url)
         end
       end
     end
