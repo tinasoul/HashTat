@@ -4,5 +4,9 @@ layout "full-width", :only => [:index]
     
   end
 
+  def about
+
+  end
+
 
 end
