@@ -12,7 +12,7 @@ group :assets do
   # gem 'less-rails'
   # gem 'less-rails-fontawesome'
   gem 'compass-rails'
-  gem 'zurb-foundation'
+  gem 'zurb-foundation', '~> 4.3.1'
 end
 
 gem 'thumbs_up'
@@ -32,6 +32,7 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'will_paginate'
 gem 'best_in_place'
+gem 'awesome_print'
 
 
 group :production do

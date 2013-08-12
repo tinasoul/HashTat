@@ -8,6 +8,7 @@ Myapp::Application.routes.draw do
   root :to => "home#index"
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :users
+  match 'twitterfeed' => 'tattoos#twitterfeed'
   match 'search' => 'tattoos#search'
   resources :tattoos do
     resources :comments

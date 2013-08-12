@@ -7,18 +7,15 @@
 
 <!-- Masonry Container -->
 <div id="masonryContainer">
-    <% if @tattoos %> 
-      <% @tattoos.each do |tattoo| %>
+    <% if @photos %> 
+      <% @photos.each do |photo| %>
         <div class="masonry-brick">
-          <%= tweeted_a_photo(tattoo) %> 
+          <%= image_tag(photo)%>
         </div>
       <% end %>
-     <% end %> 
+    <% end %>
   <div class="masonry-brick">
-    <img src="http://placehold.it/500x600&text=Item">
-  </div>
-  <div class="masonry-brick">
-    <img src="http://placehold.it/500x700&text=Item">
+     <%#= link_to image_tag(@tweets[1].attached_photos[0].media_url) %> 
   </div>
   <div class="masonry-brick">
     <img src="http://placehold.it/500x400&text=Item">
@@ -60,6 +57,7 @@
     <img src="http://placehold.it/500x200&text=Item">
   </div>
 </div>
+<% unless current_user.type == "Artist" %>
   <div id="myModal" class="reveal-modal">
     <h2>Are You A Tattoo Artist?</h2>
     <p class="lead">Create Your Online Portfolio Now.</p>
@@ -75,6 +73,7 @@
     <%= form_tag "/change_to_artist" do %>
       <%= hidden_field_tag :change_artist, :value => "maybe" %>
       <%= submit_tag "I'll decide later" %>
+    <% end %>
 
 
 <% end %>

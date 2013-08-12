@@ -2,18 +2,21 @@
   #photo_div
     - if @tattoo.picture.present?
       #pic= image_tag @tattoo.picture_url(:medium)
-      #like_button
-        - if !current_user.voted_for?(@tattoo)
-          = render 'not_liked'
-        - else
-          = render 'liked'
+    - elsif @tattoo.twitter_photo.present?
+      #pic= image_tag @tattoo.twitter_photo
+    
+    #like_button
+      - if !current_user.voted_for?(@tattoo)
+        = render 'not_liked'
+      - else
+        = render 'liked'
 
     - if @user == current_user.id
       = link_to 'Edit', edit_tattoo_path(@tattoo) 
       = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
 
   #description
-    %p.title Story
+    %p.title Description
     %p.tattoo_description= @tattoo.description
 
     %p.title Location on Body
@@ -22,8 +25,6 @@
     %p.title Artist
     %p.tattoo_artist_name= @tattoo.artist_name
 
-    / %p.title Artist
-    / %p.tattoo_artist= @tattoo.artist_name
 
     %p.title studio
     %p.tattoo_studio= @tattoo.studio

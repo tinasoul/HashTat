@@ -1,7 +1,8 @@
 class Tattoo < ActiveRecord::Base
   acts_as_voteable
-  attr_accessible :picture, :description, :gender, :body_location, :studio, :artist_name, :hashtags, :location
+  attr_accessible :picture, :description, :gender, :body_location, :studio, :artist_name, :hashtags, :location, :twitter_photo
   mount_uploader :picture, PictureUploader
+  has_one :tweet
   has_many :comments
   belongs_to :artist, class_name: 'User', foreign_key: 'artist_id'
   belongs_to :user
