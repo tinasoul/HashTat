@@ -1,4 +1,4 @@
-h1. Hashtats
+h1. Hashtat
 
 A website that tracks tattoos you have, tattoos you like, and tattoos you want. Tattoo artists can also create public portfolios to share with prospective clients and employers.
 
