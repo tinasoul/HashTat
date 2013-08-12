@@ -292,4 +292,4 @@ DEPENDENCIES
   twitter
   uglifier (>= 1.0.3)
   will_paginate
-  zurb-foundation
+  zurb-foundation (~> 4.3.1)
