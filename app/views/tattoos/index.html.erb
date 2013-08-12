@@ -11,9 +11,7 @@
       <% @tattoos.each do |tattoo| %>
         <div class="masonry-brick">
           <%= tweeted_a_photo(tattoo) %> 
-        <%= link_to image_tag(tattoo.picture_url(:medium)), tattoo %>
-
-        <%= like_button(tattoo, current_user) %>
+          <%= like_button(tattoo, current_user) %>
         </div>
       <% end %>
      <% end %> 
