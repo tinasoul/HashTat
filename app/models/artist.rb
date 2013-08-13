@@ -1,13 +1,17 @@
 class Artist < ActiveRecord::Base
   belongs_to :user
   has_many :tattoos
-  attr_accessible :last_name, :first_name, :full_name, :location, :tattoo_shop, :avatar, :specialties, :bio, :instagram, :flickr, :twitter, :facebook, :cover_tattoo, :user_id
+  attr_accessible :last_name, :first_name, :full_name, :location, :tattoo_shop, :avatar, :specialties, :bio, :instagram, :flickr, :twitter, :facebook, :cover_tattoo, :user_id, :email, :phone, :tattoo_shop_url, :color_scheme
+  mount_uploader :avatar, AvatarUploader
+  mount_uploader :cover_photo, CoverphotoUploader
+
+
   require "uri"
 
   validates_presence_of :first_name
-  validates :twitter, :format => { without: /\W/, allow_blank: true, :message => 'Enter a vaild twitter handle without @.'}
+  validates :twitter, :format => { without: /\W/, allow_blank: true, :message => 'Enter a vaild twitter handle without @, or a link to your twitter.'}
   validates :flickr, :format => { without: /\W/, allow_blank: true, :message => 'Enter a valid flickr username or a link to your flickr profile.'}
-  validates :instagram, :format => { without: /\W/, allow_blank: true, :message => 'Enter a valid instagram username or a link to your instagram profile.'}
+  validates :instagram, :format => { without: /\W/, allow_blank: true, :message => 'Enter a valid instagram username without @, or a link to your instagram profile.'}
   validates :facebook, :format => { without: /\W/, allow_blank: true, :message => 'Enter a valid facebook url.'}
 
 

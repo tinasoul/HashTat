@@ -1,11 +1,24 @@
 // Place all the styles related to the artist_steps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Split foundation and overrides css file into two files called foundation, another called variables. 
+$primary-color: #16a085;  
+
 .number {
 	font-size:5em;
 	line-height:1em;
 	margin-bottom:0;
+	text-align:center;
 }
+
+p.text {
+	text-align:center;
+	font-size:1em;
+}
+
+
 
 // .box{
 // 	border:2px red solid;
@@ -14,3 +27,26 @@
 .current_step {
 	color:black;
 }
+
+.active_step {
+	color: darken($primary-color, 12%);
+}
+
+.inactive_step{
+	color: lighten($primary-color, 8%);
+}
+
+.back_style {
+	height: 6.25em;
+	background-color: rgba(0,0,0,.4);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+// form#new_artist{
+// 	float:right;
+// }
+// input:text{
+// 	width:100%;
+// }

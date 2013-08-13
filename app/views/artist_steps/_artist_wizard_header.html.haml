@@ -1,0 +1,24 @@
+- 2.times do 
+  %br
+.row
+  .back_style
+    .artist_new_step.large-3.columns{class:(@step == nil ? 'active_step' : 'inactive_step')}
+      %p.number
+        1
+      %p.text
+        The Basics
+    .personal_step.large-3.columns{class:(@step == :personal ? 'active_step' : 'inactive_step')}
+      %p.number 
+        2
+      %p.text
+        Career Info
+    .social_step.large-3.columns{class:(@step == :social ? 'active_step' : 'inactive_step')}
+      %p.number.last
+        3
+      %p.text.last
+        Contact Info
+    .page_style_step.large-3.columns{class:(@step == :page_style ? 'active_step' : 'inactive_step')}
+      %p.number.last
+        4
+      %p.text.last
+        Customization

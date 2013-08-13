@@ -1,18 +1,30 @@
-= render 'steps_header'
-= simple_form_for @artist, url: wizard_path do |f|
-  = f.error_notification
+= render 'artist_wizard_header'
 
-  .field
-    = f.input :instagram
+.row
+  .large-4.columns
+    %h3 Help your new fans get in touch with you.
+  .large-7.columns
+    = simple_form_for @artist, url: wizard_path do |f|
+      = f.error_notification
 
-  .field
-    = f.input :twitter
+      .field
+        = f.input :instagram
 
-  .field
-    = f.input :flickr
+      .field
+        = f.input :twitter
 
-  .field
-    = f.input :facebook
+      .field
+        = f.input :flickr
 
-  .form_actions
-    = f.button :submit, "Create My Portfolio", class: 'button'
+      .field
+        = f.input :facebook
+
+      .field
+        = f.input :email
+
+      .field
+        = f.input :phone
+
+
+      .form_actions
+        = f.button :submit, "Create My Portfolio", class: 'button'

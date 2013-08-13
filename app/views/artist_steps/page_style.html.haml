@@ -1,0 +1,20 @@
+= render 'artist_wizard_header'
+
+.row
+  .large-4.columns
+    %h3 Almost there. Now we've just got to customize your page.
+  .large-7.columns
+    = simple_form_for @artist, :html => {multipart: true}, url: wizard_path do |f|
+      = f.error_notification
+
+      .field
+        = f.input :avatar, :as => :file, :label => "Profile Picture"
+
+      .field
+        = f.input :cover_photo, :as => :file, :label => "Cover Photo"
+
+      .field
+        = f.input :color_scheme, :collection =>[['red',:red], ['turquoise', :turquoise],['purple',:indigo], ['yellow', :yellow]], :as => :radio_buttons
+
+      .form_actions
+        = f.button :submit, "Next", class: 'button'

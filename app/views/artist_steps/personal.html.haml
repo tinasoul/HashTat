@@ -1,15 +1,19 @@
-= render 'steps_header'
+= render 'artist_wizard_header'
 
-= simple_form_for @artist, url:wizard_path do |f|
-  = f.error_notification
+.row
+  .large-4.columns
+    %h3 Tell prospective clients and employers what you'll bring to the table.
+  .large-7.columns
+    = simple_form_for @artist, url:wizard_path do |f|
+      = f.error_notification
 
-  .field
-    = f.input :bio
+      .field
+        = f.input :bio
 
-  .field
-    = f.input :specialties
+      .field
+        = f.input :specialties
 
-  .form_actions
-    = f.button :submit, "Next", class: 'button'
+      .form_actions
+        = f.button :submit, "Next", class: 'button'
 
 

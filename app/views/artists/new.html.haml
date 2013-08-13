@@ -1,19 +1,28 @@
-/ = render 'artist_steps/steps_header'
-= simple_form_for(@artist) do |f|
-  = f.error_notification
+= render 'artist_steps/artist_wizard_header'
 
-  .field
-    = f.input :first_name
+.row
+  .large-4.columns
+    %h3 Let's start with the basics...
 
-  .field
-    = f.input :last_name
+  .large-7.columns
+    = simple_form_for(@artist) do |f|
+      = f.error_notification
 
-  .field
-    = f.input :location
+      .field
+        = f.input :first_name
 
-  .field
-    = f.input :tattoo_shop
+      .field
+        = f.input :last_name
 
-  .form_actions
-    = f.button :submit, "Next", class: 'button'
+      .field
+        = f.input :location
+
+      .field
+        = f.input :tattoo_shop
+
+      .field
+        = f.input :tattoo_shop_url, :label => "Tattoo shop's Website"
+
+      .form_actions
+        = f.button :submit, "Next", class: 'button'
 
