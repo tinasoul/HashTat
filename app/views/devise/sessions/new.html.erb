@@ -9,10 +9,11 @@
   <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
   <%= f.button :submit, "Log in", :class => 'btn-primary' %>
 <% end %>
-
+<br>
+<br>
 <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Log in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+      <%- User.omniauth_providers.each do |provider| %>
+        <%= link_to "Log In with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn' %><br />
   <% end -%>
 <% end -%>
 

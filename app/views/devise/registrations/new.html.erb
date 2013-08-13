@@ -1,4 +1,4 @@
-<h2>Almost there!</h2>
+<h2>Sign Up. Welcome, friend.</h2>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
 <!--   <%= f.error_notification %>  This added the line, "Please review..." -->
   <%= display_base_errors resource %>
@@ -9,6 +9,14 @@
   	<%= f.input :password_confirmation, :required => true %>
   <% end %>
   <%= f.button :submit, 'Let me see them tats', :class => 'btn-primary' %>
+  <br>
+  <br>
+  <br>
+  <%- if devise_mapping.omniauthable? %>
+        <%- User.omniauth_providers.each do |provider| %>
+        <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn' %><br />
+        <% end -%>
+  <% end -%>
 <% end %>
 
 
