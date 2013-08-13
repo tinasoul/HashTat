@@ -33,7 +33,10 @@ $(function(){
 
 
   $('#myModal').foundation('reveal', 'open');
-  $('#myModal').foundation('reveal', 'close');  
+  $('#myModal').foundation('reveal', 'close');
+
+
+
   $('.hover-bar').hide();
   $('.masonry-brick').hover(function(){
     $(this).find('.hover-bar').toggle();

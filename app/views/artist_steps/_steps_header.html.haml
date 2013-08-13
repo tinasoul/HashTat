@@ -1,0 +1,21 @@
+- 2.times do 
+  %br
+.row
+  .artist_new_step.large-4.columns
+    = link_to edit_artist_path(@artist) do
+      %p.number
+        1
+      %p.text
+        The Basics
+  .personal_step.large-4.columns
+    = link_to wizard_path(:personal) do
+      %p.number 
+        2
+      %p.text
+        Career Info
+  .social_step.large-4.columns
+    = link_to wizard_path(:social) do
+      %p.number
+        3
+      %p.text
+        Contact Info

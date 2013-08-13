@@ -32,6 +32,7 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'will_paginate'
 gem 'best_in_place'
+gem 'wicked'
 gem 'awesome_print'
 
 

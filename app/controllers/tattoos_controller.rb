@@ -9,7 +9,6 @@ class TattoosController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @tattoos }
     end
-
   end
 
   # GET /tattoos/1
@@ -47,12 +46,17 @@ class TattoosController < ApplicationController
   # POST /tattoos
   # POST /tattoos.json
   def create
-    @tattoo = current_user.tattoos.build(params[:tattoo])
+    tattoo_maker = if params[:tattoo][:artist_id]
+      Artist.find(params[:tattoo][:artist_id])
+    else
+      current_user
+    end
+    @tattoo = tattoo_maker.tattoos.build(params[:tattoo])
     
 
     respond_to do |format|
-      if @tattoo.save
-        format.html { redirect_to @tattoo, notice: 'Your tattoo was successfully created.' }
+      if tattoo_maker.save
+        format.html { redirect_to @tattoo, notice: 'Tattoo was successfully created.' }
         format.json { render json: @tattoo, status: :created, location: @tattoo }
       else
         format.html { render action: "new" }
@@ -90,8 +94,9 @@ class TattoosController < ApplicationController
   end
 
   def vote_up
-      @tattoo = Tattoo.find(params[:id])
+    @tattoo = Tattoo.find(params[:id])
     current_user.vote_for(@tattoo)
+    
     respond_to do |format|
       format.js {render 'vote'}
       format.html{redirect_to :back}

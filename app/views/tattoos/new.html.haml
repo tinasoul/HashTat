@@ -1,0 +1,9 @@
+
+- if params[:artist_id]
+	= render 'artist_tattoo_form'
+- else
+	= render 'user_tattoo_form'
+
+= link_to 'Back', root_path
+
+= params.inspect

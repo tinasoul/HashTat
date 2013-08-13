@@ -1,5 +1,5 @@
 Myapp::Application.routes.draw do
-  
+
   post '/change_to_artist' => 'users#change_to_artist'
 
   authenticated :user do
@@ -19,5 +19,9 @@ Myapp::Application.routes.draw do
       post :vote_down
     end
   end
+  resources :artists do
+    resources :tattoos
+  end
+  resources :artist_steps
 
 end

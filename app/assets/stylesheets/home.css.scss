@@ -51,8 +51,8 @@ html{
 }
 
 .row {
-  margin-top:-3.8em;
-  height: 0;
+  margin-bottom:0;
+  margin-top:-60px;
 }
 
 .log_in {
@@ -116,4 +116,8 @@ html{
 .sign_btn {
   opacity:1;
   display:inline;
+}
+
+.left {
+  margin:0 auto;
 }
