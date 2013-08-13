@@ -75,9 +75,12 @@ html{
 .login_background {
   height:100%;
   min-height:800px;
-  background-image: url('noheroes_scaled.jpg');
+  background-image: url('mban.jpg');
+  background-repeat: no-repeat; 
   background-size:100%;
   margin-top: 15px;
+  // background-color: #003e2c;
+  // background-color: #002d29;
 }
 
 .login_intro {
