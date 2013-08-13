@@ -23,10 +23,13 @@
           <li>
             <%= link_to "About", about_path %>
           </li>
-        <% if user_signed_in? %>
-          <li>
+           <li>
             <%= link_to "Twitterfeed", twitterfeed_path %>
           </li>
+        <% if user_signed_in? %>
+          <!-- <li> -->
+            <%#= link_to "Twitterfeed", twitterfeed_path %>
+         <!--  </li> -->
           <li>
             <%= link_to "Add a Tat", new_tattoo_path %>
           </li>
