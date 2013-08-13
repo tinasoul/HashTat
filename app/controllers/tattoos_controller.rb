@@ -1,5 +1,5 @@
 class TattoosController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index, :twitterfeed]
   layout "full-width", :only => [:index, :search, :twitterfeed]
   # GET /tattoos
   # GET /tattoos.json
