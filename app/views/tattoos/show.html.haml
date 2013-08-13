@@ -16,7 +16,11 @@
 
   #description
     %p.title Who added this tat?
-    %p.tattoo_adder= @tattoo.user.username
+    %p.tattoo_adder
+      - if @tattoo.artist
+        = @tattoo.artist.full_name
+      - else
+        = @tattoo.user.username
 
     %p.title Story
     %p.tattoo_description= @tattoo.description
