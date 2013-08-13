@@ -14,13 +14,15 @@
       = link_to 'Edit', edit_tattoo_path(@tattoo) 
       = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
 
-  #description
-    %p.title Who added this tat?
+    %br
+    %br
+    %p.title Tat Added By
     %p.tattoo_adder
       - if @tattoo.artist
         = @tattoo.artist.full_name
       - else
         = @tattoo.user.username
+  #description
 
     %p.title Story
     %p.tattoo_description= @tattoo.description
