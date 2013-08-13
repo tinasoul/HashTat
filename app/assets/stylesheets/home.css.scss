@@ -42,6 +42,10 @@ html{
 
 }
 
+.box_container{
+  min-width:1200px;
+}
+
 .top-bar {
   margin-bottom:0;
 }
@@ -83,16 +87,16 @@ html{
   // background-color: #002d29;
 }
 
-.login_intro {
-  padding: 3em;
-}
+// .login_intro {
+//   padding: 3em;
+// }
 
-.login_intro h1{
-  color: #FFBD2A;
-  text-align: center;
-  font-size: 2.5em;
-  text-shadow: 2px 2px 5px black, -2px -2px 5px black; 
-}
+// .login_intro h1{
+//   color: #FFBD2A;
+//   text-align: center;
+//   font-size: 2.5em;
+//   text-shadow: 2px 2px 5px black, -2px -2px 5px black; 
+// }
 
 .push{
   height:23em;
