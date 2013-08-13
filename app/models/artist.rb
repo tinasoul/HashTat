@@ -13,7 +13,8 @@ class Artist < ActiveRecord::Base
   validates :flickr, :format => { without: /\W/, allow_blank: true, :message => 'Enter a valid flickr username or a link to your flickr profile.'}
   validates :instagram, :format => { without: /\W/, allow_blank: true, :message => 'Enter a valid instagram username without @, or a link to your instagram profile.'}
   validates :facebook, :format => { without: /\W/, allow_blank: true, :message => 'Enter a valid facebook url.'}
-
+  validates_presence_of :bio, :message => 'Please enter a short bio. We want to know something about you!'
+  validates_presence_of :specialties, :message => "We know you're good at something!"
 
   # Public: Creates a "full name" for the artist, which is a combination of first and last name
   # If only first name exists, full name is set as first name
