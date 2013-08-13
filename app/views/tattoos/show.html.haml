@@ -16,7 +16,7 @@
 
   #description
     %p.title Who added this tat?
-    / %p.
+    %p.user= @tattoo.user.username
 
     %p.title Story
     %p.tattoo_description= @tattoo.description
