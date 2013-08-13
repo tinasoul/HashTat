@@ -20,16 +20,10 @@
  
       <!-- Right Nav Section -->
       <ul class="right">
-          <li>
+        <li>
             <%= link_to "About", about_path %>
           </li>
-           <li>
-            <%= link_to "Twitterfeed", twitterfeed_path %>
-          </li>
         <% if user_signed_in? %>
-          <!-- <li> -->
-            <%#= link_to "Twitterfeed", twitterfeed_path %>
-         <!--  </li> -->
           <li>
             <%= link_to "Add a Tat", new_tattoo_path %>
           </li>
@@ -56,15 +50,16 @@
                 <!-- </li> -->
               <%# end %>
               <!-- <li> -->  
-           
               <li>
               <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
-              <li>
-              </ul>
+            <li>
+          </ul>
+        </li>
+        <% else %>
+          <li>
+            <%= link_to "Twitterfeed", twitterfeed_path %>
           </li>
-
         <% end %>
-
       </ul>
     </section>
   </nav>

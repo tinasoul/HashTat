@@ -8,5 +8,9 @@ layout "full-width", :only => [:index]
 
   end
 
+  def preview
+
+  end
+
 
 end

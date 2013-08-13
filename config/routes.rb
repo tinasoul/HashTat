@@ -11,6 +11,7 @@ Myapp::Application.routes.draw do
   match 'twitterfeed' => 'tattoos#twitterfeed'
   match 'search' => 'tattoos#search'
   match 'about' => 'home#about'
+  match 'preview' => 'home#preview'
   resources :tattoos do
     resources :comments
     member do 
