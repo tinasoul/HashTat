@@ -2,26 +2,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.artist_career {
-	background-color:red;
+.artist_bio {
 	float:left;
+	margin-bottom: 50px;
 }
 
-.about_artist {
-	background-color:red;
+.arttatshow {
+	margin-bottom: 50px;
 }
 
 .portfolio_tattoos{
 	margin:0 auto;
 	height:400px;
 	width:600px;
-	background-color:red;
 }
 
 .social {
-	background-color:red;
+	line-height: 15px;
 }
 
-.artist_page p {
+.artist_page {
 	font-size:1em;
+	background-image: url("http://maudlintales.files.wordpress.com/2012/04/the-tattooist.jpg");
+	background-size: 100% auto;
+	height: 350px;
+   -moz-box-shadow:    inset 0 0 30px #000000;
+   -webkit-box-shadow: inset 0 0 30px #000000;
+   box-shadow:         inset 0 0 30px #000000;
 }
+
+.artistpic {
+	padding-top: 220px;
+	padding-left: 30px;
+	height: 200px;
+	width: 200px;
+}
+
+.username {
+	float: right;
+	padding-top: 275px;
+	padding-right: 20px;
+	h1 {
+		color: white;
+		text-shadow: 2px 2px black;
+	}
+}
+
+ul.breadcrumbs{
+	line-height: 15px;
+	li {
+		float: right;
+		font-size: 20px;
+		vertical-align: middle;
+	}
+}
+
+.tatcontain {
+	margin: 10px;
+}
+
+/*h2 {
+	float: right;
+}
+*/
