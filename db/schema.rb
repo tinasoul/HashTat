@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20130813221905) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "user_id"
-    t.string   "studio_url"
     t.string   "tattoo_shop_url"
     t.string   "email"
     t.string   "phone"

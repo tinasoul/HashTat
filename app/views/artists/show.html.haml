@@ -14,12 +14,14 @@
         = build_link(@artist,:twitter)
       = if_social(@artist, :instagram) do
         = build_link(@artist,:instagram)
+      = if_social(@artist, :email) do
+        = link_to(image_tag("#{artist.email}"), email-4-48.png)
   %br
   %li
   %li.current
     %a{:href => "#"} #{@artist.location}
   %li
-    %a{:href => "http://www.atomic-tattoo.com/"} #{@artist.tattoo_shop} Tattoo Shop
+    %a{:href => "#{@artist.tattoo_shop_url}"} #{@artist.tattoo_shop} Tattoo Shop
 
 .row
   .artist_bio.large-4.columns
