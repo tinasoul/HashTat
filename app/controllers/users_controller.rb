@@ -17,15 +17,18 @@ class UsersController < ApplicationController
   end
   
   def update
-    authorize! :update, @user, :message => 'Not authorized as an administrator.'
     @user = User.find(params[:id])
+    # authorize! :update, @user, :message => 'Not authorized as an administrator.'
+    
 
-    if @user.update_attributes(params[:user], :as => :admin)
-      format.html redirect_to users_path, :notice => "User updated."
-      format.json { respond_with_bip(@user) }
-    else
-      format.html { render action: "edit"}
-      format.json { respond_with_bip(@user) }
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to users_path, :notice => "User updated."}
+        format.json { respond_with_bip(@user) }
+      else
+        format.html { render action: "edit"}
+        format.json { respond_with_bip(@user) }
+      end
     end
     # Works with best_in_place gem
     # if @user.update_attributes(params[:user], :as => :admin)
