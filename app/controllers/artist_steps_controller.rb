@@ -19,7 +19,12 @@ class ArtistStepsController < Wicked::WizardController
 private
 
   def finish_wizard_path
-    artist_path(current_user.artist)
+    @artist = current_user.artist
+    if @artist.vanity_url.empty?
+      artist_path(current_user.artist.id)
+    else
+      artist_path(current_user.artist.vanity_url)
+    end
   end
   
 end
