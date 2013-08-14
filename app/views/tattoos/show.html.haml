@@ -16,12 +16,14 @@
 
     %br
     %br
-    %p.title Tat Added By
-    %p.tattoo_adder
       - if @tattoo.artist
-        = @tattoo.artist.full_name
+        %p.title Inked By
+        %p.tattoo_adder 
+          = link_to "#{@tattoo.artist.full_name}", artist_path(@tattoo.artist)
       - else
-        = @tattoo.user.username
+        %p.title Added By
+        %p.tattoo_adder 
+          = link_to "#{@tattoo.user.username}", user_path(@tattoo.user)
   #description
 
     %p.title Story
@@ -35,7 +37,6 @@
 
     %p.title Artist
     %p.tattoo_artist_name= @tattoo.artist_name
-
 
     %p.title studio
     %p.tattoo_studio= @tattoo.studio
