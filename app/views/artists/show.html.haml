@@ -39,7 +39,7 @@
         This artist hasn't added any tattoos to their portfolio yet.
     - else
       - @artist.tattoos.each do |tattoo|
-        .tatcontain.large-2.columns
+        .tatcontain.large-3.columns
           = link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo
       - if user_signed_in?
         - if @artist.user_id == current_user.id
