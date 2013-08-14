@@ -11,4 +11,7 @@
 				.artisttext
 					= link_to "#{artist.full_name}", artist_path(artist.id)
 					%br
-					= "#{artist.location}"
+					- if artist.location
+						= "#{artist.location}"
+					- else
+						= "Paris, Texas"
