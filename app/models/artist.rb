@@ -1,6 +1,7 @@
 class Artist < ActiveRecord::Base
   belongs_to :user
   has_many :tattoos
+  has_many :comments
   attr_accessible :last_name, :first_name, :full_name, :location, :tattoo_shop, :avatar, :specialties, :bio, :instagram, :flickr, :twitter, :facebook, :cover_tattoo, :user_id, :email, :phone, :tattoo_shop_url, :color_scheme
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover_photo, CoverphotoUploader

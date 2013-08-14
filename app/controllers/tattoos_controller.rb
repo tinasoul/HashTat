@@ -18,6 +18,7 @@ class TattoosController < ApplicationController
     @comment = @tattoo.comments.build
     @comments = @tattoo.comments
     @user = @tattoo.user_id
+    
     @current_url = request.original_url
     
     respond_to do |format|
@@ -55,9 +56,14 @@ class TattoosController < ApplicationController
     
 
     respond_to do |format|
-      if tattoo_maker.save
-        format.html { redirect_to @tattoo, notice: 'Tattoo was successfully created.' }
-        format.json { render json: @tattoo, status: :created, location: @tattoo }
+      if @tattoo.save
+        if params[:tattoo][:artist_id]
+          format.html {redirect_to artist_path(params[:tattoo][:artist_id])}
+          format.json { render json: @tattoo, status: :created, location: @tattoo }
+        else
+          format.html { redirect_to @tattoo, notice: 'Tattoo was successfully created.' }
+          format.json { render json: @tattoo, status: :created, location: @tattoo }
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @tattoo.errors, status: :unprocessable_entity }
