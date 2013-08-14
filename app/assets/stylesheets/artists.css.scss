@@ -57,7 +57,16 @@ ul.breadcrumbs{
 	}
 }
 
-.tatcontain,
+.tatcontain {
+	margin: 10px;
+}
+
 .artistcontainer {
 	margin: 10px;
+	text-align: center;
+	padding: 10px;
+}
+
+.artisttext {
+	padding-top: 10px;
 }
