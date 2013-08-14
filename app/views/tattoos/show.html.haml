@@ -26,26 +26,33 @@
           = link_to "#{@tattoo.user.username}", user_path(@tattoo.user)
   #description
 
-    %p.title Story
-    %p.tattoo_description= @tattoo.description
+    - if @tattoo.description.present?
+      %p.title Story
+      %p.tattoo_description= @tattoo.description
 
-    %p.title Gender
-    %p.tattoo_gender= @tattoo.gender
+    - if @tattoo.gender.present?
+      %p.title Gender
+      %p.tattoo_gender= @tattoo.gender
 
-    %p.title Location on Body
-    %p.tattoo_body_location= @tattoo.body_location
+    - if @tattoo.body_location.present?
+      %p.title Location on Body
+      %p.tattoo_body_location= @tattoo.body_location
 
-    %p.title Artist
-    %p.tattoo_artist_name= @tattoo.artist_name
+    - if @tattoo.artist_name.present?
+      %p.title Artist
+      %p.tattoo_artist_name= @tattoo.artist_name
 
-    %p.title studio
-    %p.tattoo_studio= @tattoo.studio
+    - if @tattoo.studio.present?
+      %p.title studio
+      %p.tattoo_studio= @tattoo.studio
 
-    %p.title Location
-    %p.tattoo_location= @tattoo.location
+    - if @tattoo.location.present?
+      %p.title Location
+      %p.tattoo_location= @tattoo.location
 
-    %p.title HashTags
-    %p.tattoo_hashtags= @tattoo.hashtags
+    - if @tattoo.hashtags.present?
+      %p.title HashTags
+      %p.tattoo_hashtags= @tattoo.hashtags
 
 #comments
 = render 'comments'

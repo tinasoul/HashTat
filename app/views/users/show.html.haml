@@ -17,7 +17,7 @@
     .rightside.large-offset-1.column.large-8.columns
       %h1 My Ink
       %hr
-      - if @user.tattoos == 0
+      - if @user.tattoos.size == 0
         = "This user has not added any Ink."
       - else
         - @tattoos.each do |tattoo|
