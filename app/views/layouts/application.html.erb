@@ -5,6 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "HashTat" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "HashTat" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -13,15 +14,7 @@
 
   <body class="<%= controller_name %> <%= action_name %>">
  
- <!-- Facebook Like JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1376057452618930";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
    
 
 <!-- Nav -->
@@ -54,8 +47,16 @@
         <%= yield %>
       </div>
     </div>
+    
+ <!-- Facebook Like JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1376057452618930";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-
-    <%= javascript_include_tag "application" %>
   </body>
 </html>
