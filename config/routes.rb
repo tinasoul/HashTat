@@ -11,7 +11,7 @@ Myapp::Application.routes.draw do
   match 'preview' => 'tattoos#preview'
   match 'search' => 'tattoos#search'
   match 'about' => 'home#about'
-  match 'preview' => 'home#preview'
+  match 'quickpreview' => 'home#quickpreview'
   resources :tattoos do
     resources :comments
     member do 
