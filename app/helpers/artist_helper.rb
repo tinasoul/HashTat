@@ -42,3 +42,13 @@ module ArtistHelper
   end
 
 end
+
+  # Public: Supplies default image if avatar is not present.
+
+  def artist_av(artist)
+    if artist.avatar
+      image_tag ("#{artist.avatar}")
+    else
+      image_tag ("avatardefault.gif")
+    end
+  end
