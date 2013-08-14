@@ -12,6 +12,7 @@ class ArtistsController < ApplicationController
   end
 
   def edit
+    @artist = Artist.find(params[:id])
   end
 
   # Creates the artist through the user model
@@ -25,6 +26,17 @@ class ArtistsController < ApplicationController
   end
 
   def update
+    @artist = Artist.find(params[:id])
+
+    respond_to do |format|
+      if @artist.update_attributes(params[:artist])
+        format.html { redirect_to @artist, notice: 'Your profile was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @artist.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
