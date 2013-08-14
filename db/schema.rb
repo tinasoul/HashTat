@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814004226) do
+ActiveRecord::Schema.define(:version => 20130814165136) do
 
   create_table "artists", :force => true do |t|
     t.string   "first_name"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20130814004226) do
     t.string   "full_name"
     t.string   "location"
     t.string   "tattoo_shop"
-    t.string   "avatar"
+    t.string   "avatar",          :default => "hashlogo.png"
     t.string   "specialties"
     t.text     "bio"
     t.string   "instagram"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(:version => 20130814004226) do
     t.string   "twitter"
     t.string   "facebook"
     t.string   "cover_photo"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.integer  "user_id"
     t.string   "tattoo_shop_url"
     t.string   "email"
