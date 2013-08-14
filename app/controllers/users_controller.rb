@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:index]
 
-  def index
-    authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @users = User.all
-  end
 
   def show
     @user = User.find(params[:id])
@@ -23,7 +19,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to users_path, :notice => "User updated."}
+        format.html { redirect_to user_path(@user), :notice => "User updated."}
         format.json { respond_with_bip(@user) }
       else
         format.html { render action: "edit"}
