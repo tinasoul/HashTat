@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :location, :memorable_story, :about_me
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :location, :memorable_story, :about_me, :avatar
   
   # Establish relationships between models
   has_many :tattoos
