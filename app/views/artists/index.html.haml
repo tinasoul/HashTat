@@ -2,8 +2,8 @@
 	.artistsindex.large-12.columns
 		%h1 Browse Tattoo Artists
 		- @artists.each do |artist|
-			.artistcontainer.large-2.columns.end.panel
-				- if artist.avatar_url
+			.artistcontainer.large-2.columns.panel.end
+				- if artist.avatar_url.present?
 					= image_tag ("hashlogo.png")
 				- else
 					= image_tag ("avatardefault.gif")
@@ -11,7 +11,7 @@
 				.artisttext
 					= link_to "#{artist.full_name}", artist_path(artist.id)
 					%br
-					- if artist.location
+					- if artist.location.present?
 						= "#{artist.location}"
 					- else
 						= "Paris, Texas"
