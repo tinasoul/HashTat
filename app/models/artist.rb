@@ -2,13 +2,14 @@ class Artist < ActiveRecord::Base
   belongs_to :user
   has_many :tattoos
   has_many :comments
-  attr_accessible :last_name, :first_name, :full_name, :location, :tattoo_shop, :avatar, :specialties, :bio, :instagram, :flickr, :twitter, :facebook, :cover_tattoo, :user_id, :email, :phone, :tattoo_shop_url, :color_scheme
+  attr_accessible :last_name, :first_name, :full_name, :location, :tattoo_shop, :avatar, :specialties, :bio, :instagram, :flickr, :twitter, :facebook, :cover_tattoo, :user_id, :email, :phone, :tattoo_shop_url, :color_scheme, :vanity_url
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover_photo, CoverphotoUploader
 
 
   require "uri"
-
+  validates_uniqueness_of :vanity_url, allow_blank: true, :message => 'url not available'
+  validates_format_of :vanity_url, :without => /^\d/, allow_blank:true
   validates_presence_of :first_name
   validates :twitter, :format => { without: /\W/, allow_blank: true, :message => 'Enter a vaild twitter handle without @, or a link to your twitter.'}
   validates :flickr, :format => { without: /\W/, allow_blank: true, :message => 'Enter a valid flickr username or a link to your flickr profile.'}
@@ -26,6 +27,18 @@ class Artist < ActiveRecord::Base
       self.full_name = full_name
     else
       self.full_name = self.first_name
+    end
+  end
+
+  def to_param
+    self.vanity_url
+  end
+
+  def self.find(input)
+    if input.to_i != 0
+      super
+    else
+        find_by_vanity_url(input)
     end
   end
 
