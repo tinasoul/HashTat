@@ -10,6 +10,10 @@ class ArtistsController < ApplicationController
   end
 
   def new
+    if current_user.artist
+      redirect_to artist_path(current_user.artist)
+    end
+
     @artist = Artist.new
   end
 
