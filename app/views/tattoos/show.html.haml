@@ -9,6 +9,7 @@
     #photo
       = show_tattoo_photo(@tattoo)
     = like_button(@tattoo, current_user)
+    = params.inspect
 
     - if @user == current_user.id
       = link_to 'Edit', edit_tattoo_path(@tattoo) 

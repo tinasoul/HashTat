@@ -18,6 +18,7 @@ class TattoosController < ApplicationController
     @comment = @tattoo.comments.build
     @comments = @tattoo.comments
     @user = @tattoo.user_id
+    
     @current_url = request.original_url
     
     respond_to do |format|
@@ -55,7 +56,7 @@ class TattoosController < ApplicationController
     
 
     respond_to do |format|
-      if tattoo_maker.save
+      if @tattoo.save
         format.html { redirect_to @tattoo, notice: 'Tattoo was successfully created.' }
         format.json { render json: @tattoo, status: :created, location: @tattoo }
       else

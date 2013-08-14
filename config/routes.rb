@@ -21,6 +21,7 @@ Myapp::Application.routes.draw do
   end
   resources :artists do
     resources :tattoos
+    resources :comments
   end
   resources :artist_steps
 

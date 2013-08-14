@@ -1,0 +1,22 @@
+%h3= "#{@artist.full_name}'s Reviews"
+- @comments.each do |comment|
+  - if comment.id
+    .comment_div
+      %div.user= link_to comment.user.username, comment.user
+      %div.comment_content= comment.comment_content
+
+%hr
+= form_for [@artist, @comment] do |f|
+
+  - if @comment.errors.any? 
+    #error_explanation
+      %h2= pluralize(@comment.errors.count, "error") +'prohibited this comment from being saved:'
+
+  %ul
+    - @artist.errors.full_messages.each do |msg| 
+      %li= msg
+
+  .field
+    = f.text_area :comment_content, :placeholder => "What do you think of #{@artist.full_name}'s work?"
+  
+  = f.submit "Review #{@artist.full_name}", class: 'button tiny'
