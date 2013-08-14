@@ -9,6 +9,6 @@
 					= image_tag ("avatardefault.gif")
 				%br
 				.artisttext
-					= link_to "#{artist.full_name}", artist_path(artist)
+					= link_to "#{artist.full_name}", artist_path(artist.id)
 					%br
 					= "#{artist.location}"
