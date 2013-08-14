@@ -1,6 +1,6 @@
 class TattoosController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :twitterfeed]
-  layout "full-width", :only => [:index, :search, :twitterfeed]
+  before_filter :authenticate_user!, :except => [:index, :preview]
+  layout "full-width", :only => [:index, :search, :preview]
   # GET /tattoos
   # GET /tattoos.json
   def index
@@ -125,7 +125,7 @@ class TattoosController < ApplicationController
     render "index"
   end  
 
-    def twitterfeed
+    def preview
       @tweets = Tweet.order('created_at DESC')
       @photos = []
       @tweets.each do |tweet|
