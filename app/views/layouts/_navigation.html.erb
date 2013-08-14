@@ -4,19 +4,12 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <%= link_to "H A S H T A T", root_path %>
+          <%= link_to "# H A S H T A T", root_path %>
         </h1>
       </li>
     </ul>
  
     <section class="top-bar-section">
-      <!-- Left Nav Section -->
-<!--       <ul class="left">
-        <li class="divider"></li>
-        <li>
-          <%= link_to image_tag("hashtatlogo_03.gif", :align=> "left"), root_path, :class => 'logo' %>
-        </li>
-      </ul> -->
  
       <!-- Right Nav Section -->
       <ul class="right">
@@ -30,16 +23,12 @@
           <li id="search">
            <%= form_tag '/search', :method => :get do %>
             <%= text_field_tag :q, params[:q], :placeholder => "search" %>
-            <!-- <%= submit_tag "search" %> -->
           </li>
           <% end %>
           <li class="has-dropdown">
             <%=link_to current_user.username, user_path(current_user) %>
 
             <ul class="dropdown">
-              <li>
-              <%= link_to 'My User Profile', user_path(current_user)  %>
-              </li>
 
               <% if current_user.artist %>
                 <li>
@@ -51,12 +40,6 @@
               <li>
               <%= link_to 'Settings', edit_user_registration_path %>
               </li>
-              <%# if current_user.has_role? :admin %>
-                <!-- <li> -->
-                <%#= link_to 'Admin', users_path %>
-                <!-- </li> -->
-              <%# end %>
-              <!-- <li> -->  
               <li>
               <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
             <li>

@@ -1,6 +1,26 @@
 .user_tat {
 	display:inline-block;
-	width:24%;
+	width:50%;
 	margin-bottom: 5px;
+}
 
+.leftside{
+	padding: 2em;
+/*	img {
+		box-shadow: 5px 5px 5px #888888;
+	}*/
+	box-shadow: 5px 5px 5px #888888;
+
+}
+
+.rightside{
+	margin-top: 5em;
+}
+
+.usernametitle {
+	text-align: center;
+	text-shadow: 2px 2px white;
+	h1 {
+		color: #16a085;
+	}
 }

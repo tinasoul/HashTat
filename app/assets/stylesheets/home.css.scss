@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html{
-  height:100%;
-}
-
 .login_container {
   position:fixed;
   height:100%;
@@ -77,36 +73,21 @@ html{
 }
 
 .login_background {
-  height:100%;
-  min-height:800px;
-  background-image: url('mban.jpg');
-  background-repeat: no-repeat; 
-  background-size:100%;
   margin-top: 15px;
-  // background-color: #003e2c;
-  // background-color: #002d29;
+  background: url(mban.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-
-// .login_intro {
-//   padding: 3em;
-// }
-
-// .login_intro h1{
-//   color: #FFBD2A;
-//   text-align: center;
-//   font-size: 2.5em;
-//   text-shadow: 2px 2px 5px black, -2px -2px 5px black; 
-// }
 
 .push{
   height:23em;
 }
-/*Ensures that the picture covers the entire page.*/
 
 .footer {
-    height: 200px;
-    clear: both !important;
-
+  height: 200px;
+  clear: both !important;
 }
 
 .active {
