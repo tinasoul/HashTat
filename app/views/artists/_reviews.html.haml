@@ -6,7 +6,7 @@
       %div.comment_content= comment.comment_content
 
 %hr
-= form_for [@artist, @comment] do |f|
+= form_for(@comment, :url => "/artists/#{@artist.id}/comments") do |f|
 
   - if @comment.errors.any? 
     #error_explanation

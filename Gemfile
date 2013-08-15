@@ -49,6 +49,7 @@ group :development do
   gem 'sunspot_solr'
   gem 'progress_bar'
   gem 'sqlite3'
+  gem 'debugger'
 end
 
 group :development, :test do

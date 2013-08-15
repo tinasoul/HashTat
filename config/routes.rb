@@ -19,10 +19,13 @@ Myapp::Application.routes.draw do
       post :vote_down
     end
   end
+
+ 
   resources :artists do
     resources :tattoos
     resources :comments
   end
   resources :artist_steps
+  # post '/artists/:artist_id/comments' => 'comments#create', as: 'create_comment'
 
 end
