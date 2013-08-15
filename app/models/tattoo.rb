@@ -10,7 +10,7 @@ class Tattoo < ActiveRecord::Base
 
   if Rails.env.production?
     searchable do 
-      text :description, :gender, :body_location, :studio, :artist_name, :hashtags, :location
+      text :description, :gender, :body_location, :studio, :artist_name, :hashtags, :location, :artist, :user
     end
 
     def self.search(query, params={})
