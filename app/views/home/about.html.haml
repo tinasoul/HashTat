@@ -1,32 +1,49 @@
-/ .row
-/ 	.hashtatabout.large-12.columns
-/ 		= image_tag("hashlogo.png")
-/ 	.large-4.columns.panel
-/ 		= "tina"
-/ 	.large-4.columns.panel
-/ 		= "shannon"
-/ 	.large-4.columns.panel
-/ 		= "doa"
+.abouttext.large-12.columns
+  %h1 HASHTAT
+  %p.top
+    is a community for tattoo art and the stories behind the ink. We're three art-loving women who learned to code in 10 weeks, culminating in hashtat.com. We attended Austin's first development bootcamp,
+    = succeed "," do
+      %a{:href => "http://www.themakersquare.com"} MakerSquare
+    and didn't know a lick of code prior to the experience.
 
-%p
-  H A S H T A T is a community for tattoo art and the stories behind them.
+
+.row.pics
+  .large-4.columns
+    .avatar.shannon
+      = image_tag("cshannon.gif")
+      %p Shannon
+      %p.bio 
+        The Back End Beast
+        %br @s_byrne
+  .large-4.columns
+    .doa.avatar
+      = image_tag("cdoa.gif")
+      %p Doa
+      %p.bio 
+        The Front End Freak
+        %br @doaboa
+  .large-4.columns
+    .tina.avatar
+      = image_tag("ctina.gif")
+      %p Tina
+      %p.bio 
+        The Merge Master
+        %br @tinapshah
+
+.subtext.large-6.columns
+  %h1 PLUS ONE
   %p
+    We stand on the shoulders of the patient teachers, mentors and coders who believed in us and inspire us to keep building.
     %p
-      3 art-loving women, Tina (@tinapshah), Shannon (@), and Doa (@), learned how to code a website in 10 weeks, resulting in hashtat.com. They attended Austin's first development bootcamp, MakerSquare, and did not know a lick of code prior to the experience.
-      %p
-        %p
-          H A S H T A T lives through both the emotional and financial support from those that profoundly care about creation, community and art. We thank you kindly for your support.
-          %p
-            %p
-              Add a Donate button
-              %p
-                %p
-                  We stand on the shoulders of those patient few teachers that believed in us and who inspire us to keep building.
-                  %p
-                    %p
-                      Credits: MakerSquare founders and classmates, Matt Tschlogel, Sonny Gonzales, Silas Rioux, Matthew Buck, Mike Ornellas, Nathaniel Jones, Micah Frazier, Aron Scruggs, Scott Bellware, Mando Escamilla, Damon Clinkscales, Christina Day, Sam Kapila, Nick Zadrozny, and Andres Angulo.
-                      %p
-                        %p
-                          Contact us @mrhastat or mrhashtat@gmail.com
-                          %p
+      Many thanks to the MKS founders, Aaron Scruggs, Micah Frazier, Gilbert Garza, Matthew Buck, Mike Ornellas, Nathaniel Jones, Christina Day, Scott Bellware, Mando Escamilla, Damon Clinkscales, Sam Kapila, Nick Zadrozny, and Andres Angulo.
+
+
+.subtext.large-offset-1.columns.large-5.columns
+  %h1 CONTACT
+  %p 
+    We built HashTat for you, so when it comes to your feedback, we're all ears. Let us know if you found a bug, if you have ideas to make the site better, or just to say hi.  We like people with tattoos.
+    %p
+      Tweet us @mrhashtat or shoot an e-mail to
+      = succeed "," do
+        %a{:href => "mailto:mrhashtat@gmail.com"} mrhashtat@gmail.com
 

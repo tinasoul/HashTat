@@ -9,7 +9,6 @@
   min-height:100%;
   height: auto !important;
   margin: 0 auto -4em;
-  min-width:1150px;
   margin-top: 45px;
 }
 
@@ -19,16 +18,13 @@
 }
 
 .sign_up {
-  margin-left:15%;
-  width:25em;
-  height: 500px;
-  display:inline-block;
-  padding:1em;
-  border-radius:5px;
-  margin-top:2em;
-  background-color: black;
-  background-color: rgba(0,0,0,.5);
-  color:white;
+  background: rgba(0,0,0,.5);
+  border-radius: 5px;
+  color: white;
+  padding: 1em;
+  margin: 2em auto;
+  text-align: left;
+  width: 25em; height: 500px;
   h2 {
     color:white;
   }
@@ -36,10 +32,6 @@
     color:white;
   }
 
-}
-
-.box_container{
-  min-width:1200px;
 }
 
 .top-bar {
@@ -52,17 +44,12 @@
 }
 
 .log_in {
-  display:inline-block;
-  height: 500px;
-  width:25em;
-  padding:1em;
-  border-radius:5px;
-  float:right;
-  margin-right:15%;
-  margin-top:2em;
-  background-color: black;
-  background-color: rgba(0,0,0,.5);
-  color:white;
+  color: white;
+  background: rgba(0,0,0,.5);
+  border-radius: 5px;
+  padding: 1em;
+  margin: 2em auto;
+  width: 25em; height: 500px;
   h2 {
     color:white;
   }
@@ -105,4 +92,142 @@
 
 .hashtatabout {
   margin: 10px;
+}
+
+
+//About Page
+
+.abouttext {
+  text-align: center;
+  padding-bottom: 2.5em;
+  h1 {
+    display: inline;
+    position: relative;
+    font: 200px Helvetica, Sans-Serif;
+    letter-spacing: -5px;
+    color: rgba(22, 160, 133,0.8); 
+  }
+
+
+  h1:after {
+    content: "HASHTAT";
+    position: absolute; left: 10px; top: 5px;
+    color: rgba(46, 204, 113,0.5);   
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  p.top {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.pics {
+  height: 20em;
+}
+
+.avatar {
+  text-align: center;
+
+  img {
+    height: 200px;
+    margin: 0 0 2em 0;
+    position: relative;
+
+    -webkit-transition: top 0.5s ease-out; 
+    -moz-transition: top 0.5s ease-out; 
+    -o-transition: top 0.5s ease-out;
+
+    -webkit-filter: grayscale(1.0);
+  }
+
+  p {
+    font-size: 50px;
+    font-weight: 300; 
+    position: relative;
+    text-transform: uppercase;
+
+    -webkit-transition: top 0.5s ease; 
+    -moz-transition: top 0.5s ease; 
+    -o-transition: top 0.5s ease; 
+  }
+
+  p.bio {
+    font-size: 20px;
+    text-transform: none;
+    opacity: 0.0;
+  }
+
+}
+
+.avatar:hover {
+  img { 
+    height: 200px;
+    top: -8px;
+    -webkit-filter: grayscale(0.0);
+   }
+
+  p   { 
+    top: 10px;
+    color: rgba(22, 160, 133,1.0);
+    margin-bottom: .5em;
+    }
+
+  p.bio {
+    opacity: 1.0;
+  }
+
+}
+
+.subtext {
+  text-align: center;
+  padding-bottom: 2.5em;
+  h1 {
+    display: inline;
+    position: relative;
+    font: 100px Helvetica, Sans-Serif;
+    letter-spacing: -5px;
+    color: rgba(46, 204, 113,0.6); 
+  }
+
+
+  // h1:after {
+  //   content: "Thanks";
+  //   position: absolute; left: 5px; top: 3px;
+  //   color: rgba(46, 204, 113,0.5);   
+  // }
+
+  p {
+    font-size: 15px;
+  }
+
+  p.top {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.qptext {
+  margin: 2em auto;
+  width: 40em;
+  text-align: center;
+}
+
+.qpsign_up {
+  background: rgba(0,0,0,.5);
+  border-radius: 5px;
+  color: white;
+  padding: 1em;
+  margin: 2em auto;
+  width: 25em; height: 500px;
+  h2 {
+    color:white;
+  }
+  label,abbr {
+    color:white;
+  }
+
 }
