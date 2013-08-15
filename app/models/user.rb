@@ -17,17 +17,17 @@ class User < ActiveRecord::Base
   has_one :artist
 
   # Calling the Tweet table not twitter api
-  after_create :assign_tweets_to_tattoos
+  # after_create :assign_tweets_to_tattoos
 
-  def assign_tweets_to_tattoos
-    if Tweet.where(:handle => self.username).present?
-      Tweet.where(:handle => self.username).each do |entry|
-        entry.attached_photos.each do |photo|
-          Tattoo.create(user_id: self.id, twitter_photo: photo.media_url, hashtags: entry.hashtags)
-        end
-      end
-    end
-  end
+  # def assign_tweets_to_tattoos
+  #   if Tweet.where(:handle => self.username).present?
+  #     Tweet.where(:handle => self.username).each do |entry|
+  #       entry.attached_photos.each do |photo|
+  #         Tattoo.create(user_id: self.id, twitter_photo: photo.media_url, hashtags: entry.hashtags)
+  #       end
+  #     end
+  #   end
+  # end
 
 
   def self.from_omniauth(auth)

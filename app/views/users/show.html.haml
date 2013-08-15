@@ -2,7 +2,10 @@
   .large-12.columns
     .leftside.large-3.columns.panel
       .avatarshow
-        = image_tag (@user.avatar)
+        - if @user.avatar.present?
+          = image_tag (@user.avatar)
+        - else
+          = image_tag ("hashlogo.png")
       .usernametitle
         %h1 #{@user.username}
         %hr
