@@ -30,6 +30,10 @@ module ApplicationHelper
     else
       link_to image_tag(tattoo.twitter_photo), tattoo 
     end
+  rescue
+    link_to(tattoo) do
+      image_tag 'hashlogo.png'
+    end
   end
 
   def show_tattoo_photo_profile(tattoo)
