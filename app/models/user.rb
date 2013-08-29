@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  validates_length_of :username, :maximum => 15, :allow_blank => false
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :location, :memorable_story, :about_me, :avatar
