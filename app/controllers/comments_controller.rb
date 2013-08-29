@@ -10,4 +10,15 @@ class CommentsController < ApplicationController
     redirect_to :back
   end
 
+  def destroy
+  	@tattoo = Tattoo.find(params[:tattoo_id])
+  	@comment = @tattoo.comments.find(params[:id])
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to tattoo_path(@tattoo) }
+      format.json { head :no_content }
+    end
+  end
+
 end
