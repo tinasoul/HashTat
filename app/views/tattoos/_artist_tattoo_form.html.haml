@@ -8,7 +8,8 @@
   .field
     = f.input :description
   .field
-    = f.input :body_location
+    = f.input :body_location,
+    :collection => [['shoulder',:shoulder], ['arm',:arm], ['upper back',:upper_back], ['torso',:torso], ['lower back',:lower_back], ['face',:face], ['neck',:neck], ['calf',:calf], ['leg',:leg], ['other', :other]]
   .field
     = f.input :studio
     = f.hidden_field :artist_id, :value => params[:artist_id]
