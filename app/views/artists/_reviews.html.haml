@@ -4,6 +4,8 @@
     .comment_div
       %div.user= link_to comment.user.username, comment.user
       %div.comment_content= comment.comment_content
+    - if comment.user == current_user
+      %div.comment_delete= link_to 'Delete Review', artist_comment_path(@artist.id, comment), method: :delete, data: { confirm: 'Are you sure?' } 
 
 %hr
 = form_for(@comment, :url => "/artists/#{@artist.id}/comments") do |f|
