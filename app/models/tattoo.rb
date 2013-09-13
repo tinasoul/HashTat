@@ -7,5 +7,12 @@ class Tattoo < ActiveRecord::Base
   has_many :comments
   belongs_to :user
   belongs_to :artist
-
+ 
+  searchable do 
+    text :description, :gender, :body_location, :studio, :artist_name, :hashtags, :location, :artist, :user
+    text :username 
+    text :full_name
+  end
+  delegate :username, to: :user
+  delegate :full_name, to: :artist, allow_nil: true
 end
