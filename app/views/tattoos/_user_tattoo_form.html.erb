@@ -5,14 +5,14 @@
     <%= f.input :picture, :as => :file %>
   </div>
   <div class="field">
-    <%= f.input :description, :placeholder => "Share the story of this tattoo." %>
+    <%= f.input :description, label: "Story", :placeholder => "Share the story of this tattoo. It's exciting and powerful." %>
   </div>
   <div class="field">
     <%= f.input :gender, :collection =>[['Female',:female],['Male',:male]], :as => :radio_buttons %>
   </div>
   <div class="field">
     <%= f.input :body_location, 
-    :collection => [['shoulder',:shoulder], ['arm',:arm], ['upper back',:upper_back], ['torso',:torso], ['lower back',:lower_back], ['face',:face], ['neck',:neck], ['calf',:calf], ['leg',:leg], ['other', :other]]
+    :collection => [['shoulder',:shoulder], ['arm',:arm], ['hand',:hand],['neck',:neck],['chest',:chest],['upper back',:upper_back], ['lower back',:lower_back], ['torso',:torso], ['calf',:calf], ['leg',:leg], ['feet',:feet], ['face',:face], ['other', :other]]
      %>
   </div>
   <div class="field">
