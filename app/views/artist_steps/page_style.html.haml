@@ -16,8 +16,8 @@
       .field
         = f.input :cover_photo, :as => :file, :label => "Cover Photo"
 
-      .field
-        = f.input :color_scheme, :collection =>[['red',:red], ['turquoise', :turquoise],['purple',:indigo], ['yellow', :yellow]], :as => :radio_buttons
+      / .field
+      /   = f.input :color_scheme, :collection =>[['red',:red], ['turquoise', :turquoise],['purple',:indigo], ['yellow', :yellow]], :as => :radio_buttons
 
       .form_actions
         = f.button :submit, "Create My Portfolio", class: 'button'

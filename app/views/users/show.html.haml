@@ -21,7 +21,7 @@
       %h1 Ink
       %hr
       - if @user.tattoos.size == 0
-        = "This user has not added any Ink."
+        = "No Ink added."
       - else
         - @tattoos.each do |tattoo|
           .user_tat.large-3.columns

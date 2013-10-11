@@ -24,19 +24,22 @@
     = f.input :specialties
 
   .field
-    = f.input :instagram
-
-  .field
     = f.input :twitter
 
   .field
-    = f.input :flickr
+    = f.input :instagram
+
+  / .field
+  /   = f.input :flickr
 
   .field
     = f.input :facebook
 
   .field
     = f.input :email
+
+  .field
+    = f.input :phone
 
   .form_actions
     = f.button :submit, "Next", class: 'button'

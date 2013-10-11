@@ -1,4 +1,4 @@
-%h1 Add a Tattoo To Your Portfolio
+%h1 Add a Tattoo to your Portfolio
 
 = simple_form_for([@artist, @tattoo]) do |f|
   = f.error_notification
@@ -8,10 +8,15 @@
   .field
     = f.input :description
   .field
-    = f.input :body_location,
-    :collection => [['shoulder',:shoulder], ['arm',:arm], ['upper back',:upper_back], ['torso',:torso], ['lower back',:lower_back], ['face',:face], ['neck',:neck], ['calf',:calf], ['leg',:leg], ['other', :other]]
+    = f.input :gender,
+     :collection => [['Female',:female],['Male',:male]], :as => :radio_buttons
   .field
-    = f.input :studio
-    = f.hidden_field :artist_id, :value => params[:artist_id]
+    = f.input :body_location,
+     :collection => [['shoulder',:shoulder], ['arm',:arm], ['hand',:hand],['neck',:neck],['chest',:chest],['upper back',:upper_back], ['lower back',:lower_back], ['torso',:torso], ['calf',:calf], ['leg',:leg], ['feet',:feet], ['face',:face], ['other', :other]]
+  / .field
+  /   = f.input :studio
+  /   = f.hidden_field :artist_id, :value => params[:artist_id]
+  .field
+    = f.input :hashtags
   .form_action
     = f.button :submit, "Add To My Portfolio"

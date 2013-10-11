@@ -2,28 +2,28 @@
 
 .row
   .large-4.columns
-    %h3 Help your new fans get in touch with you.
+    %h3 Help your new fans get in touch with you.  
   .large-7.columns
     = simple_form_for @artist, url: wizard_path do |f|
       = f.error_notification
 
       .field
-        = f.input :instagram
+        = f.input :twitter, :label => "Twitter link", :placeholder => "eg. https://twitter.com/tinapshah"
 
       .field
-        = f.input :twitter
+        = f.input :instagram, :label => "Instagram link", :placeholder => "eg. http://instagram.com/tinasoul"
+
+      / .field
+      /   = f.input :flickr
 
       .field
-        = f.input :flickr
-
-      .field
-        = f.input :facebook
+        = f.input :facebook, :label => "Facebook link", :placeholder => "eg. https://www.facebook.com/tina.shah.16718"
 
       .field
         = f.input :email
 
       .field
-        = f.input :phone
+        = f.input :phone, :placeholder => "212-555-5555"
 
 
       .form_actions

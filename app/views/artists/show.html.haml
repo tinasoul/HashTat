@@ -8,8 +8,8 @@
     .social
       = if_social(@artist,:facebook) do
         = build_link(@artist,:facebook)
-      = if_social(@artist, :flickr) do
-        = build_link(@artist,:flickr)
+      / = if_social(@artist, :flickr) do
+      /   = build_link(@artist,:flickr)
       = if_social(@artist, :twitter) do
         = build_link(@artist,:twitter)
       = if_social(@artist, :instagram) do
@@ -21,7 +21,7 @@
   %li.current
     %a{:href => "#"} #{@artist.location}
   %li
-    %a{:href => "#{@artist.tattoo_shop_url}"} #{@artist.tattoo_shop} Tattoo Shop
+    %a{:href => "#{@artist.tattoo_shop_url}"} #{@artist.tattoo_shop} 
 
 .row
   .artist_bio.large-4.columns
