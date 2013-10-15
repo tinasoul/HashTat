@@ -42,11 +42,13 @@
     - else
       - @artist.tattoos.each do |tattoo|
         .tatcontain.large-3.columns
-          = link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo
+          / = link_to image_tag(tattoo.picture_url(:large_medium_square)), tattoo
+          = show_tattoo_photo_profile(tattoo)
       - if user_signed_in?
         - if @artist.user_id == current_user.id
           %hr
           = link_to "Add Another Photo To Your Portfolio", new_artist_tattoo_path(@artist.id), class: 'button'
+          = link_to "Edit your portfolio", edit_artist_step_path
     %hr
     .commentsreview
       .row
