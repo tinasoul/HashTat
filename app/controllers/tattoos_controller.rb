@@ -22,7 +22,7 @@ class TattoosController < ApplicationController
     @current_url = request.original_url
     
     respond_to do |format|
-      format.html # show.html.haml
+      format.html # show.html.erb
       format.json { render json: @tattoo }
     end
   end

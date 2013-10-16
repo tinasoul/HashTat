@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="qptext">
+    <h1>Welcome to H A S H T A T</h1>
+    <h5>
+      We are community for tattoo art and the stories behind them.
+      <h5>
+        To see more photos or find out more details sign up in 3 seconds.
+      </h5>
+    </h5>
+  </div>
+  <div class="qpsign_up">
+    <br>
+      <% if devise_mapping.omniauthable? %>
+        <% User.omniauth_providers.each do |provider| %>
+          <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn' %>
+          <br/>
+        <% end %>
+      <% end %>
+      <br>
+        <hr>
+          <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+            <%= f.error_notification %>
+            <%= display_base_errors resource %>
+            <%= f.input :username, :label => "Username", :autofocus => true %>
+            <%= f.input :email, :required => true %>
+            <% if f.object.password_required? %>
+              <%= f.input :password, :required => true %>
+              <%= f.input :password_confirmation, :required => true %>
+            <% end %>
+            <%= f.button :submit, 'Sign Up', :class => 'small button' %>
+          <% end %>
+        </hr>
+      </br>
+    </br>
+  </div>
+</div>
+
+<!-- HAML version
+.row
+  .qptext
+    %h1 Welcome to H A S H T A T
+    %h5
+      We are community for tattoo art and the stories behind them.
+      %h5
+        To see more photos or find out more details sign up in 3 seconds.
+  .qpsign_up
+    %br
+      - if devise_mapping.omniauthable?
+        - User.omniauth_providers.each do |provider|
+          = link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn'
+          %br/
+      %br
+        %hr
+          = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
+            = f.error_notification
+            = display_base_errors resource
+            = f.input :username, :label => "Username", :autofocus => true
+            = f.input :email, :required => true
+            - if f.object.password_required?
+              = f.input :password, :required => true
+              = f.input :password_confirmation, :required => true
+            = f.button :submit, 'Sign Up', :class => 'small button' -->
