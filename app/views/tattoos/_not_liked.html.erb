@@ -1,0 +1,14 @@
+<div class="blackandwhite">
+  <%= link_to vote_up_tattoo_path(tattoo), method: :post, remote: true do %>
+    <%= image_tag('likemom.png', size:'40x40') %>
+    <span id="count">
+      <%= tattoo.votes_for %>
+    </span>
+  <% end %>
+</div>
+
+<!-- HAML version
+.blackandwhite
+  = link_to vote_up_tattoo_path(tattoo), method: :post, remote: true do
+    = image_tag('likemom.png', size:'40x40')
+    %span#count= tattoo.votes_for -->

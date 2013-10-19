@@ -1,0 +1,69 @@
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <% if comment.id %>
+    <div class="comment_div">
+      <div class="user">
+        <%= link_to comment.user.username, comment.user %>
+      </div>
+      <div class="comment_content">
+        <%= comment.comment_content %>
+      </div>
+    </div>
+    <% if comment.user == current_user %>
+      <div class="comment_delete">
+        <%= link_to 'Delete Comment', tattoo_comment_path(@tattoo, comment), method: :delete, data: { confirm: 'Are you sure?' }  %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<hr/>
+<%= form_for [@tattoo, @comment] do |f| %>
+  <% if @comment.errors.any?  %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@comment.errors.count, "error") +'prohibited this comment from being saved:' %>
+      </h2>
+    </div>
+  <% end %>
+  <ul>
+    <% @tattoo.errors.full_messages.each do |msg|  %>
+      <li>
+        <%= msg %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="field">
+    <%= f.text_area :comment_content, :placeholder => "What do you think?" %>
+  </div>
+  <%= f.submit 'Comment', class: 'button tiny' %>
+<% end %>
+
+<!-- HAML version
+%h3 Comments
+- @comments.each do |comment|
+  - if comment.id
+    .comment_div
+      %div.user= link_to comment.user.username, comment.user
+      %div.comment_content= comment.comment_content
+    - if comment.user == current_user
+      %div.comment_delete= link_to 'Delete Comment', tattoo_comment_path(@tattoo, comment), method: :delete, data: { confirm: 'Are you sure?' } 
+      
+
+
+%hr
+= form_for [@tattoo, @comment] do |f|
+
+  - if @comment.errors.any? 
+    #error_explanation
+      %h2= pluralize(@comment.errors.count, "error") +'prohibited this comment from being saved:'
+
+  %ul
+    - @tattoo.errors.full_messages.each do |msg| 
+      %li= msg
+
+  .field
+    = f.text_area :comment_content, :placeholder => "What do you think?"
+  
+  = f.submit 'Comment', class: 'button tiny'
+
+ -->

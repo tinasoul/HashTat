@@ -1,0 +1,136 @@
+<div id="tattoo_info">
+  <div class="large-5 columns" id="photo_div">
+    <div id="photo">
+      <%= show_tattoo_photo(@tattoo) %>
+    </div>
+    <%= like_button(@tattoo, current_user) %>
+    <% if @user == current_user.id %>
+      <%= link_to 'Edit', edit_tattoo_path(@tattoo)  %>
+     |
+      <%= link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' }  %>
+    <% end %>
+    <br/>
+    <br/>
+  </div>
+  <div class="large-6 columns end" id="description">
+    <% if @tattoo.artist %>
+      <p class="title">Added By</p>
+      <p class="tattoo_adder">
+        <%= link_to "#{@tattoo.artist.full_name}", artist_path(@tattoo.artist) %>
+      </p>
+    <% else %>
+      <p class="title">Added By</p>
+      <p class="tattoo_adder">
+        <%= link_to "#{@tattoo.user.username}", user_path(@tattoo.user) %>
+      </p>
+    <% end %>
+    <% if @tattoo.description.present? %>
+      <p class="title">Story</p>
+      <p class="tattoo_description">
+        <%= @tattoo.description %>
+      </p>
+    <% end %>
+    <% if @tattoo.gender.present? %>
+      <p class="title">Gender</p>
+      <p class="tattoo_gender">
+        <%= @tattoo.gender %>
+      </p>
+    <% end %>
+    <% if @tattoo.body_location.present? %>
+      <p class="title">Location on Body</p>
+      <p class="tattoo_body_location">
+        <%= @tattoo.body_location %>
+      </p>
+    <% end %>
+    <% if @tattoo.artist_name.present? %>
+      <p class="title">Artist</p>
+      <p class="tattoo_artist_name">
+        <%= @tattoo.artist_name %>
+      </p>
+    <% end %>
+    <% if @tattoo.studio.present? %>
+      <p class="title">studio</p>
+      <p class="tattoo_studio">
+        <%= @tattoo.studio %>
+      </p>
+    <% end %>
+    <% if @tattoo.location.present? %>
+      <p class="title">Location</p>
+      <p class="tattoo_location">
+        <%= @tattoo.location %>
+      </p>
+    <% end %>
+    <% if @tattoo.hashtags.present? %>
+      <p class="title">HashTags</p>
+      <p class="tattoo_hashtags">
+        <%= @tattoo.hashtags %>
+      </p>
+    <% end %>
+  </div>
+</div>
+<div class="large-12 columns" id="comments"></div>
+<%= render 'comments' %>
+
+<!-- HAML version
+/ %nav.breadcrumbs
+/   = link_to 'Tattoos', tattoos_path
+/   = link_to current_user.username, user_path
+/   %a.current{:href => "#"} tattoo.title
+/
+/ = link_to 'Back', tattoos_path
+#tattoo_info
+  #photo_div.large-5.columns
+    #photo
+      = show_tattoo_photo(@tattoo)
+    = like_button(@tattoo, current_user)
+
+    - if @user == current_user.id
+      = link_to 'Edit', edit_tattoo_path(@tattoo) 
+      = link_to 'Delete', @tattoo, method: :delete, data: { confirm: 'Are you sure?' } |
+
+    %br
+    %br
+
+  #description.large-6.columns.end
+
+    - if @tattoo.artist
+      %p.title Added By
+      %p.tattoo_adder 
+        = link_to "#{@tattoo.artist.full_name}", artist_path(@tattoo.artist)
+    - else
+      %p.title Added By
+      %p.tattoo_adder 
+        = link_to "#{@tattoo.user.username}", user_path(@tattoo.user)
+
+    - if @tattoo.description.present?
+      %p.title Story
+      %p.tattoo_description= @tattoo.description
+
+    - if @tattoo.gender.present?
+      %p.title Gender
+      %p.tattoo_gender= @tattoo.gender
+
+    - if @tattoo.body_location.present?
+      %p.title Location on Body
+      %p.tattoo_body_location= @tattoo.body_location
+
+    - if @tattoo.artist_name.present?
+      %p.title Artist
+      %p.tattoo_artist_name= @tattoo.artist_name
+
+    - if @tattoo.studio.present?
+      %p.title studio
+      %p.tattoo_studio= @tattoo.studio
+
+    - if @tattoo.location.present?
+      %p.title Location
+      %p.tattoo_location= @tattoo.location
+
+    - if @tattoo.hashtags.present?
+      %p.title HashTags
+      %p.tattoo_hashtags= @tattoo.hashtags
+
+#comments.large-12.columns
+= render 'comments' -->
+
+

@@ -11,6 +11,10 @@
         %hr
         = "#{@user.location}"
         %br
+        %hr
+        = "#{@user.about_me}"
+        %br
+        %hr
         - if @user == current_user
           = link_to "Edit your profile", edit_user_path
         - else
@@ -26,8 +30,8 @@
         - @tattoos.each do |tattoo|
           .user_tat.large-3.columns
             = show_tattoo_photo_profile(tattoo)
-.row
-  .righside.large-3.columns.panel
-    - if !current_user.artist
-      Are you a tattoo artist? Create your custom artist portfolio now in less than a minute.
-      = link_to "Build an Artist Portfolio", new_artist_path, class: 'tiny button'
+/ .row
+/   .righside.large-3.columns.panel
+/     - if !current_user.artist
+/       Are you a tattoo artist? Create your custom artist portfolio now in less than a minute.
+/       = link_to "Build an Artist Portfolio", new_artist_path, class: 'tiny button'

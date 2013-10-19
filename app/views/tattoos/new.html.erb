@@ -1,0 +1,15 @@
+<% if params[:artist_id] %>
+  <%= render 'artist_tattoo_form' %>
+<% else %>
+  <%= render 'user_tattoo_form' %>
+<% end %>
+<%= link_to 'Back', root_path %>
+
+<!-- HAML version
+
+- if params[:artist_id]
+  = render 'artist_tattoo_form'
+- else
+  = render 'user_tattoo_form'
+
+= link_to 'Back', root_path -->
