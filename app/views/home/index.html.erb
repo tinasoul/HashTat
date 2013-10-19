@@ -21,6 +21,12 @@
                   <%= f.input :password, :required => true %>
                   <%= f.input :password_confirmation, :required => true %>
                 <% end %>
+                <%= f.label "I have read and accept the terms of service" %>
+                <%= f.check_box :terms_of_service %>
+                <%= f.label "I would like to be signed up for the newsletter" %>
+                <%= f.check_box :newsletter %>
+                <br>
+
                 <%= f.button :submit, 'Sign Up', :class => 'small button' %>
               <% end %>
             </hr>
