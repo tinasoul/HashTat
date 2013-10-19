@@ -9,10 +9,14 @@ class User < ActiveRecord::Base
          :confirmable
 
   validates_length_of :username, :maximum => 15, :allow_blank => false
+  validates :terms_of_service, acceptance: true
+  validates :newsletter, acceptance: true
+
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :location, :memorable_story, :about_me, :avatar
+  attr_accessible :newsletter, :terms_of_service
   mount_uploader :avatar, PictureUploader
   # Establish relationships between models
   has_many :tattoos
