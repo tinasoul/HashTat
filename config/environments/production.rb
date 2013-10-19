@@ -76,11 +76,11 @@ Myapp::Application.configure do
     domain: ENV["DOMAIN_NAME"],
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "hashtat2@gmail.com",
+    user_name: "mrhashtat@gmail.com",
     password: "a1b2c3d45"
   }
 
-  config.action_mailer.default_url_options = { :host => '49.212.132.239:8899' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 
   # Log the query plan for queries taking more than this (works
