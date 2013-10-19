@@ -32,9 +32,9 @@ $(function(){
 
   //$(".best_in_place").best_in_place();
 
-
-  $('#myModal').foundation('reveal', 'open');
-  $('#myModal').foundation('reveal', 'close');
+  var modal = $('#myModal');
+  modal.foundation('reveal', 'open');
+  modal.foundation('reveal', 'close');
 
 
 
