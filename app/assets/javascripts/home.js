@@ -13,6 +13,8 @@ $(document).ready(function(){
 		$(".sign_up").removeClass("active");
 	});
 
+    $('#logModal').foundation('reveal', 'open');
+
 	
 });
 

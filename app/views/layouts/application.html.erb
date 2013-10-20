@@ -14,7 +14,6 @@
 
 
   <body class="<%= controller_name %> <%= action_name %>">
- 
 
    
 
@@ -22,23 +21,6 @@
 
       
   <%= render 'layouts/navigation' %>
-<button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
-
-
-
-<!-- SideNav -->
-<!--   <div id="navbar" class="small-1 column">
-    <div id="navbar" class="fixed">
-      <ul class="side-nav"> -->
-       <!-- <<li>
-          <%= link_to "+Tat", new_tattoo_path %> 
-        </li>  -->
-        <!-- <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li> -->
-   <!--    </ul>
-    </div>
-  </div> -->
 
   <!-- Content -->
 
@@ -53,12 +35,13 @@
  <!-- Facebook Like JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1376057452618930";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1376057452618930";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
   </body>
 </html>

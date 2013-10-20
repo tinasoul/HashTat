@@ -1,115 +1,65 @@
-<div class="login_container">
-  <div class="login_background">
-    <div class="row">
-      <div class="large-6 columns">
-        <div class="sign_up">
-          <h2>Sign up.</h2>
-          <% if devise_mapping.omniauthable? %>
-            <% User.omniauth_providers.each do |provider| %>
-              <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn' %>
-              <br/>
+<div id="logModal" class="reveal-modal small" style="padding: 0px;">
+  <div class="section-container auto" data-section>
+    <section class="active">
+      <p class="title" data-section-title><a href="#panel1">Sign Up</a></p>
+      <div class="content" data-section-content>
+        <br>
+        <hr>
+        <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+            <%= f.error_notification %>
+            <%= display_base_errors resource %>
+            <%= f.input :username, :label => "Username", :autofocus => true %>
+            <%= f.input :email, :required => true %>
+            <% if f.object.password_required? %>
+                <%= f.input :password, :required => true %>
+                <%= f.input :password_confirmation, :required => true %>
             <% end %>
-          <% end %>
-          <br>
-            <hr>
-              <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-                <%= f.error_notification %>
-                <%= display_base_errors resource %>
-                <%= f.input :username, :label => "Username", :autofocus => true %>
-                <%= f.input :email, :required => true %>
-                <% if f.object.password_required? %>
-                  <%= f.input :password, :required => true %>
-                  <%= f.input :password_confirmation, :required => true %>
-                <% end %>
-                <%= f.label "I have read and accept the terms of service" %>
-                <%= f.check_box :terms_of_service %>
-                <%= f.label "I would like to be signed up for the newsletter" %>
-                <%= f.check_box :newsletter %>
-                <br>
+            <%= f.label "I have read and accept the terms of service" %>
+            <%= f.check_box :terms_of_service %>
+            <%= f.label "I would like to be signed up for the newsletter" %>
+            <%= f.check_box :newsletter %>
+            <br>
 
-                <%= f.button :submit, 'Sign Up', :class => 'small button' %>
-              <% end %>
-            </hr>
-          </br>
-        </div>
+            <%= f.button :submit, 'Sign Up', :class => 'small button' %>
+        <% end %>
+        <% if devise_mapping.omniauthable? %>
+            <% User.omniauth_providers.each do |provider| %>
+                <%= link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button' %>
+                <br/>
+            <% end %>
+        <% end %>
       </div>
-      <div class="large-6 columns">
+    </section>
+    <section>
+      <p class="title" data-section-title><a href="#panel2">Login</a></p>
+      <div class="content" data-section-content>
         <div class="log_in">
           <h2>Log in.</h2>
           <% if devise_mapping.omniauthable? %>
-            <% User.omniauth_providers.each do |provider| %>
-              <%= link_to "Log In with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn' %>
-              <br/>
-            <% end %>
+              <% User.omniauth_providers.each do |provider| %>
+                  <%= link_to "Log In with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn' %>
+                  <br/>
+              <% end %>
           <% end %>
           <br>
-            <hr>
-              <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-                <%= f.input :email, :autofocus => true %>
-                <% if devise_mapping.recoverable? && controller_name != 'passwords' %>
+          <hr>
+          <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+              <%= f.input :email, :autofocus => true %>
+              <% if devise_mapping.recoverable? && controller_name != 'passwords' %>
                   <%= f.input :password %>
                   <% if devise_mapping.recoverable? && controller_name != 'passwords' %>
-                    <%= link_to "Forgot your password?", new_password_path(resource_name) %>
-                    <br/>
+                      <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+                      <br/>
                   <% end %>
                   <br/>
-                <% end %>
-                <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-                <br>
-                  <%= f.button :submit, "Log in", :class => 'small button' %>
-                </br>
               <% end %>
-            </hr>
-          </br>
+              <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+              <br>
+              <%= f.button :submit, "Log in", :class => 'small button' %>
+          <% end %>
         </div>
       </div>
-    </div>
-    <div class="push"></div>
-    <div class="footer"></div>
+    </section>
   </div>
+  <a class="close-reveal-modal">&#215;</a>
 </div>
-
-<!-- HAML version
-.login_container
-  .login_background
-    .row
-      .large-6.columns
-        .sign_up
-          %h2 Sign up.
-          - if devise_mapping.omniauthable?
-            - User.omniauth_providers.each do |provider|
-              = link_to "Sign Up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn'
-              %br/
-          %br
-            %hr
-              = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
-                = f.error_notification
-                = display_base_errors resource
-                = f.input :username, :label => "Username", :autofocus => true
-                = f.input :email, :required => true
-                - if f.object.password_required?
-                  = f.input :password, :required => true
-                  = f.input :password_confirmation, :required => true
-                = f.button :submit, 'Sign Up', :class => 'small button'
-      .large-6.columns
-        .log_in
-          %h2 Log in.
-          - if devise_mapping.omniauthable?
-            - User.omniauth_providers.each do |provider|
-              = link_to "Log In with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'medium button twitter_btn'
-              %br/
-          %br
-            %hr
-              = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
-                = f.input :email, :autofocus => true
-                - if devise_mapping.recoverable? && controller_name != 'passwords'
-                  = f.input :password
-                  - if devise_mapping.recoverable? && controller_name != 'passwords'
-                    = link_to "Forgot your password?", new_password_path(resource_name)
-                    %br/
-                  %br
-                = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-                %br
-                  = f.button :submit, "Log in", :class => 'small button'
-    .push
-    .footer -->
