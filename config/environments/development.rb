@@ -52,7 +52,7 @@ Myapp::Application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "mrhashtat@gmail.com",
-    password: "a1b2c3d45"
+    password: "workhardplayhard"
   }
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
