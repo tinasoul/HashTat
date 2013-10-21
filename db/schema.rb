@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814183422) do
+ActiveRecord::Schema.define(:version => 20131019031947) do
 
   create_table "artists", :force => true do |t|
     t.string   "first_name"
@@ -105,8 +105,12 @@ ActiveRecord::Schema.define(:version => 20130814183422) do
     t.integer  "tat_number"
     t.string   "fav_artist"
     t.text     "memorable_story"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
