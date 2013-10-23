@@ -1,17 +1,24 @@
 Myapp::Application.routes.draw do
 
+  root :to => "tattoos#index"
+
+  match 'about' => 'home#about'
+
   post '/change_to_artist' => 'users#change_to_artist'
 
   authenticated :user do
     root :to => 'tattoos#index'
   end
-  root :to => "home#index"
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+  devise_for :users #path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
   resources :users
+
   match 'preview' => 'tattoos#preview'
-  get 'search' => 'search#search'
-  match 'about' => 'home#about'
   match 'quickpreview' => 'home#quickpreview'
+
+  get 'search' => 'search#search'
+
   resources :tattoos do
     resources :comments
     member do 
@@ -19,13 +26,14 @@ Myapp::Application.routes.draw do
       post :vote_down
     end
   end
-
  
  resources :artists do
     resources :tattoos
     resources :comments
   end
+
   resources :artist_steps
-   post '/artists/:artist_id/comments' => 'comments#create', as: 'create_comment'
+  
+  post '/artists/:artist_id/comments' => 'comments#create', as: 'create_comment'
 
 end

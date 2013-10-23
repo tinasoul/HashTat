@@ -1,11 +1,14 @@
 class User < ActiveRecord::Base
   acts_as_voter
   rolify
+
+  after_create :send_welcome_message
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         :recoverable, :rememberable, :trackable, :omniauthable
 
   validates_length_of :username, :maximum => 15, :allow_blank => false
 
@@ -62,5 +65,11 @@ class User < ActiveRecord::Base
     else
       super
     end
+  end
+
+  private
+
+  def send_welcome_message
+    UserMailer.welcome_email(self).deliver
   end
 end
