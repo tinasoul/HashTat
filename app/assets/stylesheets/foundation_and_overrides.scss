@@ -1304,9 +1304,26 @@ $topbar-breakpoint: emCalc(940); // Change to 9999px for always mobile layout
 // $topbar-sticky-class: ".sticky";
 
 @import 'foundation';
+@import url(http://fonts.googleapis.com/css?family=Miltonian+Tattoo);
+
+
+body {
+  background-image: url('brickwall.png');
+}
 
 .top-bar {
 padding: 3px 0;
+font-family: "Miltonian Tattoo", cursive;
+background-image: url('brickwall.png');
+border-bottom: black;
+border-bottom-style: solid;
+border-bottom-width: thin;
+  .name {
+    h1 { width: 200px;
+    font-family: "Miltonian Tattoo", cursive;
+    a {color: black; }
+    }
+  }
 }
 
 .top-bar-section ul {
@@ -1314,6 +1331,7 @@ padding: 3px 0;
 }
 
 .top-bar-section ul li a:link {
+  font-family: "Miltonian Tattoo", cursive;
 }
 
 
