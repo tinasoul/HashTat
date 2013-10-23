@@ -5,8 +5,9 @@
     <title><%= content_for?(:title) ? yield(:title) : "HashTat" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "HashTat" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
     <script src="https://togetherjs.com/togetherjs-min.js"></script>
+      <%= javascript_include_tag "application" %>
+
     <%= csrf_meta_tags %>
   </head>
 
@@ -58,6 +59,7 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1376057452618930";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
 
   </body>
 </html>
