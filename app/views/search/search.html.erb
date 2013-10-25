@@ -1,4 +1,8 @@
+<% if @search.results.present? %>
 <%= render @search.results %>
+<% else %>
+No Search Results Found
+<% end %>
 
 <%# @search.results.each do |result| %>
     <%#= show_tattoo_photo(result) %> 

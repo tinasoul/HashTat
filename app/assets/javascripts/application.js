@@ -47,4 +47,14 @@ $(function(){
   //   $(".hover-bar").append xhr.responseText
   // ).bind "ajax:error", (e, xhr, status, error) ->
   //   $("#new_post").append "<p>ERROR</p>"
+  $('textarea[data-limit]').each(function() {
+  var $this=$(this), limit = $this.data('limit');
+  $this.attr('placeholder', 'limit '+limit+' words');
+  $this.keypress(function(){
+     var wordcount = $this.val().split(/\b[\s,\.-:;]*/).length;
+     if (wordcount > limit) {
+      return false;
+     }
+  });
+});
 });    
