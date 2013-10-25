@@ -9,7 +9,7 @@
     = f.input :location, :placeholder => "Austin, Texas"
 
   .field
-    = f.input :about_me, :label => "About me in 5 words" 
+    = f.input :about_me, :label => "About me in 5 words", :input_html => {"data-limit" => 5} 
     
   / .field
   /   = f.input :memorable_story, :label => "Fav. tattoo story"
