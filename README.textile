@@ -2,6 +2,15 @@ h1. Hashtat
 
 A website that tracks tattoos you have, tattoos you like, and tattoos you want. Tattoo artists can also create public portfolios to share with prospective clients and employers.
 
+h2. Mailers:
+
+- bundle
+- rake db:migrate
+- rails s
+- sign up
+- rake jobs:work (to start delayed job worker)
+- you should receive blank welcome email
+
 h2. Features:
 
 - Twitter Authentication
