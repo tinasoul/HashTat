@@ -34,6 +34,8 @@ gem 'will_paginate'
 gem 'best_in_place'
 gem 'wicked'
 gem 'awesome_print'
+gem 'devise-async'
+gem 'delayed_job_active_record'
 
 
 group :production do
