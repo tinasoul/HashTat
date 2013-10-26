@@ -69,4 +69,13 @@ class User < ActiveRecord::Base
   def welcome_email
      ::Devise.mailer.delay.welcome_email(self)
   end
+
+  def reset_password_instructions(record, token, opts={})
+    @token = token
+    devise_mail(record, :reset_password_instructions, opts)
+  end
+
+  def send_unlock_instructions
+    Devise::Mailer.delay.unlock_instructions(self)
+  end
 end
