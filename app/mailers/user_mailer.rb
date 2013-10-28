@@ -3,7 +3,7 @@ class UserMailer < Devise::Mailer
 
   def welcome_email(user)
     @user = user
-    @url  = "https://hashtat.herokuapp.com"
+    @url  = "https://hashtat.com"
     mail(:to => user.email, :subject => "Welcome to HashTat!", :from => "mrhashtat@gmail.com")
   end
 
