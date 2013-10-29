@@ -1305,8 +1305,17 @@ $topbar-breakpoint: emCalc(940); // Change to 9999px for always mobile layout
 
 @import 'foundation';
 
+body {
+  background-image: url('brickwall.png');
+}
+
 .top-bar {
 padding: 3px 0;
+
+// background-image: url('brickwall.png');
+border-bottom: black;
+border-bottom-style: solid;
+border-bottom-width: thin;
 }
 
 .top-bar-section ul {
