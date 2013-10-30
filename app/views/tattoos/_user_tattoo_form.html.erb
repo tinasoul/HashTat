@@ -5,18 +5,18 @@
     <%= f.input :picture, :as => :file %>
   </div>
   <div class="field">
-    <%= f.input :description, label: "Story", :placeholder => "Share the story of this tattoo. It's exciting and powerful." %>
+    <%= f.input :description, label: "Story", :placeholder => "Share the story of this tattoo. If you don't know full the story describe what's compelling about this tattoo." %>
   </div>
   <div class="field">
     <%= f.input :gender, :collection =>[['Female',:female],['Male',:male]], :as => :radio_buttons %>
   </div>
   <div class="field">
     <%= f.input :body_location, 
-    :collection => [['shoulder',:shoulder], ['arm',:arm], ['hand',:hand],['neck',:neck],['chest',:chest],['upper back',:upper_back], ['lower back',:lower_back], ['torso',:torso], ['calf',:calf], ['leg',:leg], ['feet',:feet], ['face',:face], ['other', :other]]
+    :collection => [['arm',:arm], ['hand',:hand],['neck',:neck],['chest',:chest],['back',:back],['torso',:torso], ['leg',:leg], ['foot',:foot], ['other', :other]]
      %>
   </div>
   <div class="field">
-    <%= f.input :artist_name%>
+    <%= f.input :artist_name, label:"Artist's Name"%>
   </div>
   <div class="field">
     <%= f.input :studio%>
@@ -24,10 +24,9 @@
   <div class="field">
     <%= f.input :location, :placeholder => 'eg. Austin, Texas' %>
   </div>
-<!--   Not showing hashtags until browsing working -->
- <!-- <div class="field"> -->
-    <%#= f.input :hashtags %>
-  <!-- </div> -->
+  <div class="field"> 
+    <%= f.input :hashtags, :placeholder => "#blackandwhite, #color, #typography, #abstract" %>
+  </div> 
   <div class="form-actions">
     <%= f.button :submit, "Submit", class: 'small button' %>
   </div>

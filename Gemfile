@@ -36,6 +36,7 @@ gem 'wicked'
 gem 'awesome_print'
 gem 'devise-async'
 gem 'delayed_job_active_record'
+gem 'heroku_plus'
 
 
 group :production do
