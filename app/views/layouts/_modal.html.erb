@@ -1,0 +1,77 @@
+<div id="login_signup_modal" style="width: 900px; left: 830px; display: block;"><div class="ui-dialog">
+  <a class="ui-dialog-titlebar-close ui-corner-all close"></a>
+  <div class="ui-dialog-content">
+    <div class="signup_form" style="display: none;">
+      <div class="logo"></div>
+      <div class="message">
+        <div class="copy">The world’s greatest art, online. Sign up<br>to discover and collect your favorites.</div>
+      </div>
+      <div class="signup_buttons">
+        <a class="signup_with_facebook" href="/users/auth/facebook?sign_up=true">Sign Up with Facebook</a>
+        <a class="signup_with_twitter" href="/users/auth/twitter?sign_up=true">Sign Up with Twitter</a>
+        <a class="signup_with_email" href="/users/invitation/accept?email=1">Sign Up Using Your Email Address</a>
+      </div>
+      <div class="terms_copy">
+        By creating your Artsy account you agree to our
+        <br>
+        <a class="terms_link faux-underline" href="/terms" target="_blank">Terms of Use</a>
+        and
+        <a class="privacy_link faux-underline" href="/privacy" target="_blank">Privacy Policy</a>.
+      </div>
+      <div class="login_copy bottom-text">
+        Already have an account?
+        <a class="log_in log_in_button faux-underline">Log in</a>
+      </div>
+    </div>
+
+    <div class="login_form" style="display: block;">
+      <div class="logo"></div>
+      <div class="errors error_message"></div>
+      <div class="login_providers">
+        <div class="social_providers">
+          <div class="message">
+            Log In With Facebook or Twitter
+          </div>
+          <a class="enter_with_facebook" href="/users/auth/facebook">Facebook</a>
+          <a class="enter_with_twitter" href="/users/auth/twitter">Twitter</a>
+        </div>
+        <form accept-charset="UTF-8" action="https://artsy.net/users/sign_in" class="formatted" method="post">
+          <div class="artsy_placeholder_wrapper" style="position: relative;"><div class="artsy_placeholder" style="position: absolute; top: 0px; left: 0px; color: rgb(153, 153, 153);">Email</div><input autocomplete="on" autofocus="autofocus" name="user[email]" type="email"></div>
+          <div class="log_in">
+            <div class="artsy_placeholder_wrapper" style="position: relative;"><div class="artsy_placeholder" style="position: absolute; top: 0px; left: 0px; color: rgb(153, 153, 153);">Password</div><input autocomplete="on" name="user[password]" type="password"></div>
+            <button class="log_in text block dark">
+              <div class="spinner_container">
+                <div class="spinner w_p"></div>
+              </div>
+              Log in
+            </button>
+            <div class="checkbox_container">
+              <input checked="checked" class="checkbox" name="user[remember_me]" type="checkbox" value="1">
+              <label class="checkbox" for="user[remember_me]">Remember me</label>
+            </div>
+            <a class="forgot_password faux-underline" href="#">Forgot password?</a>
+          </div>
+          <div class="forgot">
+            <button class="forgot_password text block dark">
+              <div class="spinner_container">
+                <div class="spinner w_p"></div>
+              </div>
+              Send me reset instructions
+            </button>
+            <a class="forgot_password faux-underline" href="#">I remember it!</a>
+          </div>
+        </form>
+      </div>
+      <div class="confirmation_sent">
+        <h3>Please check your email for instructions on how to reset your password.</h3>
+        <a class="back_to_login faux-underline">Log in</a>
+      </div>
+      <div class="back_to_signup bottom-text">
+        Don't have an account?
+        <a class="sign_up_button faux-underline">Sign up</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
