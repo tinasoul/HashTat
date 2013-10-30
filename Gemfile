@@ -35,7 +35,6 @@ gem 'best_in_place'
 gem 'wicked'
 gem 'awesome_print'
 
-
 group :production do
   gem 'sunspot_solr'
   gem 'progress_bar'
@@ -45,6 +44,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'hirb'
   gem 'quiet_assets'
   gem 'sunspot_solr'
   gem 'progress_bar'
@@ -54,6 +54,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails','~> 2.0'
+  gem 'faker'
+  gem 'machinist'
 end
 
 # gem 'pg'
