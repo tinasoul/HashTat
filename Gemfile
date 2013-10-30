@@ -34,6 +34,8 @@ gem 'will_paginate'
 gem 'best_in_place'
 gem 'wicked'
 gem 'awesome_print'
+gem 'mailchimp-api'
+
 
 
 group :production do

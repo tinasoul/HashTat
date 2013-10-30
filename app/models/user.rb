@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_one :artist
 
+  after_create :send_newsletter
+
   # Calling the Tweet table not twitter api
   # after_create :assign_tweets_to_tattoos
 
@@ -68,4 +70,9 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+  def send_newsletter
+    self.email
+  end
+
 end
