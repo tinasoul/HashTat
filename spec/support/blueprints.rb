@@ -6,7 +6,7 @@ User.blueprint do
   email { Faker::Internet.email }
   fav_artist { Faker::Name.name }
   password { "test1234" }
-  password_confirmation { "test1234" }
+  password_confirmation { password }
   location { 'Austin, TX' }
   memorable_story { Faker::Lorem.paragraph(10) }
   tat_number { 1 + rand(100).to_i }
