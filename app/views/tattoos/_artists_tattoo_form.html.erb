@@ -5,13 +5,16 @@
     <%= f.input :picture, :as => :file %>
   </div>
   <div class="field">
-    <%= f.input :description %>
+    <%= f.input :description, label: "Story", :placeholder => "Share the story of this tattoo. If you don't know full the story describe what's compelling about this tattoo." %>
   </div>
    <div class="field">
     <%= f.input :gender, :collection =>[['Female',:female],['Male',:male]], :as => :radio_buttons %>
   </div>
    <div class="field">
-    <%= f.input :body_location, 
+     <%= f.input :body_location, 
+    :collection => [['arm',:arm], ['hand',:hand],['neck',:neck],['chest',:chest],['back',:back],['torso',:torso], ['leg',:leg], ['foot',:foot], ['other', :other]]
+     %>
+    <%#= f.input :body_location, 
     :collection => [['shoulder',:shoulder], ['arm',:arm], ['hand',:hand],['neck',:neck],['chest',:chest],['upper back',:upper_back], ['lower back',:lower_back], ['torso',:torso], ['calf',:calf], ['leg',:leg], ['feet',:feet], ['face',:face], ['other', :other]]
      %>
   </div>
@@ -21,6 +24,9 @@
   </div>
    <div class="field">
     <%= f.input :location, :placeholder => 'eg. Austin, Texas' %>
+  </div>
+  <div class="field"> 
+    <%= f.input :hashtags, :placeholder => "#blackandwhite, #color, #typography, #abstract" %>
   </div>
   <!--   Not showing hashtags until browsing working -->
  <!-- <div class="field"> -->
