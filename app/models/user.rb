@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :async, :registerable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   validates_length_of :username, :maximum => 15, :allow_blank => false
@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
   end
 
   def welcome_email
-     ::Devise.mailer.delay.welcome_email(self)
+     UserMailer.welcome_email(self).deliver
   end
 
   def reset_password_instructions(record, token, opts={})
@@ -75,7 +75,4 @@ class User < ActiveRecord::Base
     devise_mail(record, :reset_password_instructions, opts)
   end
 
-  def send_unlock_instructions
-    Devise::Mailer.delay.unlock_instructions(self)
-  end
 end
