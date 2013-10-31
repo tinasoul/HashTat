@@ -1,4 +1,5 @@
 class UserMailer < ActionMailer::Base
+  include Devise::Mailers::Helpers
   default from: "mshashtat@gmail.com"
 
   def welcome_email(user)
