@@ -34,6 +34,7 @@ gem 'will_paginate'
 gem 'best_in_place'
 gem 'wicked'
 gem 'awesome_print'
+gem 'activeadmin'
 
 group :production do
   gem 'sunspot_solr'
