@@ -3,6 +3,12 @@ class Artist < ActiveRecord::Base
   has_many :tattoos
   has_many :comments
   attr_accessible :last_name, :first_name, :full_name, :location, :tattoo_shop, :avatar, :specialties, :bio, :instagram, :flickr, :twitter, :facebook, :cover_tattoo, :user_id, :email, :phone, :tattoo_shop_url, :color_scheme, :vanity_url
+  attr_accessible :id, :first_name, :last_name, :full_name, :location, 
+                  :tattoo_shop, :avatar, :specialties, :bio, :instagram, 
+                  :flickr, :twitter, :facebook, :cover_photo, :created_at, 
+                  :updated_at, :user_id, :tattoo_shop_url, :email, :phone, 
+                  :color_scheme, :vanity_url, :as => [:default, :admin]
+
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover_photo, CoverphotoUploader
 

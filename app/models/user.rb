@@ -14,6 +14,12 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :location, :memorable_story, :about_me, :avatar
+
+  attr_accessible :id, :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at,
+                  :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :created_at,
+                  :updated_at, :username, :provider, :uid, :avatar, :about_me, :location, :tat_number, :fav_artist, :memorable_story,
+                  :confirmation_token, :confirmed_at, :confirmation_sent_at, :as => [:default, :admin]
+
   mount_uploader :avatar, PictureUploader
   # Establish relationships between models
   has_many :tattoos

@@ -1,5 +1,8 @@
 Myapp::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   post '/change_to_artist' => 'users#change_to_artist'
 
   authenticated :user do
@@ -7,6 +10,7 @@ Myapp::Application.routes.draw do
   end
   root :to => "home#index"
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  ActiveAdmin.routes(self)
   resources :users
   match 'preview' => 'tattoos#preview'
   get 'search' => 'search#search'
