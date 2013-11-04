@@ -74,7 +74,8 @@ body {
 }
 
 #banner_img {
-position: fixed;
+<!-- position: fixed; -->
+position: relative;
 top: 60px;
 /*left: -10px;*/
 padding: 0px;
@@ -97,12 +98,13 @@ background-repeat: no-repeat;
 #masonryContainer { 
   background-image: url('brickwall.png');
   position:relative;
-  top: 500px;
+ <!--  top: 500px; -->
   width: 102%;
   bottom:0;
   scroll:auto;
   left: -15px;
   padding-left: 7%;
+  float: left;
 } 
 .masonry-brick a {
   transition: opacity .2s linear;
