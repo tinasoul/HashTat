@@ -119,6 +119,7 @@ $medium-screen: 1280px;
 $large-screen: 1440px;
 
 $screen: "only screen";
+$tiny: "only screen and (max-width: #{$small-screen})";
 $small: "only screen and (min-width: #{$small-screen})";
 $medium: "only screen and (min-width: #{$medium-screen})";
 $large: "only screen and (min-width: #{$large-screen})";
@@ -1332,8 +1333,11 @@ border-bottom-width: thin;
 }
 
 
-@media #{$small}{
+@media #{$tiny}{
    #banner_img {
    height:250px !important;
- }
- }
+  }
+  #masonryContainer { 
+    top:250px !important;
+  }
+}
