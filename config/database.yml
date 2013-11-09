@@ -1,40 +1,46 @@
 
-# development:
-#   adapter: postgresql
-#   database: hash_tats_dev
-#   pool: 5
-#   timeout: 5000
-
-# test: &test
-#   adapter: postgresql
-#   database: hash_tats_test
-#   pool: 5
-#   timeout: 5000
-
-# production:
-#   adapter: postgresql
-#   database: hash_tats_prod
-#   pool: 5
-#   timeout: 5000
-
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  username: hashtat
+  password: hashtat
+  database: hashtat_dev
+  port: 15432
   pool: 5
   timeout: 5000
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  adapter: sqlite3
-  database: db/test.sqlite3
+test: &test
+  adapter: postgresql
+  username: hashtat
+  password: hashtat
+  database: hashtat_test
+  port: 15432
   pool: 5
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: hashtat_prod
   pool: 5
   timeout: 5000
+
+# development:
+#   adapter: sqlite3
+#   database: db/development.sqlite3
+#   pool: 5
+#   timeout: 5000
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+# test:
+#   adapter: sqlite3
+#   database: db/test.sqlite3
+#   pool: 5
+#   timeout: 5000
+
+# production:
+#   adapter: sqlite3
+#   database: db/production.sqlite3
+#   pool: 5
+#   timeout: 5000
 

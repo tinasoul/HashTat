@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ArtistController do
+describe ArtistsController do
 
   describe "GET 'index'" do
     it "returns http success" do
