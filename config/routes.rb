@@ -5,6 +5,9 @@ Myapp::Application.routes.draw do
 
   post '/change_to_artist' => 'users#change_to_artist'
 
+  get 'tattoos/most_liked' => 'tattoos#most_liked'
+
+
   authenticated :user do
     root :to => 'tattoos#index'
   end

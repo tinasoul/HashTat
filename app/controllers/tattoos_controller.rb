@@ -11,6 +11,11 @@ class TattoosController < ApplicationController
     end
   end
 
+  def most_liked
+    @tattoos = Tattoo.tally.limit(10).having('COUNT(votes.id) > 0')
+    render :index
+  end
+
   # GET /tattoos/1
   # GET /tattoos/1.json
   def show

@@ -3,6 +3,8 @@
 
 <!-- Masonry Container -->
 <div id="masonryContainer">
+    <%= link_to "Most Liked Tattoos", controller: "tattoos", action: "most_liked" %>  |
+    <%= link_to "Most Recent Tattoos", tattoos_path %>
     <% if @tattoos %> 
       <% @tattoos.each do |tattoo| %>
         <div class="masonry-brick">
