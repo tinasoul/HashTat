@@ -57,7 +57,7 @@ module ApplicationHelper
 
   def avatar_url(user)
     if user.avatar.present?
-      user.avatar
+      user.avatar.url(:large_medium_square)
     else
       default_url = "#{root_path}/assets/hashlogo.png"
       if user.email

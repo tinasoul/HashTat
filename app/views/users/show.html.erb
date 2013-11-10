@@ -10,7 +10,7 @@
         <%= "#{@user.location}" %>
         <br/>
         <hr/>
-        <%= "#{@user.about_me}" %>
+        <div class="user_desc"><%= "#{@user.about_me}" %></div>
         <br/>
         <hr/>
         <% if @user == current_user %>
@@ -20,10 +20,10 @@
       </div>
     </div>
     <div class="rightside large-offset-1 column large-5 columns">
-      <h1>Ink</h1>
+      <h1 class="ink">Ink</h1>
       <hr/>
       <% if @user.tattoos.size == 0 %>
-        <%= "This user has not added any Ink." %>
+        <div class="no-ink-result"><%= "This user has not added any Ink." %></div>
       <% else %>
         <% @tattoos.each do |tattoo| %>
           <div class="user_tat large-3 columns">
