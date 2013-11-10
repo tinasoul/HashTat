@@ -2,11 +2,7 @@
   <div class="large-12 columns">
     <div class="leftside large-3 columns panel">
       <div class="avatarshow">
-        <% if @user.avatar.present? %>
-          <%= image_tag (@user.avatar) %>
-        <% else %>
-          <%= image_tag ("hashlogo.png") %>
-        <% end %>
+          <%= image_tag (avatar_url(@user)) %>
       </div>
       <div class="usernametitle">
         <h1><%= "#{@user.username}" %></h1>
