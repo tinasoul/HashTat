@@ -1,6 +1,6 @@
 class TattoosController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :preview]
-  layout "full-width", :only => [:index, :search, :preview]
+  before_filter :authenticate_user!, :except => [:index, :preview, :most_liked]
+  layout "full-width", :only => [:index, :search, :preview, :most_liked]
   # GET /tattoos
   # GET /tattoos.json
   def index
