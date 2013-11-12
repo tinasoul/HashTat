@@ -1,0 +1,43 @@
+<h2>Edit Your Artist Portfolio</h2>
+<%= simple_form_for(@artist) do |f| %>
+  <%= f.error_notification %>
+  <div class="field">
+    <%= f.input :first_name %>
+  </div>
+  <div class="field">
+    <%= f.input :last_name %>
+  </div>
+  <div class="field">
+    <%= f.input :location %>
+  </div>
+  <div class="field">
+    <%= f.input :tattoo_shop %>
+  </div>
+  <div class="field">
+    <%= f.input :tattoo_shop_url, :label => "Tattoo shop website" %>
+  </div>
+  <div class="field">
+    <%= f.input :bio %>
+  </div>
+  <div class="field">
+    <%= f.input :specialties %>
+  </div>
+  <div class="field">
+    <%= f.input :instagram %>
+  </div>
+  <div class="field">
+    <%= f.input :twitter %>
+  </div>
+  <div class="field">
+    <%= f.input :flickr %>
+  </div>
+  <div class="field">
+    <%= f.input :facebook %>
+  </div>
+  <div class="field">
+    <%= f.input :email %>
+  </div>
+  <div class="form_actions">
+    <%= f.button :submit, "Next", class: 'button' %>
+  </div>
+<% end %>
