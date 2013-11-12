@@ -55,4 +55,18 @@ module ApplicationHelper
     "current_step" if current_page?(path)
   end
 
+  def avatar_url(user)
+    if user.avatar.present?
+      user.avatar.url(:large_medium_square)
+    else
+      default_url = "#{root_path}/assets/hashlogo.png"
+      if user.email
+        gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+        "http://gravatar.com/avatar/#{gravatar_id}.png"
+      else
+        default_url
+      end
+    end
+  end
+
 end

@@ -15,6 +15,12 @@
 
 .rightside{
 	margin-top: 5em;
+	.ink{
+		text-align: center;
+	}
+	.no-ink-result{
+		margin-left: 25px;
+	}
 }
 
 .usernametitle {
@@ -22,5 +28,8 @@
 	text-shadow: 2px 2px white;
 	h1 {
 		color: #16a085;
+	}
+	.user_desc{
+		text-align: left;
 	}
 }

@@ -1,12 +1,8 @@
 <div class="row">
   <div class="large-12 columns">
-    <div class="leftside large-3 columns panel">
+    <div class="leftside large-6 columns panel">
       <div class="avatarshow">
-        <% if @user.avatar.present? %>
-          <%= image_tag (@user.avatar) %>
-        <% else %>
-          <%= image_tag ("hashlogo.png") %>
-        <% end %>
+          <%= image_tag (avatar_url(@user)) %>
       </div>
       <div class="usernametitle">
         <h1><%= "#{@user.username}" %></h1>
@@ -14,7 +10,7 @@
         <%= "#{@user.location}" %>
         <br/>
         <hr/>
-        <%= "#{@user.about_me}" %>
+        <div class="user_desc"><%= "#{@user.about_me}" %></div>
         <br/>
         <hr/>
         <% if @user == current_user %>
@@ -23,11 +19,11 @@
         <% end %>
       </div>
     </div>
-    <div class="rightside large-offset-1 column large-8 columns">
-      <h1>Ink</h1>
+    <div class="rightside large-offset-1 column large-5 columns">
+      <h1 class="ink">Ink</h1>
       <hr/>
       <% if @user.tattoos.size == 0 %>
-        <%= "This user has not added any Ink." %>
+        <div class="no-ink-result"><%= "This user has not added any Ink." %></div>
       <% else %>
         <% @tattoos.each do |tattoo| %>
           <div class="user_tat large-3 columns">

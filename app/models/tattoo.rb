@@ -9,6 +9,8 @@ class Tattoo < ActiveRecord::Base
                   :location, :artist_id, :twitter_photo, :as => [:default, :admin]
 
   mount_uploader :picture, PictureUploader
+  validates_presence_of :picture
+  
   has_one :tweet
   has_many :comments
   belongs_to :user

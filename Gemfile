@@ -7,7 +7,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  # gem 'therubyracer'
+  gem 'therubyracer'
   # gem 'less'
   # gem 'less-rails'
   # gem 'less-rails-fontawesome'
@@ -44,12 +44,14 @@ group :production do
 end
 
 group :development do
+  gem 'pry'
+  gem 'pry-debugger'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sunspot_solr'
   gem 'progress_bar'
-  gem 'sqlite3'
+  gem 'pg'
   gem 'debugger'
 end
 
