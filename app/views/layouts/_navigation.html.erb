@@ -22,9 +22,6 @@
           <%= link_to "Most Recent Tattoos", tattoos_path %>
           </li>
         <% end %>
-        <li>
-          <%= link_to "About", about_path %>
-        </li>
         <% if user_signed_in? %>
           <li>
             <%= link_to "Add a Tat", new_tattoo_path %>
@@ -33,6 +30,9 @@
           <li id="search">
            <%= form_tag '/search', :method => :get do %>
             <%= text_field_tag :q, params[:q], :placeholder => "Search any field" %>
+          </li>
+           <li>
+          <%= link_to "About", about_path %>
           </li>
           <% end %>
           <li class="has-dropdown">
