@@ -6,13 +6,10 @@
       </div>
       <div class="usernametitle">
         <h1><%= "#{@user.username}" %></h1>
-        <hr/>
-        <%= "I am a tattoo artist"%>
-         <hr/>
         <%= "Location: #{@user.location}" %>
         <br/>
         <hr/>
-        <div class="user_desc"><%= " About Me: #{@user.about_me}" %></div>
+        <div class="user_desc"><%= "About Me: #{@user.about_me}" %></div>
         <br/>
         <hr/>
         <% if @user == current_user %>
