@@ -16,17 +16,28 @@
       <ul class="right">
         <% if user_signed_in? %>
           <li>
-          <%= link_to "Most Liked Tattoos", controller: "tattoos", action: "most_liked" %>
+          <%= link_to "Popular Tattoos", controller: "tattoos", action: "most_liked" %>
           </li>
           <li>
-          <%= link_to "Most Recent Tattoos", tattoos_path %>
+          <%= link_to "Recent Tattoos", tattoos_path %>
           </li>
+          <% unless current_user.artist %>
+            <li>
+              <%= link_to "Create Tattoo Artist Page", new_artist_path %>
+            </li>
+          <% end %>
         <% end %>
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to "Add a Tat", new_tattoo_path %>
-          </li>
 
+        <% if user_signed_in? %>
+          <% if current_user.artist %>
+            <li>
+              <%= link_to "Add a Tat", new_artist_tattoo_path(current_user.artist.id) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Add a Tat", new_tattoo_path %>
+            </li>
+          <% end %>
           <li id="search">
            <%= form_tag '/search', :method => :get do %>
             <%= text_field_tag :q, params[:q], :placeholder => "Search any field" %>

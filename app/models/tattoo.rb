@@ -21,6 +21,6 @@ class Tattoo < ActiveRecord::Base
     text :username 
     text :full_name
   end
-  delegate :username, to: :user
+  delegate :username, to: :user, allow_nil: true
   delegate :full_name, to: :artist, allow_nil: true
 end
