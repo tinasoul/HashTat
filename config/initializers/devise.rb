@@ -17,7 +17,7 @@ Devise.setup do |config|
 
   #config.allow_insecure_token_lookup = true
 
-  config.secret_key = 'da152c5ec7bea7781f50383c1ea06f710f296f278bac923bbba3970c0baa00f6c8be5eb395b22a32eac622cd1419b9decc5dad62805f96fb8876329e734d2590'
+  config.secret_key = ENV['SECRET_KEY']
 
 
   # ==> Configuration for any authentication mechanism
