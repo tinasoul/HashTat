@@ -15,6 +15,14 @@ require Rails.root.join('spec', 'support', 'blueprints')
 #   puts 'role: ' << role
 # end
 # puts 'DEFAULT USERS'
-# user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
+# user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSOWRD'].dup
 # puts 'user: ' << user.username
 # user.add_role :admin
+
+3.times do
+  user = User.make!
+  Tattoo.make(3).each do |tattoo|
+    tattoo.user_id = user.id
+    tattoo.save!(validate: false)
+  end
+end

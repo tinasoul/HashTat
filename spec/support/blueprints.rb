@@ -24,7 +24,14 @@ Tattoo.blueprint do
   body_location { %w[arm leg back].sample }
   description   { Faker::Lorem.paragraph }
   gender        { %w[male female].sample }
+  hashtags      { '#myreallycooltatt #tattoosareme' }
   location      { 'Abu Dabi' }
+  picture do
+    Rack::Test::UploadedFile.new(
+      Rails.root.join('spec', 'support', 'tat_imgs', 'tattoo1.jpg'),
+      'image/jpg'
+    )
+  end
   studio        { 'Tickety Tatt' }
 end
 
@@ -40,7 +47,7 @@ User.blueprint do
   location        { 'Austin, TX' }
   memorable_story { Faker::Lorem.paragraph(10) }
   password        { "test1234" }
-  password_confirmation { password }
+  password_confirmation { object.password }
   tat_number      { 1 + rand(100).to_i }
   username        { Faker::Name.first_name }
 end
