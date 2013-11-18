@@ -79,3 +79,5 @@ pickle-email-*.html
 *notes*
 
 solr/data
+
+.env
