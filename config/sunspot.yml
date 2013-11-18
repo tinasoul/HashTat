@@ -8,6 +8,7 @@ production:
 
 development:
   solr:
+    solr_home: solr
     hostname: localhost
     port: 8982
     log_level: INFO
