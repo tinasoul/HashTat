@@ -81,3 +81,4 @@ pickle-email-*.html
 solr/data
 
 .env
+/public/uploads/tmp
