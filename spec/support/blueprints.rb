@@ -26,12 +26,13 @@ Tattoo.blueprint do
   gender        { %w[male female].sample }
   hashtags      { '#myreallycooltatt #tattoosareme' }
   location      { 'Abu Dabi' }
-  picture do
-    Rack::Test::UploadedFile.new(
-      Rails.root.join('spec', 'support', 'tat_imgs', 'tattoo1.jpg'),
-      'image/jpg'
-    )
-  end
+  # AWS credentials not valid
+  # picture do
+  #   Rack::Test::UploadedFile.new(
+  #     Rails.root.join('spec', 'support', 'tat_imgs', 'tattoo1.jpg'),
+  #     'image/jpg'
+  #   )
+  # end
   studio        { 'Tickety Tatt' }
 end
 
