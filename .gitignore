@@ -79,4 +79,8 @@ config/database.yml
 *notes*
 
 solr/data
+
+
 .env
+/public/uploads/tmp
+

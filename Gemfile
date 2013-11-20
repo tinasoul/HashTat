@@ -37,6 +37,7 @@ gem 'wicked'
 gem 'awesome_print'
 gem 'activeadmin'
 
+
 group :production do
   gem 'sunspot_solr'
   gem 'progress_bar'
@@ -48,6 +49,7 @@ group :development do
   gem 'pry-debugger'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'hirb'
   gem 'quiet_assets'
   gem 'sunspot_solr'
   gem 'progress_bar'
@@ -57,6 +59,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails','~> 2.0'
+  gem 'faker'
+  gem 'machinist'
 end
 
 # gem 'pg'
