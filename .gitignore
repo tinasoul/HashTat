@@ -79,3 +79,4 @@ config/database.yml
 *notes*
 
 solr/data
+.env
