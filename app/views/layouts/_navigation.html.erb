@@ -21,11 +21,11 @@
           <li>
           <%= link_to "Recent Tattoos", tattoos_path %>
           </li>
-          <% unless current_user.artist %>
-            <li>
-              <%= link_to "Create Tattoo Artist Page", new_artist_path %>
-            </li>
-          <% end %>
+          <%# unless current_user.artist %>
+            <!-- <li> -->
+              <%#= link_to "Create Tattoo Artist Page", new_artist_path %>
+            <!-- </li> -->
+          <%# end %>
         <% end %>
 
         <% if user_signed_in? %>
