@@ -1,19 +1,23 @@
 
 development:
   adapter: postgresql
-  username: hashtat
-  password: hashtat
+  encoding: utf8
+  host: localhost
+  template: template0
+  username: root
+  password: root
   database: hashtat_dev
-  port: 15432
   pool: 5
   timeout: 5000
 
 test: &test
   adapter: postgresql
-  username: hashtat
-  password: hashtat
+  encoding: utf8
+  host: localhost
+  template: template0
   database: hashtat_test
-  port: 15432
+  username: root
+  password: root
   pool: 5
   timeout: 5000
 

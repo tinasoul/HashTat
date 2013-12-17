@@ -16,7 +16,7 @@
       <ul class="right">
         <% if user_signed_in? %>
           <li>
-          <%= link_to "Popular Tattoos", controller: "tattoos", action: "most_liked" %>
+          <%= link_to "Popular Tattoos", controller: "/tattoos", action: "most_liked" %>
           </li>
           <li>
           <%= link_to "Recent Tattoos", tattoos_path %>
